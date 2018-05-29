@@ -10,7 +10,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
-import net.oneplus.weather.R;
+
 import net.oneplus.weather.util.AlertUtils;
 import net.oneplus.weather.util.NetUtil;
 import net.oneplus.weather.widget.openglbase.RainSurfaceView;

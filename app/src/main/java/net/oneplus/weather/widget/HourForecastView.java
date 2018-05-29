@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-import net.oneplus.weather.R;
+
 import net.oneplus.weather.api.helper.DateUtils;
 import net.oneplus.weather.api.nodes.DailyForecastsWeather;
 import net.oneplus.weather.api.nodes.HourForecastsWeather;

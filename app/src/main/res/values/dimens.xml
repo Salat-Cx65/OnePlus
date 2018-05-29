@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <item type="dimen" name="disabledAlpha_light">0.38</item>
+    <item type="dimen" name="disabledAlpha_dark">0.5</item>
+    <item type="dimen" name="disabled_alpha_material_dark">0.3</item>
+    <item type="dimen" name="disabled_alpha_material_light">0.26</item>
+    <item type="dimen" name="btn_highlight_alpha_material">@dimen/btn_highlight_alpha_material_light</item>
+    <item type="dimen" name="btn_highlight_alpha_material_dark">0.3</item>
+    <item type="dimen" name="btn_highlight_alpha_material_light">0.3</item>
+    <item type="dimen" name="oneplus_contorl_text_disable_alpha">0.24</item>
+    <item type="dimen" name="oneplus_contorl_text_hint_alpha">0.24</item>
+    <item type="dimen" name="oneplus_contorl_text_label_alpha">0.48</item>
+    <item type="dimen" name="oneplus_contorl_text_primary_alpha">1.0</item>
+    <item type="dimen" name="oneplus_contorl_text_secondary_alpha">0.48</item>
+    <item type="dimen" name="op_disabled_alpha_material_dark">0.3</item>
+    <item type="dimen" name="op_disabled_alpha_material_light">0.26</item>
+    <item type="dimen" name="op_highlight_alpha_material_dark">0.2</item>
+    <item type="dimen" name="op_highlight_alpha_material_light">0.12</item>
+    <item type="dimen" name="text_selection_highlight_alpha_material">0.5</item>
     <dimen name="ab_double_subhead">12.0sp</dimen>
     <dimen name="ab_double_title">16.0sp</dimen>
     <dimen name="ab_single_title">20.0sp</dimen>

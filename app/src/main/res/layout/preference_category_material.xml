@@ -1,3 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView n1:textAppearance="@style/TextAppearance.Material.Body2" n1:textColor="?android:colorAccent" n1:id="@android:id/title" n1:paddingTop="16.0dip" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:layout_marginBottom="16.0dip" n1:paddingStart="?android:listPreferredItemPaddingStart" n1:paddingEnd="?android:listPreferredItemPaddingEnd"
-  xmlns:n1="http://schemas.android.com/apk/res/android" />
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/title"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16.0dip"
+    android:paddingEnd="?android:listPreferredItemPaddingEnd"
+    android:paddingStart="?android:listPreferredItemPaddingStart"
+    android:paddingTop="16.0dip"
+    android:textColor="?android:colorAccent" />

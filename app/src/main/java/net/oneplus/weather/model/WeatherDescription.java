@@ -1,7 +1,6 @@
 package net.oneplus.weather.model;
 
 import android.content.Context;
-import net.oneplus.weather.R;
 
 public class WeatherDescription {
     public static final int WEATHER_DESCRIPTION_CLOUDY = 1003;

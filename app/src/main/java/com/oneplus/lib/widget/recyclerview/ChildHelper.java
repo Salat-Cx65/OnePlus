@@ -5,7 +5,6 @@ import android.view.ViewGroup.LayoutParams;
 import com.oneplus.lib.widget.recyclerview.RecyclerView.ViewHolder;
 import java.util.ArrayList;
 import java.util.List;
-import net.oneplus.weather.R;
 
 class ChildHelper {
     private static final boolean DEBUG = false;

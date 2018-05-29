@@ -24,7 +24,7 @@ import com.oneplus.lib.util.loading.DialogLoadingAsyncTask;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-import net.oneplus.weather.R;
+
 import net.oneplus.weather.api.nodes.Alarm;
 import net.oneplus.weather.util.BitmapUtils;
 import net.oneplus.weather.util.MediaUtil;

@@ -1,7 +1,6 @@
 package com.oneplus.lib.app;
 
 import android.content.Context;
-import android.content.DialogInterface.OnCancelListener;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
@@ -13,7 +12,7 @@ import android.view.View;
 import android.widget.TextView;
 import com.oneplus.lib.widget.OPProgressBar;
 import java.text.NumberFormat;
-import net.oneplus.weather.R;
+
 import net.oneplus.weather.util.StringUtils;
 
 public class OPProgressDialog extends OPAlertDialog {

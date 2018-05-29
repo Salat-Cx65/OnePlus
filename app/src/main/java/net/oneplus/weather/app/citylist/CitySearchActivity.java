@@ -27,7 +27,7 @@ import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
-import net.oneplus.weather.R;
+
 import net.oneplus.weather.app.BaseActivity;
 import net.oneplus.weather.app.ShowWeatherActivity;
 import net.oneplus.weather.db.CityWeatherDB;

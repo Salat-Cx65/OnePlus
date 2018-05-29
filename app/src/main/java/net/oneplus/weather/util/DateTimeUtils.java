@@ -13,7 +13,7 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.Random;
 import java.util.TimeZone;
-import net.oneplus.weather.R;
+
 import net.oneplus.weather.api.helper.DateUtils;
 import net.oneplus.weather.widget.WeatherCircleView;
 import net.oneplus.weather.widget.openglbase.RainSurfaceView;

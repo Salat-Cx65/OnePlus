@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import net.oneplus.weather.R;
+
 import net.oneplus.weather.widget.openglbase.RainSurfaceView;
 
 public class WeatherSingleInfoView extends LinearLayout {

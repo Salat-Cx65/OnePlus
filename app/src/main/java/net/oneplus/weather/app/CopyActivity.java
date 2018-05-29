@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.View.OnLongClickListener;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import net.oneplus.weather.R;
 
 public class CopyActivity extends BaseBarActivity {
     private WebView mWebView;

@@ -35,7 +35,7 @@ import com.google.android.gms.location.GeofenceStatusCodes;
 import com.oneplus.lib.widget.recyclerview.ItemTouchHelper.Callback;
 import java.util.ArrayList;
 import java.util.List;
-import net.oneplus.weather.R;
+
 import net.oneplus.weather.api.WeatherException;
 import net.oneplus.weather.api.nodes.CurrentWeather;
 import net.oneplus.weather.api.nodes.DailyForecastsWeather;

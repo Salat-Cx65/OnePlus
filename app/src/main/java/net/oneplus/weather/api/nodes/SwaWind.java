@@ -3,9 +3,8 @@ package net.oneplus.weather.api.nodes;
 import android.content.Context;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.location.DetectedActivity;
-import net.oneplus.weather.R;
+
 import net.oneplus.weather.api.impl.SwaRequest;
-import net.oneplus.weather.api.nodes.Wind.Direction;
 import net.oneplus.weather.widget.openglbase.RainSurfaceView;
 import net.oneplus.weather.widget.shap.Stars;
 

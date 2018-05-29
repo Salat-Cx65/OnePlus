@@ -4,7 +4,6 @@ import android.content.Context;
 import android.graphics.PointF;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.os.Parcelable.Creator;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
@@ -14,13 +13,12 @@ import com.google.android.gms.common.ConnectionResult;
 import com.oneplus.lib.preference.Preference;
 import com.oneplus.lib.widget.recyclerview.ItemTouchHelper.ViewDropHandler;
 import com.oneplus.lib.widget.recyclerview.RecyclerView.LayoutManager;
-import com.oneplus.lib.widget.recyclerview.RecyclerView.LayoutManager.Properties;
 import com.oneplus.lib.widget.recyclerview.RecyclerView.LayoutParams;
 import com.oneplus.lib.widget.recyclerview.RecyclerView.Recycler;
 import com.oneplus.lib.widget.recyclerview.RecyclerView.State;
 import com.oneplus.lib.widget.recyclerview.RecyclerView.ViewHolder;
 import java.util.List;
-import net.oneplus.weather.R;
+
 import net.oneplus.weather.widget.openglbase.RainSurfaceView;
 
 public class LinearLayoutManager extends LayoutManager implements ViewDropHandler {

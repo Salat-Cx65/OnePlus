@@ -55,11 +55,10 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.Locale;
 import java.util.concurrent.CopyOnWriteArrayList;
-import net.oneplus.weather.R;
+
 import net.oneplus.weather.api.nodes.Alarm;
 import net.oneplus.weather.api.nodes.RootWeather;
 import net.oneplus.weather.app.ContentWrapper.OnUIChangedListener;
-import net.oneplus.weather.app.MainActivity.OnViewPagerScrollListener;
 import net.oneplus.weather.app.citylist.CityListActivity;
 import net.oneplus.weather.db.ChinaCityDB;
 import net.oneplus.weather.db.CityWeatherDB;

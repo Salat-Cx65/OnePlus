@@ -17,7 +17,7 @@ import android.widget.TextView;
 import com.google.android.gms.common.ConnectionResult;
 import com.oneplus.lib.app.OPAlertDialog;
 import com.oneplus.lib.app.OPAlertDialog.Builder;
-import net.oneplus.weather.R;
+
 import net.oneplus.weather.widget.CenterAlertDialog;
 
 public class AlertUtils {

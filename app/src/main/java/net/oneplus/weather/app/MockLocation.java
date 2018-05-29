@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.widget.CompoundButton;
 import android.widget.Switch;
-import net.oneplus.weather.R;
+
 import net.oneplus.weather.util.PreferenceUtils;
 
 public class MockLocation extends Activity {

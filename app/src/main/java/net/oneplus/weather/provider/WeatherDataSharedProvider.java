@@ -12,7 +12,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import java.util.ArrayList;
 import java.util.Locale;
-import net.oneplus.weather.R;
+
 import net.oneplus.weather.api.WeatherException;
 import net.oneplus.weather.api.helper.WeatherUtils;
 import net.oneplus.weather.api.nodes.RootWeather;

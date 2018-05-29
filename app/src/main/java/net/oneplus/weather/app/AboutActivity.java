@@ -14,7 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.google.android.gms.location.DetectedActivity;
 import com.oneplus.lib.widget.button.OPButton;
-import net.oneplus.weather.R;
+
 import net.oneplus.weather.app.EggDetector.OnEggListerner;
 import net.oneplus.weather.model.WeatherDescription;
 import net.oneplus.weather.util.GpsUtils;

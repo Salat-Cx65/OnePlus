@@ -17,6 +17,7 @@ import java.util.Calendar;
 import java.util.Iterator;
 import java.util.List;
 import java.util.TimeZone;
+
 import net.oneplus.weather.R;
 import net.oneplus.weather.api.WeatherException;
 import net.oneplus.weather.api.nodes.CurrentWeather;

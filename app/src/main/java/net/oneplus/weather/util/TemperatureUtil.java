@@ -1,7 +1,6 @@
 package net.oneplus.weather.util;
 
 import android.content.Context;
-import net.oneplus.weather.R;
 
 public class TemperatureUtil {
     private static final int NO_TEMP_DATA_FLAG = -2000;

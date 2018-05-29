@@ -1,11 +1,11 @@
 package com.oneplus.custom.utils;
 
 import android.util.Log;
-import com.oneplus.custom.utils.OpCustomizeSettings.CUSTOM_TYPE;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import net.oneplus.weather.R;
+
 import net.oneplus.weather.widget.openglbase.RainSurfaceView;
 import net.oneplus.weather.widget.shap.Stars;
 

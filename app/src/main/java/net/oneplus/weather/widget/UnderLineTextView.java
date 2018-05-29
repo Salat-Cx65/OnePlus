@@ -11,7 +11,6 @@ import android.support.v4.internal.view.SupportMenu;
 import android.text.Layout;
 import android.util.AttributeSet;
 import android.widget.TextView;
-import net.oneplus.weather.R;
 
 public class UnderLineTextView extends TextView {
     private Paint mPaint;

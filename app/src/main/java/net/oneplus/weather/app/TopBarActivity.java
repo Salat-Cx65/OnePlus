@@ -6,7 +6,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewStub;
 import android.widget.ImageView;
 import android.widget.TextView;
-import net.oneplus.weather.R;
+
 import net.oneplus.weather.util.UIUtil;
 
 public class TopBarActivity extends BaseActivity {

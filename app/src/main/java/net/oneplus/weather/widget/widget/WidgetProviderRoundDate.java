@@ -17,7 +17,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 import java.util.Properties;
-import net.oneplus.weather.R;
+
 import net.oneplus.weather.api.WeatherException;
 import net.oneplus.weather.api.nodes.RootWeather;
 import net.oneplus.weather.app.MainActivity;

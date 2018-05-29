@@ -8,7 +8,7 @@ import android.support.v4.widget.AutoScrollHelper;
 import com.android.volley.DefaultRetryPolicy;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
-import net.oneplus.weather.R;
+
 import net.oneplus.weather.gles20.objects.RainDownpourParticles;
 import net.oneplus.weather.gles20.objects.RainDrizzleParticles;
 import net.oneplus.weather.gles20.objects.RainNormalParticles;

@@ -13,10 +13,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
 import android.widget.LinearLayout;
-import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 import com.google.android.gms.common.ConnectionResult;
-import net.oneplus.weather.R;
+
 import net.oneplus.weather.widget.openglbase.RainSurfaceView;
 
 public class SettingSwitch extends LinearLayout implements OnTouchListener {

@@ -7,7 +7,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.FrameLayout;
 import android.widget.Toast;
-import net.oneplus.weather.R;
+
 import net.oneplus.weather.model.WeatherDescription;
 import net.oneplus.weather.util.UIUtil;
 import net.oneplus.weather.util.WeatherViewCreator;

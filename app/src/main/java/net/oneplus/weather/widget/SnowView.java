@@ -11,7 +11,7 @@ import android.util.AttributeSet;
 import com.google.android.gms.location.LocationRequest;
 import java.util.ArrayList;
 import java.util.Random;
-import net.oneplus.weather.R;
+
 import net.oneplus.weather.util.OrientationSensorUtil.OrientationInfoListener;
 import net.oneplus.weather.widget.openglbase.RainSurfaceView;
 import net.oneplus.weather.widget.shap.Stars;

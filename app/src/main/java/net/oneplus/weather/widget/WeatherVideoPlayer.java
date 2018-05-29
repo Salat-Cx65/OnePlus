@@ -9,7 +9,6 @@ import android.view.LayoutInflater;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import com.google.android.gms.location.DetectedActivity;
-import net.oneplus.weather.R;
 
 public class WeatherVideoPlayer extends FrameLayout implements OnCompletionListener {
     private ImageView mImageView;

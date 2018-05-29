@@ -11,7 +11,7 @@ import android.util.Log;
 import android.widget.RemoteViews;
 import com.google.android.gms.location.DetectedActivity;
 import java.util.Properties;
-import net.oneplus.weather.R;
+
 import net.oneplus.weather.api.WeatherException;
 import net.oneplus.weather.api.nodes.RootWeather;
 import net.oneplus.weather.app.MainActivity;

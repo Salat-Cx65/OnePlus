@@ -17,13 +17,12 @@ import android.support.v4.widget.AutoScrollHelper;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.View;
-import android.view.View.MeasureSpec;
 import android.widget.LinearLayout;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.location.DetectedActivity;
 import com.google.android.gms.location.LocationRequest;
 import java.util.List;
-import net.oneplus.weather.R;
+
 import net.oneplus.weather.api.nodes.RootWeather;
 import net.oneplus.weather.util.DateTimeUtils;
 import net.oneplus.weather.util.SystemSetting;

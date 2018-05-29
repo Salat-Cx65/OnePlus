@@ -17,7 +17,7 @@ import android.widget.ListView;
 import com.android.volley.DefaultRetryPolicy;
 import java.util.ArrayList;
 import java.util.List;
-import net.oneplus.weather.R;
+
 import net.oneplus.weather.provider.CitySearchProvider;
 
 public class ScreenShot {

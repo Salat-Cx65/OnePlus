@@ -19,10 +19,9 @@ import java.lang.ref.WeakReference;
 import java.util.Map;
 import java.util.WeakHashMap;
 import java.util.concurrent.ConcurrentHashMap;
-import net.oneplus.weather.R;
+
 import net.oneplus.weather.api.WeatherException;
 import net.oneplus.weather.api.nodes.RootWeather;
-import net.oneplus.weather.app.citylist.CityListAdapter.ItemHolder;
 import net.oneplus.weather.db.ChinaCityDB;
 import net.oneplus.weather.db.CityWeatherDB;
 import net.oneplus.weather.db.CityWeatherDB.CityListDBListener;

@@ -11,7 +11,7 @@ import com.android.volley.DefaultRetryPolicy;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.location.LocationRequest;
 import java.util.ArrayList;
-import net.oneplus.weather.R;
+
 import net.oneplus.weather.util.GlobalConfig;
 import net.oneplus.weather.util.OrientationSensorUtil.OrientationInfoListener;
 import net.oneplus.weather.util.UIUtil;

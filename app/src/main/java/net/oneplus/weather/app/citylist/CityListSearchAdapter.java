@@ -10,7 +10,7 @@ import android.widget.Filterable;
 import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
-import net.oneplus.weather.R;
+
 import net.oneplus.weather.model.CommonCandidateCity;
 import net.oneplus.weather.util.StringUtils;
 

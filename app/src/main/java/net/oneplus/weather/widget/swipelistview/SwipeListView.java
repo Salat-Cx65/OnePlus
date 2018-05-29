@@ -14,7 +14,6 @@ import android.view.ViewGroup;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import java.util.List;
-import net.oneplus.weather.R;
 
 public class SwipeListView extends ListView {
     public static final boolean DEBUG = false;

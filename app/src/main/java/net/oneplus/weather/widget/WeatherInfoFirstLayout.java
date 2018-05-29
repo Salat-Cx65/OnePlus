@@ -5,8 +5,6 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.RelativeLayout;
-import android.widget.RelativeLayout.LayoutParams;
-import net.oneplus.weather.R;
 
 public class WeatherInfoFirstLayout extends RelativeLayout {
     public WeatherInfoFirstLayout(Context context) {

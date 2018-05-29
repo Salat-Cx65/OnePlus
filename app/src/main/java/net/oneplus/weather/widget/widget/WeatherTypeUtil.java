@@ -1,7 +1,7 @@
 package net.oneplus.weather.widget.widget;
 
 import com.google.android.gms.location.GeofenceStatusCodes;
-import net.oneplus.weather.R;
+
 import net.oneplus.weather.model.WeatherDescription;
 
 public class WeatherTypeUtil {

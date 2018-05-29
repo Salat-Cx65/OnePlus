@@ -12,7 +12,7 @@ import android.view.GestureDetector;
 import android.view.GestureDetector.SimpleOnGestureListener;
 import android.view.MotionEvent;
 import android.widget.EditText;
-import net.oneplus.weather.R;
+
 import net.oneplus.weather.util.StringUtils;
 import net.oneplus.weather.widget.openglbase.RainSurfaceView;
 

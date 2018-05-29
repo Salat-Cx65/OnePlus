@@ -12,7 +12,7 @@ import com.nineoldandroids.animation.Animator.AnimatorListener;
 import com.nineoldandroids.view.ViewPropertyAnimator;
 import java.util.ArrayList;
 import java.util.List;
-import net.oneplus.weather.R;
+
 import net.oneplus.weather.widget.openglbase.RainSurfaceView;
 
 public class WeatherPathAnim {

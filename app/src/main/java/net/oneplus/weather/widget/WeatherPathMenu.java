@@ -5,14 +5,12 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import com.nineoldandroids.animation.Animator;
 import com.nineoldandroids.animation.Animator.AnimatorListener;
-import net.oneplus.weather.R;
+
 import net.oneplus.weather.widget.anim.WeatherPathAnim;
 import net.oneplus.weather.widget.openglbase.RainSurfaceView;
 

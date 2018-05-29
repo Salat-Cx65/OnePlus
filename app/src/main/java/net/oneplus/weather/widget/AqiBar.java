@@ -10,13 +10,10 @@ import android.graphics.Shader;
 import android.graphics.Shader.TileMode;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.os.Parcelable.Creator;
 import android.support.v4.widget.AutoScrollHelper;
 import android.util.AttributeSet;
 import android.view.View;
-import android.view.View.BaseSavedState;
-import net.oneplus.weather.R;
-import net.oneplus.weather.widget.AqiBar.Level;
+
 import net.oneplus.weather.widget.shap.Stars;
 
 public class AqiBar extends View {

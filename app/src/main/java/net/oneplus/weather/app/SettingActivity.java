@@ -12,7 +12,7 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.Switch;
 import android.widget.TextView;
 import java.text.DecimalFormat;
-import net.oneplus.weather.R;
+
 import net.oneplus.weather.app.SettingSwitch.OnChangedListener;
 import net.oneplus.weather.util.StringUtils;
 import net.oneplus.weather.util.SystemSetting;

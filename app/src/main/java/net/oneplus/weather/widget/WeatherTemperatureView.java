@@ -9,12 +9,12 @@ import android.graphics.Path;
 import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.view.View;
-import android.view.View.MeasureSpec;
+
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.location.DetectedActivity;
 import java.util.ArrayList;
 import java.util.Collections;
-import net.oneplus.weather.R;
+
 import net.oneplus.weather.util.TemperatureUtil;
 import net.oneplus.weather.util.UIUtil;
 import net.oneplus.weather.widget.openglbase.RainSurfaceView;

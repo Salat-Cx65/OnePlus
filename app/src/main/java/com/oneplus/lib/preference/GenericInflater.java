@@ -4,10 +4,10 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.util.Xml;
 import android.view.InflateException;
-import com.oneplus.lib.preference.GenericInflater.Factory;
+
 import java.io.IOException;
 import java.util.HashMap;
-import net.oneplus.weather.R;
+
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 

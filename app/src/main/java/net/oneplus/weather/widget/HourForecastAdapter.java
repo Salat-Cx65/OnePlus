@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import java.util.List;
-import net.oneplus.weather.R;
+
 import net.oneplus.weather.model.HourForecastsWeatherData;
 
 public class HourForecastAdapter extends Adapter<ViewHolder> {

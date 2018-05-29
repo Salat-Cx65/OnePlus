@@ -15,7 +15,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Toast;
 import com.google.android.gms.location.DetectedActivity;
-import net.oneplus.weather.R;
+
 import net.oneplus.weather.app.BaseBarActivity;
 import net.oneplus.weather.app.MainActivity;
 import net.oneplus.weather.app.citylist.CityListAdapter.OnDefaulatChangeListener;

@@ -2,7 +2,6 @@ package net.oneplus.weather.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import net.oneplus.weather.R;
 
 public class SandStormView extends BaseWeatherView {
     public SandStormView(Context context) {

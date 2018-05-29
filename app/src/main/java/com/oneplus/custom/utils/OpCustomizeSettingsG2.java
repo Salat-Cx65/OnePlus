@@ -2,12 +2,11 @@ package com.oneplus.custom.utils;
 
 import android.util.Log;
 import com.google.android.gms.common.ConnectionResult;
-import com.oneplus.custom.utils.OpCustomizeSettings.CUSTOM_BACK_COVER_TYPE;
-import com.oneplus.custom.utils.OpCustomizeSettings.CUSTOM_TYPE;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import net.oneplus.weather.R;
+
 import net.oneplus.weather.widget.openglbase.RainSurfaceView;
 
 public class OpCustomizeSettingsG2 extends OpCustomizeSettings {

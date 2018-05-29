@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import com.google.android.gms.location.GeofenceStatusCodes;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import net.oneplus.weather.R;
+
 import net.oneplus.weather.api.WeatherType;
 import net.oneplus.weather.api.nodes.Wind.Direction;
 import net.oneplus.weather.db.CityWeatherDBHelper.WeatherEntry;

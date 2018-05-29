@@ -5,9 +5,7 @@ import android.content.Context;
 import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.TextView;
-import net.oneplus.weather.R;
 
 public class CenterAlertDialog extends Dialog {
     private TextView mCancel;

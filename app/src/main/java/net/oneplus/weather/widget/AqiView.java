@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.google.android.gms.location.DetectedActivity;
-import net.oneplus.weather.R;
+
 import net.oneplus.weather.util.StringUtils;
 import net.oneplus.weather.widget.AqiBar.Level;
 import net.oneplus.weather.widget.AqiBar.OnAqiLevelChangeListener;

@@ -11,8 +11,6 @@ import android.view.Window;
 import android.view.WindowManager.LayoutParams;
 import android.widget.VideoView;
 import com.android.volley.DefaultRetryPolicy;
-import net.oneplus.weather.BuildConfig;
-import net.oneplus.weather.R;
 
 public class VidePlayActivity extends Activity implements OnCompletionListener {
     private MediaPlayer mMediaPlayer;

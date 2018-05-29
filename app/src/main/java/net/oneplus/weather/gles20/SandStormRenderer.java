@@ -9,7 +9,7 @@ import android.support.v4.widget.AutoScrollHelper;
 import com.android.volley.DefaultRetryPolicy;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
-import net.oneplus.weather.R;
+
 import net.oneplus.weather.gles20.objects.SandParticleShooter;
 import net.oneplus.weather.gles20.objects.SandParticleSystem;
 import net.oneplus.weather.gles20.programs.SandShaderProgram;
