@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout n1:layout_width="wrap_content" n1:layout_height="wrap_content"
+  xmlns:n1="http://schemas.android.com/apk/res/android">
+    <ImageView n1:id="@id/single_info_icon" n1:background="@drawable/ic_air_level" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:contentDescription="@null" />
+    <LinearLayout n1:gravity="center_vertical" n1:orientation="vertical" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginLeft="@dimen/dimen_3" n1:layout_toRightOf="@id/single_info_icon" n1:layout_centerVertical="true" n1:layout_marginStart="@dimen/dimen_3" n1:layout_toEndOf="@id/single_info_icon">
+        <TextView n1:textSize="@dimen/sp_11" n1:textColor="@color/white" n1:id="@id/single_info_type" n1:layout_width="wrap_content" n1:layout_height="wrap_content" />
+        <TextView n1:textSize="@dimen/sp_16" n1:textColor="@color/white" n1:id="@id/single_info_level" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginTop="2.0dip" />
+    </LinearLayout>
+</RelativeLayout>

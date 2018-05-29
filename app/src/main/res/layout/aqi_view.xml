@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n1:orientation="horizontal" n1:layout_width="fill_parent" n1:layout_height="wrap_content"
+  xmlns:n1="http://schemas.android.com/apk/res/android">
+    <ImageView n1:id="@id/icon" n1:background="@drawable/ic_aqi_anim" n1:layout_width="wrap_content" n1:layout_height="wrap_content" />
+    <LinearLayout n1:layout_gravity="bottom" n1:orientation="vertical" n1:layout_width="fill_parent" n1:layout_height="wrap_content">
+        <LinearLayout n1:orientation="horizontal" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginLeft="@dimen/dimen_3" n1:layout_marginStart="@dimen/dimen_3">
+            <TextView n1:textSize="@dimen/sp_11" n1:textColor="@color/white" n1:id="@id/type" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:text="@string/single_air" />
+            <TextView n1:textSize="@dimen/sp_16" n1:textColor="@color/white" n1:id="@id/level" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginLeft="@dimen/dimen_9" n1:layout_marginStart="@dimen/dimen_9" />
+            <TextView n1:textSize="@dimen/sp_11" n1:textColor="@color/white" n1:id="@id/pm_type" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginLeft="@dimen/dimen_20" n1:text="@string/PM25" />
+            <TextView n1:textSize="@dimen/sp_16" n1:textColor="@color/white" n1:id="@id/aqi_level_value" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginLeft="@dimen/dimen_9" />
+        </LinearLayout>
+        <net.oneplus.weather.widget.AqiBar n1:id="@id/aqiBar" n1:layout_width="fill_parent" n1:layout_height="@dimen/dimen_10" n1:layout_marginTop="@dimen/dimen_6" n1:layout_marginBottom="@dimen/dimen_9" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout n1:id="@id/about_view" n1:background="@color/settings_bkg" n1:layout_width="fill_parent" n1:layout_height="fill_parent"
+  xmlns:n1="http://schemas.android.com/apk/res/android">
+    <LinearLayout n1:gravity="center_horizontal" n1:orientation="vertical" n1:id="@id/weather_info" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:layout_marginLeft="@dimen/oneplus_contorl_layout_margin_left2" n1:layout_marginRight="@dimen/oneplus_contorl_layout_margin_right2" n1:layout_centerHorizontal="true" n1:layout_centerVertical="true">
+        <ImageView n1:id="@id/about_icon" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:src="@drawable/ic_launcher" />
+        <TextView n1:textAppearance="@style/oneplus_contorl_text_style_descriptions" n1:textColor="@color/about_text_color" n1:gravity="center" n1:id="@id/about_version" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:layout_marginTop="@dimen/oneplus_contorl_layout_margin_bottom2" />
+        <TextView n1:textAppearance="@style/oneplus_contorl_text_style_descriptions" n1:textColor="@color/about_text_color" n1:gravity="center" n1:id="@id/about_origin_china" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:layout_marginTop="2.0dip" n1:text="@string/china_weather" />
+        <ImageView n1:gravity="center" n1:id="@id/about_origin_acc" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:layout_marginTop="2.0dip" n1:src="@drawable/accu_logo_copyright" />
+    </LinearLayout>
+    <LinearLayout n1:gravity="center_horizontal" n1:orientation="vertical" n1:id="@id/company_info" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:layout_alignParentBottom="true">
+        <com.oneplus.lib.widget.button.OPButton n1:id="@id/about_user_agreement" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:text="@string/agreement" style="?android:buttonBarButtonStyle" />
+        <TextView n1:textAppearance="@style/oneplus_contorl_text_style_descriptions" n1:textColor="@color/about_text_color" n1:gravity="center" n1:id="@id/about_copyright" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginBottom="@dimen/oneplus_contorl_layout_margin_bottom3" n1:text="@string/copyright" />
+    </LinearLayout>
+</RelativeLayout>

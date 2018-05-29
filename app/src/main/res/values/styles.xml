@@ -1,0 +1,2363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AcBar_titleStyle" parent="@android:style/TextAppearance.Material.Widget.ActionBar.Title">
+        <item name="android:textSize">20.0sp</item>
+    </style>
+
+    <style name="AlertDialogTitleStyleDark">
+        <item name="android:textSize">@dimen/alert_dialog_title_style_font_size</item>
+        <item name="android:textColor">@color/oneplus_contorl_text_color_primary_dark</item>
+    </style>
+
+    <style name="AlertDialogTitleStyleLight">
+        <item name="android:textSize">@dimen/alert_dialog_title_style_font_size</item>
+        <item name="android:textColor">@color/oneplus_contorl_text_color_primary_light</item>
+    </style>
+
+    <style name="Animation.Design.BottomSheetDialog" parent="@style/Animation.AppCompat.Dialog">
+        <item name="android:windowEnterAnimation">@anim/design_bottom_sheet_slide_in</item>
+        <item name="android:windowExitAnimation">@anim/design_bottom_sheet_slide_out</item>
+    </style>
+
+    <style name="Animation.DropDownUp" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/grow_fade_in_from_bottom</item>
+        <item name="android:windowExitAnimation">@anim/shrink_fade_out_from_bottom</item>
+    </style>
+
+    <style name="Animation.Material" parent="@android:style/Animation" />
+
+    <style name="Animation.Material.Dialog" parent="@style/Animation.Material">
+        <item name="android:windowEnterAnimation">@anim/popup_enter_material</item>
+        <item name="android:windowExitAnimation">@anim/popup_exit_material</item>
+    </style>
+
+    <style name="Animation.VoiceActivity" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/voice_activity_open_enter</item>
+        <item name="android:windowExitAnimation">@anim/voice_activity_close_exit</item>
+    </style>
+
+    <style name="AppTheme.ActionBar" parent="@style/Oneplus.Theme.DeviceDefault">
+        <item name="android:windowBackground">@color/settings_bkg</item>
+        <item name="android:alertDialogTheme">@style/Theme.AlertDialog</item>
+        <item name="android:colorPrimary">?onePlusActionbarBackgroundColor</item>
+        <item name="android:colorPrimaryDark">?onePlusActionbarBackgroundColor</item>
+        <item name="android:windowLightStatusBar">@bool/statusbar_black_conent</item>
+        <item name="onePlusActionbarBackgroundColor">@color/actionbar_color</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@color/weather_sun</item>
+        <item name="android:itemTextAppearance">@style/itemTextStyle.AppTheme</item>
+        <item name="android:alertDialogTheme">@style/Theme.AlertDialog</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:colorPrimaryDark">@android:color/transparent</item>
+        <item name="android:windowEnterTransition">@transition/slide_bottom</item>
+        <item name="android:windowExitTransition">@android:transition/no_transition</item>
+        <item name="android:windowSharedElementEnterTransition">@transition/change_image_transform
+        </item>
+        <item name="android:windowSharedElementExitTransition">@android:transition/no_transition
+        </item>
+        <item name="android:navigationBarColor">@color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="actionOverflowButtonStyle">@style/OverflowButtonStyle</item>
+        <item name="actionOverflowMenuStyle">@style/OverflowMenuStyle</item>
+    </style>
+
+    <style name="Base.CardView" parent="@android:style/Widget">
+        <item name="cardCornerRadius">@dimen/cardview_default_radius</item>
+        <item name="cardElevation">@dimen/cardview_default_elevation</item>
+        <item name="cardMaxElevation">@dimen/cardview_default_elevation</item>
+        <item name="cardPreventCornerOverlap">true</item>
+        <item name="cardUseCompatPadding">false</item>
+    </style>
+
+    <style name="CardView" parent="@style/Base.CardView">
+        <item name="cardBackgroundColor">?android:colorBackgroundFloating</item>
+    </style>
+
+    <style name="CardView.Dark" parent="@style/CardView">
+        <item name="cardBackgroundColor">@color/cardview_dark_background</item>
+    </style>
+
+    <style name="CardView.Light" parent="@style/CardView">
+        <item name="cardBackgroundColor">@color/cardview_light_background</item>
+    </style>
+
+    <style name="ClearableEditText">
+        <item name="clearButtonAlwaysVisible">false</item>
+        <item name="clearButtonDrawable">@drawable/ic_clear</item>
+        <item name="clearButtonHeight">16.0dip</item>
+        <item name="clearButtonPadding">5.0dip</item>
+        <item name="clearButtonPosition">end</item>
+        <item name="clearButtonWidth">16.0dip</item>
+    </style>
+
+    <style name="DaildyDateStyle">
+        <item name="android:textSize">26.0px</item>
+        <item name="android:textColor">@color/oneplus_contorl_text_color_secondary_dark</item>
+        <item name="android:fontFamily">Slate-book</item>
+    </style>
+
+    <style name="DaildyTemperatureStyle">
+        <item name="android:textSize">26.0px</item>
+        <item name="android:textColor">@color/oneplus_contorl_text_color_secondary_dark</item>
+        <item name="android:fontFamily">Slate-book</item>
+    </style>
+
+
+    <style name="MyNavigationButtonStyle" parent="@style/Widget.AppCompat.Toolbar.Button.Navigation">
+        <item name="android:background">@null</item>
+    </style>
+
+    <style name="OPSwitch">
+        <item name="android:tint">#ffff0000</item>
+        <item name="android:thumb">@drawable/switch_thumb_material_light_anim</item>
+        <item name="android:radius">@dimen/dimen_18</item>
+        <item name="android:track">@drawable/switch_track_material_light</item>
+    </style>
+
+    <style name="OPTextAppearance.Design.CollapsingToolbar.Expanded" parent="@style/oneplus_contorl_text_style_title_extended" />
+
+    <style name="OnePlus.DeviceDefault.Preference.Material" parent="@style/OnePlus.Preference.Material.Light" />
+
+    <style name="OnePlus.DeviceDefault.Preference.Material.CheckBoxPreference" parent="@style/OnePlus.Preference.Material.Light.CheckBoxPreference" />
+
+    <style name="OnePlus.DeviceDefault.Preference.Material.DialogPreference" parent="@style/OnePlus.Preference.Material.Light.DialogPreference" />
+
+    <style name="OnePlus.DeviceDefault.Preference.Material.DialogPreference.EditTextPreference" parent="@style/OnePlus.Preference.Material.Light.DialogPreference.EditTextPreference" />
+
+    <style name="OnePlus.DeviceDefault.Preference.Material.PreferenceScreen" parent="@style/OnePlus.Preference.Material.Light.PreferenceScreen" />
+
+    <style name="OnePlus.DeviceDefault.Preference.Material.RingtonePreference" parent="@style/OnePlus.Preference.Material.Light.RingtonePreference" />
+
+    <style name="OnePlus.DeviceDefault.Preference.Material.SeekBarPreference" parent="@style/OnePlus.Preference.Material.Light.SeekBarPreference" />
+
+    <style name="OnePlus.DeviceDefault.Preference.Material.SwitchPreference" parent="@style/OnePlus.Preference.Material.Light.SwitchPreference" />
+
+    <style name="OnePlus.DeviceDefault.Widget.Material.Button" parent="@style/OnePlus.Widget.Material.Light.Button" />
+
+    <style name="OnePlus.Preference.Material" parent="@style/Preference.Material">
+        <item name="android:layout">@layout/oneplus_preference_material_dark</item>
+    </style>
+
+    <style name="OnePlus.Preference.Material.CheckBoxPreference" parent="@style/OnePlus.Preference.Material">
+        <item name="android:widgetLayout">@layout/op_preference_widget_checkbox</item>
+    </style>
+
+    <style name="OnePlus.Preference.Material.DialogPreference" parent="@style/OnePlus.Preference.Material">
+        <item name="android:positiveButtonText">@android:string/ok</item>
+        <item name="android:negativeButtonText">@android:string/cancel</item>
+    </style>
+
+    <style name="OnePlus.Preference.Material.DialogPreference.EditTextPreference" parent="@style/OnePlus.Preference.Material.DialogPreference">
+        <item name="android:dialogLayout">@layout/preference_dialog_edittext_material</item>
+    </style>
+
+    <style name="OnePlus.Preference.Material.Light" parent="@style/Preference.Material">
+        <item name="android:layout">@layout/oneplus_preference_material_light</item>
+    </style>
+
+    <style name="OnePlus.Preference.Material.Light.CheckBoxPreference" parent="@style/OnePlus.Preference.Material.Light">
+        <item name="android:widgetLayout">@layout/op_preference_widget_checkbox</item>
+    </style>
+
+    <style name="OnePlus.Preference.Material.Light.DialogPreference" parent="@style/OnePlus.Preference.Material.Light">
+        <item name="android:positiveButtonText">@android:string/ok</item>
+        <item name="android:negativeButtonText">@android:string/cancel</item>
+    </style>
+
+    <style name="OnePlus.Preference.Material.Light.DialogPreference.EditTextPreference" parent="@style/OnePlus.Preference.Material.Light.DialogPreference">
+        <item name="android:dialogLayout">@layout/preference_dialog_edittext_material</item>
+    </style>
+
+    <style name="OnePlus.Preference.Material.Light.PreferenceScreen" parent="@style/OnePlus.Preference.Material.Light" />
+
+    <style name="OnePlus.Preference.Material.Light.RingtonePreference" parent="@style/OnePlus.Preference.Material.Light" />
+
+    <style name="OnePlus.Preference.Material.Light.SeekBarPreference" parent="@style/OnePlus.Preference.Material.Light">
+        <item name="android:layout">@layout/op_preference_widget_seekbar_material</item>
+    </style>
+
+    <style name="OnePlus.Preference.Material.Light.SwitchPreference" parent="@style/OnePlus.Preference.Material.Light">
+        <item name="android:widgetLayout">@layout/op_preference_widget_switch</item>
+        <item name="android:switchTextOn">@string/capital_on</item>
+        <item name="android:switchTextOff">@string/capital_off</item>
+    </style>
+
+    <style name="OnePlus.Preference.Material.PreferenceScreen" parent="@style/OnePlus.Preference.Material" />
+
+    <style name="OnePlus.Preference.Material.RingtonePreference" parent="@style/OnePlus.Preference.Material" />
+
+    <style name="OnePlus.Preference.Material.SeekBarPreference" parent="@style/OnePlus.Preference.Material">
+        <item name="android:layout">@layout/op_preference_widget_seekbar_material</item>
+    </style>
+
+    <style name="OnePlus.Preference.Material.SwitchPreference" parent="@style/OnePlus.Preference.Material">
+        <item name="android:widgetLayout">@layout/op_preference_widget_switch</item>
+        <item name="android:switchTextOn">@string/capital_on</item>
+        <item name="android:switchTextOff">@string/capital_off</item>
+    </style>
+
+    <style name="OnePlus.TextAppearance.Material.Button" parent="@android:style/TextAppearance.Material.Button">
+        <item name="android:textSize">@dimen/text_size_button_material</item>
+        <item name="android:textColor">@color/op_btn_colored_text_material_dark</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="OnePlus.TextAppearance.Material.Light.Button" parent="@style/OnePlus.TextAppearance.Material.Button">
+        <item name="android:textColor">@color/op_btn_colored_text_material_light</item>
+    </style>
+
+    <style name="OnePlus.TextAppearance.Material.Raised.Button" parent="@style/OnePlus.TextAppearance.Material.Button">
+        <item name="android:textColor">@color/op_btn_colored_raised_text_material_dark</item>
+    </style>
+
+    <style name="OnePlus.TextAppearance.Material.Raised.Light.Button" parent="@style/OnePlus.TextAppearance.Material.Button">
+        <item name="android:textColor">@color/op_btn_colored_raised_text_material_light</item>
+    </style>
+
+    <style name="OnePlus.Widget.Design.FloatingActionButton" parent="@android:style/Widget">
+        <item name="android:background">@drawable/op_design_fab_background</item>
+        <item name="op_backgroundTint">?onePlusPrimaryColor</item>
+        <item name="op_borderWidth">@dimen/design_fab_border_width</item>
+        <item name="op_elevation">@dimen/design_fab_elevation</item>
+        <item name="op_fabSize">normal</item>
+        <item name="op_pressedTranslationZ">@dimen/design_fab_translation_z_pressed</item>
+        <item name="op_rippleColor">?android:colorControlHighlight</item>
+    </style>
+
+    <style name="OnePlus.Widget.Material.Button" parent="@android:style/Widget">
+        <item name="android:textAppearance">@style/OnePlus.TextAppearance.Material.Raised.Button
+        </item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/op_btn_default_material_dark</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:minWidth">88.0dip</item>
+        <item name="android:minHeight">48.0dip</item>
+        <item name="android:stateListAnimator">@anim/button_state_list_anim_material</item>
+    </style>
+
+    <style name="OnePlus.Widget.Material.Button.AlertDialog" parent="@style/Widget.Material.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">@color/op_btn_colored_text_material_dark</item>
+        <item name="android:background">@drawable/op_btn_borderless_material_dark</item>
+    </style>
+
+    <style name="OnePlus.Widget.Material.Light.Button" parent="@style/OnePlus.Widget.Material.Button">
+        <item name="android:textAppearance">
+            @style/OnePlus.TextAppearance.Material.Raised.Light.Button
+        </item>
+        <item name="android:background">@drawable/op_btn_default_material_light</item>
+        <item name="android:stateListAnimator">@anim/button_state_list_anim_material</item>
+    </style>
+
+    <style name="OnePlus.Widget.Material.Light.Button.AlertDialog" parent="@style/OnePlus.Widget.Material.Button.AlertDialog">
+        <item name="android:textColor">@color/op_btn_colored_text_material_light</item>
+        <item name="android:background">@drawable/op_btn_borderless_material_light</item>
+    </style>
+
+    <style name="OnePlusAlertDialog">
+        <item name="android:layout">@layout/op_alert_dialog_material</item>
+        <item name="horizontalProgressLayout">@layout/op_alert_dialog_progress_material</item>
+        <item name="op_listItemLayout">@layout/op_select_dialog_item_material</item>
+        <item name="op_listLayout">@layout/op_select_dialog_material</item>
+        <item name="op_multiChoiceItemLayout">@layout/op_select_dialog_multichoice_material</item>
+        <item name="op_singleChoiceItemLayout">@layout/op_select_dialog_singlechoice_material</item>
+        <item name="progressLayout">@layout/op_progress_dialog_material</item>
+    </style>
+
+    <style name="OnePlusAlertDialog.Light" parent="@style/OnePlusAlertDialog">
+        <item name="op_multiChoiceItemLayout">@layout/op_select_dialog_multichoice_material_light
+        </item>
+        <item name="op_singleChoiceItemLayout">
+            @layout/op_select_dialog_singlechoice_material_light
+        </item>
+    </style>
+
+    <style name="OnePlusToast">
+        <item name="android:layout">@layout/op_transient_notification</item>
+    </style>
+
+    <style name="OnePlusToastLight">
+        <item name="android:layout">@layout/op_transient_notification_light</item>
+    </style>
+
+    <style name="Oneplus.Animation.Material.Dialog" parent="@style/Animation.Material">
+        <item name="android:windowEnterAnimation">@anim/popup_enter_material</item>
+        <item name="android:windowExitAnimation">@anim/popup_exit_material</item>
+    </style>
+
+    <style name="Oneplus.Base.Widget.Design.OPTabLayout" parent="@android:style/Widget">
+        <item name="op_tabBackground">@drawable/op_item_background_material</item>
+        <item name="op_tabIndicatorColor">?onePlusTabIndicatorColor</item>
+        <item name="op_tabIndicatorHeight">2.0dip</item>
+        <item name="op_tabMaxWidth">160.0dip</item>
+        <item name="op_tabPaddingEnd">16.0dip</item>
+        <item name="op_tabPaddingStart">16.0dip</item>
+        <item name="op_tabSelectedTextColor">@color/op_tablayout_title_text_selected_material</item>
+        <item name="op_tabTextAppearance">@style/Oneplus.TextAppearance.Design.Tab</item>
+    </style>
+
+    <style name="Oneplus.CardView" parent="@style/CardView" />
+
+    <style name="Oneplus.CardView.Dark" parent="@style/Oneplus.CardView">
+        <item name="cardBackgroundColor">@color/opcardview_light_background_light</item>
+        <item name="cardBackgroundColorMask">@color/opcardview_light_background_mask_light</item>
+    </style>
+
+    <style name="Oneplus.CardView.Light" parent="@style/Oneplus.CardView">
+        <item name="cardBackgroundColor">@color/opcardview_light_background_light</item>
+        <item name="cardBackgroundColorMask">@color/opcardview_light_background_mask_light</item>
+    </style>
+
+    <style name="Oneplus.DeviceDefault.OPToast" parent="@style/OnePlusToastLight" />
+
+    <style name="Oneplus.DeviceDefault.Preference.Material.Category" parent="@style/Oneplus.Preference.Material.Light.Category" />
+
+    <style name="Oneplus.DeviceDefault.PreferenceFragment.Material" parent="@style/Oneplus.PreferenceFragment.Material.Light" />
+
+    <style name="Oneplus.DeviceDefault.Theme.Material.Dialog" parent="@style/Oneplus.Theme.Material.Light.Dialog" />
+
+    <style name="Oneplus.DeviceDefault.Theme.Material.Dialog.Alert" parent="@style/Oneplus.Theme.Material.Light.Dialog.Alert" />
+
+    <style name="Oneplus.DeviceDefault.Widget.Material.ActionBar.Solid" parent="@style/Oneplus.Widget.Material.ActionBar.Solid" />
+
+    <style name="Oneplus.DeviceDefault.Widget.Material.CompoundButton.CheckBox" parent="@style/Oneplus.Widget.Material.Light.CompoundButton.CheckBox" />
+
+    <style name="Oneplus.DeviceDefault.Widget.Material.CompoundButton.RadioButton" parent="@style/Oneplus.Widget.Material.Light.CompoundButton.RadioButton" />
+
+    <style name="Oneplus.DeviceDefault.Widget.Material.CompoundButton.Switch" parent="@style/Oneplus.Widget.Material.Light.CompoundButton.Switch" />
+
+    <style name="Oneplus.DeviceDefault.Widget.Material.DatePicker" parent="@style/Oneplus.Widget.Material.Light.DatePicker" />
+
+    <style name="Oneplus.DeviceDefault.Widget.Material.EditText" parent="@style/Oneplus.Widget.Material.Light.EditText" />
+
+    <style name="Oneplus.DeviceDefault.Widget.Material.ProgressBar" parent="@style/Oneplus.Widget.Material.Light.ProgressBar" />
+
+    <style name="Oneplus.DeviceDefault.Widget.Material.ProgressBar.Horizontal" parent="@style/Oneplus.Widget.Material.Light.ProgressBar.Horizontal" />
+
+    <style name="Oneplus.DeviceDefault.Widget.Material.ProgressBar.Large" parent="@style/Oneplus.Widget.Material.Light.ProgressBar.Large" />
+
+    <style name="Oneplus.DeviceDefault.Widget.Material.ProgressBar.Small" parent="@style/Oneplus.Widget.Material.Light.ProgressBar.Small" />
+
+    <style name="Oneplus.DeviceDefault.Widget.Material.SeekBar" parent="@style/Oneplus.Widget.Material.Light.SeekBar" />
+
+    <style name="Oneplus.DeviceDefault.Widget.Material.TimePicker" parent="@style/Oneplus.Widget.Material.Light.TimePicker" />
+
+    <style name="Oneplus.Preference.Material.Category" parent="@style/Preference.Material.Category">
+        <item name="android:layout">@layout/oneplus_preference_category_material_dark</item>
+        <item name="android:selectable">false</item>
+        <item name="android:shouldDisableView">false</item>
+    </style>
+
+    <style name="Oneplus.Preference.Material.Light.Category" parent="@style/Oneplus.Preference.Material.Category">
+        <item name="android:layout">@layout/oneplus_preference_category_material_light</item>
+    </style>
+
+    <style name="Oneplus.PreferenceFragment.Material" parent="@style/PreferenceFragment.Material">
+        <item name="android:divider">@color/preference_divider_color_dark</item>
+        <item name="android:dividerHeight">@dimen/oneplus_contorl_divider_height_standard</item>
+        <item name="android:paddingStart">@dimen/preference_fragment_padding_side_material</item>
+        <item name="android:paddingEnd">@dimen/preference_fragment_padding_side_material</item>
+    </style>
+
+    <style name="Oneplus.PreferenceFragment.Material.Light" parent="@style/Oneplus.PreferenceFragment.Material">
+        <item name="android:divider">@color/preference_divider_color_light</item>
+    </style>
+
+    <style name="Oneplus.PreferenceFragmentList.Material" parent="@style/PreferenceFragmentList.Material">
+        <item name="android:divider">@color/preference_divider_color_dark</item>
+        <item name="android:dividerHeight">@dimen/oneplus_contorl_divider_height_standard</item>
+        <item name="android:paddingStart">@dimen/preference_fragment_padding_side_material</item>
+        <item name="android:paddingEnd">@dimen/preference_fragment_padding_side_material</item>
+    </style>
+
+    <style name="Oneplus.PreferenceFragmentList.Material.Light" parent="@style/Oneplus.PreferenceFragmentList.Material">
+        <item name="android:divider">@color/preference_divider_color_light</item>
+    </style>
+
+    <style name="Oneplus.TextAppearance.Design.Tab" parent="@android:style/TextAppearance.Material.Button">
+        <item name="android:textSize">@dimen/oneplus_contorl_text_size_button</item>
+        <item name="android:textColor">@color/op_tablayout_title_text_material</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:fontFamily">@string/oneplus_contorl_font_family_button</item>
+    </style>
+
+    <style name="Oneplus.TextAppearance.Material.Body1" parent="@android:style/TextAppearance.Material.Body1">
+        <item name="android:textSize">@dimen/listitem_secondarytext_size</item>
+    </style>
+
+    <style name="Oneplus.TextAppearance.Material.Light.NumberPickerDialog.Minute" parent="@android:style/TextAppearance.Material.Large">
+        <item name="android:textColor">@color/numberpicker_minute_text_color_light</item>
+    </style>
+
+    <style name="Oneplus.TextAppearance.Material.Light.Widget.Calendar.Day" parent="@style/TextAppearance.Material.Widget.Calendar.Day">
+        <item name="android:textColor">
+            @color/op_primary_text_inverse_when_activated_material_light
+        </item>
+    </style>
+
+    <style name="Oneplus.TextAppearance.Material.Light.Widget.Calendar.DayOfWeek" parent="@style/TextAppearance.Material.Widget.Calendar.DayOfWeek">
+        <item name="android:textColor">@color/control_secondary_text_color_light</item>
+    </style>
+
+    <style name="Oneplus.TextAppearance.Material.Light.Widget.Calendar.Month" parent="@style/TextAppearance.Material.Widget.Calendar.Month">
+        <item name="android:textColor">@color/control_primary_text_color_light</item>
+    </style>
+
+    <style name="Oneplus.TextAppearance.Material.Light.Widget.TabWidget" parent="@android:style/TextAppearance.Material.Widget.TabWidget">
+        <item name="android:textColor">@color/op_tab_indicator_text_material_light</item>
+    </style>
+
+    <style name="Oneplus.TextAppearance.Material.Menu" parent="@android:style/TextAppearance.Material.Menu">
+        <item name="android:textSize">@dimen/op_text_size_menu_material</item>
+    </style>
+
+    <style name="Oneplus.TextAppearance.Material.Menu.Dark" parent="@style/Oneplus.TextAppearance.Material.Menu">
+        <item name="android:textSize">@dimen/oneplus_contorl_text_size_subheading</item>
+        <item name="android:textColor">@color/op_menu_text_material_dark</item>
+        <item name="android:fontFamily">@string/oneplus_contorl_font_family_subheading</item>
+    </style>
+
+    <style name="Oneplus.TextAppearance.Material.Menu.Light" parent="@style/Oneplus.TextAppearance.Material.Menu">
+        <item name="android:textSize">@dimen/oneplus_contorl_text_size_subheading</item>
+        <item name="android:textColor">@color/op_menu_text_material_light</item>
+        <item name="android:fontFamily">@string/oneplus_contorl_font_family_subheading</item>
+    </style>
+
+    <style name="Oneplus.TextAppearance.Material.NumberPickerDialog.Minute" parent="@android:style/TextAppearance.Material.Large">
+        <item name="android:textColor">@color/numberpicker_minute_text_color_dark</item>
+    </style>
+
+    <style name="Oneplus.TextAppearance.Material.Widget.ActionBar.Subtitle" parent="@android:style/TextAppearance.Material.Widget.ActionBar.Subtitle">
+        <item name="android:textSize">@dimen/oneplus_contorl_text_size_body1</item>
+        <item name="android:textColor">@color/op_actionbar_subtitle_text_material</item>
+        <item name="android:fontFamily">@string/oneplus_contorl_font_family_body1</item>
+    </style>
+
+    <style name="Oneplus.TextAppearance.Material.Widget.ActionBar.Title" parent="@android:style/TextAppearance.Material.Widget.ActionBar.Title">
+        <item name="android:textSize">@dimen/oneplus_contorl_text_size_title</item>
+        <item name="android:textColor">@color/op_actionbar_title_text_material</item>
+        <item name="android:fontFamily">@string/oneplus_contorl_font_family_title</item>
+    </style>
+
+    <style name="Oneplus.TextAppearance.Material.Widget.Calendar.Day" parent="@style/TextAppearance.Material.Widget.Calendar.Day">
+        <item name="android:textColor">@color/op_primary_text_inverse_when_activated_material_dark
+        </item>
+    </style>
+
+    <style name="Oneplus.TextAppearance.Material.Widget.Calendar.DayOfWeek" parent="@style/TextAppearance.Material.Widget.Calendar.DayOfWeek">
+        <item name="android:textColor">@color/control_secondary_text_color_dark</item>
+    </style>
+
+    <style name="Oneplus.TextAppearance.Material.Widget.Calendar.Month" parent="@style/TextAppearance.Material.Widget.Calendar.Month">
+        <item name="android:textColor">@color/control_primary_text_color_dark</item>
+    </style>
+
+    <style name="Oneplus.TextAppearance.Material.Widget.TabWidget" parent="@android:style/TextAppearance.Material.Widget.TabWidget">
+        <item name="android:textColor">@color/op_tab_indicator_text_material</item>
+    </style>
+
+    <style name="Oneplus.TextAppearance.Toast" parent="@style/TextAppearance.Toast" />
+
+    <style name="Oneplus.Theme.DeviceDefault" parent="@style/Oneplus.Theme.Material.Light.DarkActionBar">
+        <item name="onePlusActionbarBackgroundColor">@color/actionbar_blue</item>
+        <item name="onePlusActionbarLineColor">@android:color/transparent</item>
+    </style>
+
+    <style name="Oneplus.Theme.DeviceDefault.BaseDialog" parent="@style/Oneplus.Theme.Material.Light.BaseDialog" />
+
+    <style name="Oneplus.Theme.DeviceDefault.CompactMenu" parent="@style/Oneplus.Theme.Material.Light.CompactMenu" />
+
+    <style name="Oneplus.Theme.DeviceDefault.DarkActionBar" parent="@style/Oneplus.Theme.Material.Light.DarkActionBar" />
+
+    <style name="Oneplus.Theme.DeviceDefault.Dialog" parent="@style/Oneplus.Theme.Material.Light.Dialog" />
+
+    <style name="Oneplus.Theme.DeviceDefault.Dialog.Alert" parent="@style/Oneplus.Theme.Material.Light.Dialog.Alert" />
+
+    <style name="Oneplus.Theme.DeviceDefault.Dialog.BaseAlert" parent="@style/Oneplus.Theme.Material.Light.Dialog.BaseAlert" />
+
+    <style name="Oneplus.Theme.DeviceDefault.Dialog.FixedSize" parent="@style/Oneplus.Theme.Material.Light.Dialog.FixedSize" />
+
+    <style name="Oneplus.Theme.DeviceDefault.Dialog.MinWidth" parent="@style/Oneplus.Theme.Material.Light.Dialog.MinWidth" />
+
+    <style name="Oneplus.Theme.DeviceDefault.Dialog.NoActionBar" parent="@style/Oneplus.Theme.Material.Light.Dialog.NoActionBar" />
+
+    <style name="Oneplus.Theme.DeviceDefault.Dialog.NoActionBar.FixedSize" parent="@style/Oneplus.Theme.Material.Light.Dialog.NoActionBar.FixedSize" />
+
+    <style name="Oneplus.Theme.DeviceDefault.Dialog.NoActionBar.MinWidth" parent="@style/Oneplus.Theme.Material.Light.Dialog.NoActionBar.MinWidth" />
+
+    <style name="Oneplus.Theme.DeviceDefault.Dialog.NoFrame" parent="@style/Oneplus.Theme.Material.Light.Dialog.NoFrame" />
+
+    <style name="Oneplus.Theme.DeviceDefault.Dialog.Presentation" parent="@style/Oneplus.Theme.Material.Light.Dialog.Presentation" />
+
+    <style name="Oneplus.Theme.DeviceDefault.DialogWhenLarge" parent="@style/Oneplus.Theme.Material.Light.DialogWhenLarge" />
+
+    <style name="Oneplus.Theme.DeviceDefault.DialogWhenLarge.DarkActionBar" parent="@style/Oneplus.Theme.Material.Light.DialogWhenLarge.DarkActionBar" />
+
+    <style name="Oneplus.Theme.DeviceDefault.DialogWhenLarge.NoActionBar" parent="@style/Oneplus.Theme.Material.Light.DialogWhenLarge.NoActionBar" />
+
+    <style name="Oneplus.Theme.DeviceDefault.InputMethod" parent="@style/Oneplus.Theme.Material.InputMethod" />
+
+    <style name="Oneplus.Theme.DeviceDefault.LightStatusBar" parent="@style/Oneplus.Theme.Material.Light.LightStatusBar" />
+
+    <style name="Oneplus.Theme.DeviceDefault.NoActionBar" parent="@style/Oneplus.Theme.Material.Light.NoActionBar" />
+
+    <style name="Oneplus.Theme.DeviceDefault.NoActionBar.Fullscreen" parent="@style/Oneplus.Theme.Material.Light.NoActionBar.Fullscreen" />
+
+    <style name="Oneplus.Theme.DeviceDefault.NoActionBar.Overscan" parent="@style/Oneplus.Theme.Material.Light.NoActionBar.Overscan" />
+
+    <style name="Oneplus.Theme.DeviceDefault.NoActionBar.TranslucentDecor" parent="@style/Oneplus.Theme.Material.Light.NoActionBar.TranslucentDecor" />
+
+    <style name="Oneplus.Theme.DeviceDefault.Panel" parent="@style/Oneplus.Theme.Material.Light.Panel" />
+
+    <style name="Oneplus.Theme.DeviceDefault.SearchBar" parent="@style/Oneplus.Theme.Material.Light.SearchBar" />
+
+    <style name="Oneplus.Theme.DeviceDefault.Settings" parent="@style/Oneplus.Theme.Material.Settings" />
+
+    <style name="Oneplus.Theme.DeviceDefault.Settings.BaseDialog" parent="@style/Oneplus.Theme.Material.Settings.BaseDialog" />
+
+    <style name="Oneplus.Theme.DeviceDefault.Settings.CompactMenu" parent="@style/Oneplus.Theme.Material.Settings.CompactMenu" />
+
+    <style name="Oneplus.Theme.DeviceDefault.Settings.Dialog" parent="@style/Oneplus.Theme.Material.Settings.Dialog" />
+
+    <style name="Oneplus.Theme.DeviceDefault.Settings.Dialog.Alert" parent="@style/Oneplus.Theme.Material.Settings.Dialog.Alert" />
+
+    <style name="Oneplus.Theme.DeviceDefault.Settings.Dialog.BaseAlert" parent="@style/Oneplus.Theme.Material.Settings.Dialog.BaseAlert" />
+
+    <style name="Oneplus.Theme.DeviceDefault.Settings.Dialog.Presentation" parent="@style/Oneplus.Theme.Material.Settings.Dialog.Presentation" />
+
+    <style name="Oneplus.Theme.DeviceDefault.Settings.DialogWhenLarge" parent="@style/Oneplus.Theme.Material.Settings.DialogWhenLarge" />
+
+    <style name="Oneplus.Theme.DeviceDefault.Settings.DialogWhenLarge.NoActionBar" parent="@style/Oneplus.Theme.Material.Settings.DialogWhenLarge.NoActionBar" />
+
+    <style name="Oneplus.Theme.DeviceDefault.Settings.NoActionBar" parent="@style/Oneplus.Theme.Material.Settings.NoActionBar" />
+
+    <style name="Oneplus.Theme.DeviceDefault.Settings.SearchBar" parent="@style/Oneplus.Theme.Material.Settings.SearchBar" />
+
+    <style name="Oneplus.Theme.DeviceDefault.Voice" parent="@style/Oneplus.Theme.Material.Light.Voice" />
+
+    <style name="Oneplus.Theme.DeviceDefault.VoiceInteractionSession" parent="@style/Oneplus.Theme.Material.VoiceInteractionSession" />
+
+    <style name="Oneplus.Theme.DeviceDefault.Wallpaper" parent="@style/Oneplus.Theme.Material.Light.Wallpaper" />
+
+    <style name="Oneplus.Theme.DeviceDefault.Wallpaper.NoTitleBar" parent="@style/Oneplus.Theme.Material.Light.Wallpaper.NoTitleBar" />
+
+    <style name="Oneplus.Theme.Material" parent="@style/OneplusThemeBase" />
+
+    <style name="Oneplus.Theme.Material.AmberTypeA" parent="@style/Oneplus.Theme.Material">
+        <item name="onePlusAccentColor">#fffbc82d</item>
+        <item name="onePlusPrimaryColor">#ffeeba1c</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.AmberTypeB" parent="@style/Oneplus.Theme.Material.TypeB">
+        <item name="onePlusAccentColor">#ffd6a40d</item>
+        <item name="onePlusPrimaryColor">#ff8f7116</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.BaseDialog" parent="@style/Oneplus.Theme.Material">
+        <item name="android:windowBackground">@drawable/dialog_background_material</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTitleStyle">@style/DialogWindowTitle.Material</item>
+        <item name="android:windowTitleBackgroundStyle">
+            @style/DialogWindowTitleBackground.Material
+        </item>
+        <item name="android:windowAnimationStyle">@style/Oneplus.Animation.Material.Dialog</item>
+        <item name="android:listDivider">@null</item>
+        <item name="android:windowSoftInputMode">adjustPan</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="android:windowCloseOnTouchOutside">@bool/config_closeDialogWhenTouchOutside
+        </item>
+        <item name="android:listPreferredItemPaddingLeft">24.0dip</item>
+        <item name="android:listPreferredItemPaddingRight">24.0dip</item>
+        <item name="android:listPreferredItemPaddingStart">24.0dip</item>
+        <item name="android:listPreferredItemPaddingEnd">24.0dip</item>
+        <item name="android:windowElevation">@dimen/floating_window_z</item>
+        <item name="op_preferencePanelStyle">@style/PreferencePanel.Dialog</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.BlueGreyTypeA" parent="@style/Oneplus.Theme.Material">
+        <item name="onePlusAccentColor">#ff90a4ae</item>
+        <item name="onePlusPrimaryColor">#ff78909c</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.BlueGreyTypeB" parent="@style/Oneplus.Theme.Material.TypeB">
+        <item name="onePlusAccentColor">#ff546e7a</item>
+        <item name="onePlusPrimaryColor">#ff263238</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.BlueTypeA" parent="@style/Oneplus.Theme.Material">
+        <item name="onePlusAccentColor">#ff5899df</item>
+        <item name="onePlusPrimaryColor">#ff3c7abc</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.BlueTypeB" parent="@style/Oneplus.Theme.Material.TypeB">
+        <item name="onePlusAccentColor">#ff29578a</item>
+        <item name="onePlusPrimaryColor">#ff122f50</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.BrownTypeA" parent="@style/Oneplus.Theme.Material">
+        <item name="onePlusAccentColor">#ffa1887f</item>
+        <item name="onePlusPrimaryColor">#ff8d6e63</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.BrownTypeB" parent="@style/Oneplus.Theme.Material.TypeB">
+        <item name="onePlusAccentColor">#ff6d4c41</item>
+        <item name="onePlusPrimaryColor">#ff3e2723</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.CompactMenu" parent="@style/Oneplus.Theme.Material">
+        <item name="android:listViewStyle">@android:style/Widget.Material.ListView</item>
+        <item name="android:windowAnimationStyle">@style/Animation.DropDownUp</item>
+        <item name="android:background">@null</item>
+        <item name="android:itemTextAppearance">?android:textAppearanceMedium</item>
+        <item name="android:windowElevation">@dimen/floating_window_z</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.CyanTypeA" parent="@style/Oneplus.Theme.Material">
+        <item name="onePlusAccentColor">#ff4fc2db</item>
+        <item name="onePlusPrimaryColor">#ff40b4cd</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.CyanTypeB" parent="@style/Oneplus.Theme.Material.TypeB">
+        <item name="onePlusAccentColor">#ff2d99b0</item>
+        <item name="onePlusPrimaryColor">#ff0f6172</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.DarkActionBar" parent="@style/Oneplus.Theme.Material" />
+
+    <style name="Oneplus.Theme.Material.DeepOrangeTypeA" parent="@style/Oneplus.Theme.Material">
+        <item name="onePlusAccentColor">#ffff9c53</item>
+        <item name="onePlusPrimaryColor">#fff38a3c</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.DeepOrangeTypeB" parent="@style/Oneplus.Theme.Material.TypeB">
+        <item name="onePlusAccentColor">#ffcb6b23</item>
+        <item name="onePlusPrimaryColor">#ff904d1c</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.DeepPurpleTypeA" parent="@style/Oneplus.Theme.Material">
+        <item name="onePlusAccentColor">#ff9579e3</item>
+        <item name="onePlusPrimaryColor">#ff8165ce</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.DeepPurpleTypeB" parent="@style/Oneplus.Theme.Material.TypeB">
+        <item name="onePlusAccentColor">#ff6148a6</item>
+        <item name="onePlusPrimaryColor">#ff332266</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Dialog" parent="@style/Oneplus.Theme.Material.BaseDialog">
+        <item name="android:colorBackground">@color/dialog_color_background_dark</item>
+        <item name="android:colorAccent">@color/dialog_header_color_background_dark</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Dialog.Alert" parent="@style/Oneplus.Theme.Material.Dialog.BaseAlert">
+        <item name="android:colorBackground">@color/alert_dialog_color_background_dark</item>
+        <item name="android:textColorPrimary">@color/op_primary_text_color_dark</item>
+        <item name="android:windowTitleStyle">@style/AlertDialogTitleStyleDark</item>
+        <item name="android:textColor">@color/op_primary_text_color_dark</item>
+        <item name="android:listChoiceIndicatorSingle">@drawable/op_btn_radio_material_anim</item>
+        <item name="android:textColorAlertDialogListItem">@color/op_primary_text_material_dark
+        </item>
+        <item name="android:colorAccent">@color/alert_dialog_color_accent_dark</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Dialog.BaseAlert" parent="@style/Oneplus.Theme.Material.Dialog">
+        <item name="android:windowMinWidthMajor">@android:dimen/dialog_min_width_major</item>
+        <item name="android:windowMinWidthMinor">@android:dimen/dialog_min_width_minor</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Dialog.FixedSize" parent="@style/Oneplus.Theme.Material.Dialog" />
+
+    <style name="Oneplus.Theme.Material.Dialog.MinWidth" parent="@style/Oneplus.Theme.Material.Dialog">
+        <item name="android:windowMinWidthMajor">@android:dimen/dialog_min_width_major</item>
+        <item name="android:windowMinWidthMinor">@android:dimen/dialog_min_width_minor</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Dialog.NoActionBar" parent="@style/Oneplus.Theme.Material.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Dialog.NoActionBar.FixedSize" parent="@style/Oneplus.Theme.Material.Dialog.NoActionBar" />
+
+    <style name="Oneplus.Theme.Material.Dialog.NoActionBar.MinWidth" parent="@style/Oneplus.Theme.Material.Dialog.NoActionBar">
+        <item name="android:windowMinWidthMajor">@android:dimen/dialog_min_width_major</item>
+        <item name="android:windowMinWidthMinor">@android:dimen/dialog_min_width_minor</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Dialog.NoFrame" parent="@style/Oneplus.Theme.Material.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowCloseOnTouchOutside">false</item>
+        <item name="android:windowElevation">0.0dip</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Dialog.Presentation" parent="@style/Oneplus.Theme.Material.NoActionBar.Fullscreen" />
+
+    <style name="Oneplus.Theme.Material.DialogWhenLarge" parent="@style/Oneplus.Theme.Material" />
+
+    <style name="Oneplus.Theme.Material.DialogWhenLarge.DarkActionBar" parent="@style/Oneplus.Theme.Material.DarkActionBar" />
+
+    <style name="Oneplus.Theme.Material.DialogWhenLarge.NoActionBar" parent="@style/Oneplus.Theme.Material.NoActionBar" />
+
+    <style name="Oneplus.Theme.Material.GreenTypeA" parent="@style/Oneplus.Theme.Material">
+        <item name="onePlusAccentColor">#ff51ca81</item>
+        <item name="onePlusPrimaryColor">#ff40c072</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.GreenTypeB" parent="@style/Oneplus.Theme.Material.TypeB">
+        <item name="onePlusAccentColor">#ff0a8f08</item>
+        <item name="onePlusPrimaryColor">#ff0d5302</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.GreyTypeA" parent="@style/Oneplus.Theme.Material">
+        <item name="onePlusAccentColor">#ffe0e0e0</item>
+        <item name="onePlusPrimaryColor">#ffbdbdbd</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.GreyTypeB" parent="@style/Oneplus.Theme.Material.TypeB">
+        <item name="onePlusAccentColor">#ff757575</item>
+        <item name="onePlusPrimaryColor">#ff212121</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.IndigoTypeA" parent="@style/Oneplus.Theme.Material">
+        <item name="onePlusAccentColor">#ff637cd9</item>
+        <item name="onePlusPrimaryColor">#ff576fc9</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.IndigoTypeB" parent="@style/Oneplus.Theme.Material.TypeB">
+        <item name="onePlusAccentColor">#ff4156a4</item>
+        <item name="onePlusPrimaryColor">#ff1f2e63</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.InputMethod" parent="@style/Oneplus.Theme.Material.Light.Panel">
+        <item name="android:windowAnimationStyle">@android:style/Animation.InputMethod</item>
+        <item name="android:imeFullscreenBackground">@drawable/screen_background_selector_light
+        </item>
+        <item name="android:imeExtractEnterAnimation">@anim/input_method_extract_enter</item>
+        <item name="android:imeExtractExitAnimation">@anim/input_method_extract_exit</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.InputMethod.FromDark" parent="@style/Oneplus.Theme.Material.Panel" />
+
+    <style name="Oneplus.Theme.Material.Light" parent="@style/OneplusThemeLightBase" />
+
+    <style name="Oneplus.Theme.Material.Light.AmberTypeA" parent="@style/Oneplus.Theme.Material.Light">
+        <item name="onePlusAccentColor">#ffeeba1c</item>
+        <item name="onePlusPrimaryColor">#ffe3af11</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.AmberTypeB" parent="@style/Oneplus.Theme.Material.Light.TypeB">
+        <item name="onePlusAccentColor">#ffc2960e</item>
+        <item name="onePlusPrimaryColor">#ffe3af11</item>
+        <item name="onePlusTabIndicatorColor">#ffffd860</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.BaseDialog" parent="@style/Oneplus.Theme.Material.Light">
+        <item name="android:windowBackground">@drawable/dialog_background_material</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTitleStyle">@style/DialogWindowTitle.Material.Light</item>
+        <item name="android:windowTitleBackgroundStyle">
+            @style/DialogWindowTitleBackground.Material.Light
+        </item>
+        <item name="android:windowAnimationStyle">@style/Oneplus.Animation.Material.Dialog</item>
+        <item name="android:listDivider">@null</item>
+        <item name="android:windowSoftInputMode">adjustPan</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="android:windowCloseOnTouchOutside">@bool/config_closeDialogWhenTouchOutside
+        </item>
+        <item name="android:listPreferredItemPaddingLeft">24.0dip</item>
+        <item name="android:listPreferredItemPaddingRight">24.0dip</item>
+        <item name="android:listPreferredItemPaddingStart">24.0dip</item>
+        <item name="android:listPreferredItemPaddingEnd">24.0dip</item>
+        <item name="android:windowElevation">@dimen/floating_window_z</item>
+        <item name="op_preferencePanelStyle">@style/PreferencePanel.Dialog</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.BlueGreyTypeA" parent="@style/Oneplus.Theme.Material.Light">
+        <item name="onePlusAccentColor">#ff78909c</item>
+        <item name="onePlusPrimaryColor">#ff607d8b</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.BlueGreyTypeB" parent="@style/Oneplus.Theme.Material.Light.TypeB">
+        <item name="onePlusAccentColor">#ff455a64</item>
+        <item name="onePlusPrimaryColor">#ff607d8b</item>
+        <item name="onePlusTabIndicatorColor">#ffb0bec5</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.BlueTypeA" parent="@style/Oneplus.Theme.Material.Light">
+        <item name="onePlusAccentColor">#ff3c7abc</item>
+        <item name="onePlusPrimaryColor">#ff2f66a2</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.BlueTypeB" parent="@style/Oneplus.Theme.Material.Light.TypeB">
+        <item name="onePlusAccentColor">#ff214c7c</item>
+        <item name="onePlusPrimaryColor">#ff2f66a2</item>
+        <item name="onePlusTabIndicatorColor">#ff6faef2</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.BrownTypeA" parent="@style/Oneplus.Theme.Material.Light">
+        <item name="onePlusAccentColor">#ff8d6e63</item>
+        <item name="onePlusPrimaryColor">#ff795548</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.BrownTypeB" parent="@style/Oneplus.Theme.Material.Light.TypeB">
+        <item name="onePlusAccentColor">#ff5d4037</item>
+        <item name="onePlusPrimaryColor">#ff795548</item>
+        <item name="onePlusTabIndicatorColor">#ffbcaaa4</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.CompactMenu" parent="@style/Oneplus.Theme.Material.Light">
+        <item name="android:listViewStyle">@android:style/Widget.Material.Light.ListView</item>
+        <item name="android:windowAnimationStyle">@style/Animation.DropDownUp</item>
+        <item name="android:background">@null</item>
+        <item name="android:itemTextAppearance">?android:textAppearanceMedium</item>
+        <item name="android:windowElevation">@dimen/floating_window_z</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.CyanTypeA" parent="@style/Oneplus.Theme.Material.Light">
+        <item name="onePlusAccentColor">#ff40b4cd</item>
+        <item name="onePlusPrimaryColor">#ff33a5bd</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.CyanTypeB" parent="@style/Oneplus.Theme.Material.Light.TypeB">
+        <item name="onePlusAccentColor">#ff27899e</item>
+        <item name="onePlusPrimaryColor">#ff33a5bd</item>
+        <item name="onePlusTabIndicatorColor">#ff63d0e8</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.DarkActionBar" parent="@style/Oneplus.Theme.Material.Light">
+        <item name="android:actionBarWidgetTheme">@null</item>
+        <item name="android:actionBarTheme">@style/Oneplus.ThemeOverlay.Material.Dark.ActionBar
+        </item>
+        <item name="android:colorPrimary">@color/primary_material_dark</item>
+        <item name="android:colorPrimaryDark">@color/primary_dark_material_dark</item>
+        <item name="android:popupTheme">@style/Oneplus.ThemeOverlay.Material.Light</item>
+        <item name="onePlusActionbarBackground">@drawable/op_actionbar_background</item>
+        <item name="onePlusActionbarBackgroundColor">@color/oneplus_contorl_bg_color_appbar_dark
+        </item>
+        <item name="onePlusActionbarIconAlpha">1.0</item>
+        <item name="onePlusActionbarIconColor">@color/oneplus_contorl_icon_color_active_dark</item>
+        <item name="onePlusActionbarLineColor">#1e000000</item>
+        <item name="onePlusActionbarSubtitleAlpha">0.7</item>
+        <item name="onePlusActionbarSubtitleColor">
+            @color/oneplus_contorl_text_color_secondary_dark
+        </item>
+        <item name="onePlusActionbarTitleAlpha">1.0</item>
+        <item name="onePlusActionbarTitleColor">@color/oneplus_contorl_text_color_primary_dark
+        </item>
+        <item name="onePlusColorControlHighlight">@color/op_ripple_material_dark</item>
+        <item name="onePlusTabIndicatorColor">@color/oneplus_contorl_text_color_primary_dark</item>
+        <item name="onePlusTabTextAlpha">1.0</item>
+        <item name="onePlusTabTextColor">@color/oneplus_contorl_text_color_disable_dark</item>
+        <item name="onePlusTabTextSelectedAlpha">1.0</item>
+        <item name="onePlusTabTextSelectedColor">@color/oneplus_contorl_text_color_primary_dark
+        </item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.DarkActionBar.AmberTypeA" parent="@style/Oneplus.Theme.Material.Light.DarkActionBar">
+        <item name="onePlusAccentColor">#ffeeba1c</item>
+        <item name="onePlusPrimaryColor">#ffe3af11</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.DarkActionBar.AmberTypeB" parent="@style/Oneplus.Theme.Material.TypeB">
+        <item name="onePlusAccentColor">#ffc2960e</item>
+        <item name="onePlusPrimaryColor">#ffe3af11</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.DarkActionBar.BlueGreyTypeA" parent="@style/Oneplus.Theme.Material.Light.DarkActionBar">
+        <item name="onePlusAccentColor">#ff78909c</item>
+        <item name="onePlusPrimaryColor">#ff607d8b</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.DarkActionBar.BlueGreyTypeB" parent="@style/Oneplus.Theme.Material.TypeB">
+        <item name="onePlusAccentColor">#ff455a64</item>
+        <item name="onePlusPrimaryColor">#ff607d8b</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.DarkActionBar.BlueTypeA" parent="@style/Oneplus.Theme.Material.Light.DarkActionBar">
+        <item name="onePlusAccentColor">#ff3c7abc</item>
+        <item name="onePlusPrimaryColor">#ff2f66a2</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.DarkActionBar.BlueTypeB" parent="@style/Oneplus.Theme.Material.TypeB">
+        <item name="onePlusAccentColor">#ff214c7c</item>
+        <item name="onePlusPrimaryColor">#ff2f66a2</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.DarkActionBar.BrownTypeA" parent="@style/Oneplus.Theme.Material.Light.DarkActionBar">
+        <item name="onePlusAccentColor">#ff8d6e63</item>
+        <item name="onePlusPrimaryColor">#ff795548</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.DarkActionBar.BrownTypeB" parent="@style/Oneplus.Theme.Material.TypeB">
+        <item name="onePlusAccentColor">#ff5d4037</item>
+        <item name="onePlusPrimaryColor">#ff795548</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.DarkActionBar.CyanTypeA" parent="@style/Oneplus.Theme.Material.Light.DarkActionBar">
+        <item name="onePlusAccentColor">#ff40b4cd</item>
+        <item name="onePlusPrimaryColor">#ff33a5bd</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.DarkActionBar.CyanTypeB" parent="@style/Oneplus.Theme.Material.TypeB">
+        <item name="onePlusAccentColor">#ff27899e</item>
+        <item name="onePlusPrimaryColor">#ff33a5bd</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.DarkActionBar.DeepOrangeTypeA" parent="@style/Oneplus.Theme.Material.Light.DarkActionBar">
+        <item name="onePlusAccentColor">#fff38a3c</item>
+        <item name="onePlusPrimaryColor">#ffdb762a</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.DarkActionBar.DeepOrangeTypeB" parent="@style/Oneplus.Theme.Material.TypeB">
+        <item name="onePlusAccentColor">#ffba611f</item>
+        <item name="onePlusPrimaryColor">#ffdb762a</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.DarkActionBar.DeepPurpleTypeA" parent="@style/Oneplus.Theme.Material.Light.DarkActionBar">
+        <item name="onePlusAccentColor">#ff8165ce</item>
+        <item name="onePlusPrimaryColor">#ff7055bb</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.DarkActionBar.DeepPurpleTypeB" parent="@style/Oneplus.Theme.Material.TypeB">
+        <item name="onePlusAccentColor">#ff523a94</item>
+        <item name="onePlusPrimaryColor">#ff7055bb</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.DarkActionBar.GreenTypeA" parent="@style/Oneplus.Theme.Material.Light.DarkActionBar">
+        <item name="onePlusAccentColor">#ff40c072</item>
+        <item name="onePlusPrimaryColor">#ff36b066</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.DarkActionBar.GreenTypeB" parent="@style/Oneplus.Theme.Material.TypeB">
+        <item name="onePlusAccentColor">#ff0a7e07</item>
+        <item name="onePlusPrimaryColor">#ff36b066</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.DarkActionBar.GreyTypeA" parent="@style/Oneplus.Theme.Material.Light.DarkActionBar">
+        <item name="onePlusAccentColor">#ffbdbdbd</item>
+        <item name="onePlusPrimaryColor">#ff9e9e9e</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.DarkActionBar.GreyTypeB" parent="@style/Oneplus.Theme.Material.TypeB">
+        <item name="onePlusAccentColor">#ff616161</item>
+        <item name="onePlusPrimaryColor">#ff9e9e9e</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.DarkActionBar.IndigoTypeA" parent="@style/Oneplus.Theme.Material.Light.DarkActionBar">
+        <item name="onePlusAccentColor">#ff576fc9</item>
+        <item name="onePlusPrimaryColor">#ff4e64b8</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.DarkActionBar.IndigoTypeB" parent="@style/Oneplus.Theme.Material.TypeB">
+        <item name="onePlusAccentColor">#ff384b91</item>
+        <item name="onePlusPrimaryColor">#ff4e64b8</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.DarkActionBar.LightBlueTypeA" parent="@style/Oneplus.Theme.Material.Light.DarkActionBar">
+        <item name="onePlusAccentColor">#ff3faddf</item>
+        <item name="onePlusPrimaryColor">#ff299dd1</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.DarkActionBar.LightBlueTypeB" parent="@style/Oneplus.Theme.Material.TypeB">
+        <item name="onePlusAccentColor">#ff187eac</item>
+        <item name="onePlusPrimaryColor">#ff299dd1</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.DarkActionBar.LightGreenTypeA" parent="@style/Oneplus.Theme.Material.Light.DarkActionBar">
+        <item name="onePlusAccentColor">#ff94bb46</item>
+        <item name="onePlusPrimaryColor">#ff86ac3a</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.DarkActionBar.LightGreenTypeB" parent="@style/Oneplus.Theme.Material.TypeB">
+        <item name="onePlusAccentColor">#ff6e8a35</item>
+        <item name="onePlusPrimaryColor">#ff86ac3a</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.DarkActionBar.LimeTypeA" parent="@style/Oneplus.Theme.Material.Light.DarkActionBar">
+        <item name="onePlusAccentColor">#ffb7bf45</item>
+        <item name="onePlusPrimaryColor">#ffa8af3a</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.DarkActionBar.LimeTypeB" parent="@style/Oneplus.Theme.Material.TypeB">
+        <item name="onePlusAccentColor">#ff8d9329</item>
+        <item name="onePlusPrimaryColor">#ffa8af3a</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.DarkActionBar.OrangeTypeA" parent="@style/Oneplus.Theme.Material.Light.DarkActionBar">
+        <item name="onePlusAccentColor">#fff6a529</item>
+        <item name="onePlusPrimaryColor">#ffec9613</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.DarkActionBar.OrangeTypeB" parent="@style/Oneplus.Theme.Material.TypeB">
+        <item name="onePlusAccentColor">#ffce8517</item>
+        <item name="onePlusPrimaryColor">#ffec9613</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.DarkActionBar.PinkTypeA" parent="@style/Oneplus.Theme.Material.Light.DarkActionBar">
+        <item name="onePlusAccentColor">#ffd74686</item>
+        <item name="onePlusPrimaryColor">#ffc32f70</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.DarkActionBar.PinkTypeB" parent="@style/Oneplus.Theme.Material.TypeB">
+        <item name="onePlusAccentColor">#ffa0245b</item>
+        <item name="onePlusPrimaryColor">#ffc32f70</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.DarkActionBar.PurpleTypeA" parent="@style/Oneplus.Theme.Material.Light.DarkActionBar">
+        <item name="onePlusAccentColor">#ffb156c8</item>
+        <item name="onePlusPrimaryColor">#ffa04bb5</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.DarkActionBar.PurpleTypeB" parent="@style/Oneplus.Theme.Material.TypeB">
+        <item name="onePlusAccentColor">#ff773188</item>
+        <item name="onePlusPrimaryColor">#ffa04bb5</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.DarkActionBar.RedTypeA" parent="@style/Oneplus.Theme.Material.Light.DarkActionBar">
+        <item name="onePlusAccentColor">#ffe2594f</item>
+        <item name="onePlusPrimaryColor">#ffd94b41</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.DarkActionBar.RedTypeB" parent="@style/Oneplus.Theme.Material.TypeB">
+        <item name="onePlusAccentColor">#ffac342b</item>
+        <item name="onePlusPrimaryColor">#ffd94b41</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.DarkActionBar.TealTypeA" parent="@style/Oneplus.Theme.Material.Light.DarkActionBar">
+        <item name="onePlusAccentColor">#ff26b7aa</item>
+        <item name="onePlusPrimaryColor">#ff189d91</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.DarkActionBar.TealTypeB" parent="@style/Oneplus.Theme.Material.TypeB">
+        <item name="onePlusAccentColor">#ff187a71</item>
+        <item name="onePlusPrimaryColor">#ff189d91</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.DarkActionBar.YellowTypeA" parent="@style/Oneplus.Theme.Material.Light.DarkActionBar">
+        <item name="onePlusAccentColor">#ffe5c63b</item>
+        <item name="onePlusPrimaryColor">#ffd9b824</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.DarkActionBar.YellowTypeB" parent="@style/Oneplus.Theme.Material.TypeB">
+        <item name="onePlusAccentColor">#ffbd9f18</item>
+        <item name="onePlusPrimaryColor">#ffd9b824</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.DeepOrangeTypeA" parent="@style/Oneplus.Theme.Material.Light">
+        <item name="onePlusAccentColor">#fff38a3c</item>
+        <item name="onePlusPrimaryColor">#ffdb762a</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.DeepOrangeTypeB" parent="@style/Oneplus.Theme.Material.Light.TypeB">
+        <item name="onePlusAccentColor">#ffba611f</item>
+        <item name="onePlusPrimaryColor">#ffdb762a</item>
+        <item name="onePlusTabIndicatorColor">#ffffb680</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.DeepPurpleTypeA" parent="@style/Oneplus.Theme.Material.Light">
+        <item name="onePlusAccentColor">#ff8165ce</item>
+        <item name="onePlusPrimaryColor">#ff7055bb</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.DeepPurpleTypeB" parent="@style/Oneplus.Theme.Material.Light.TypeB">
+        <item name="onePlusAccentColor">#ff523a94</item>
+        <item name="onePlusPrimaryColor">#ff7055bb</item>
+        <item name="onePlusTabIndicatorColor">#ffb59cfb</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.Dialog" parent="@style/Oneplus.Theme.Material.Light.BaseDialog">
+        <item name="android:colorBackground">@color/dialog_color_background</item>
+        <item name="android:colorAccent">@color/dialog_header_color_background</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.Dialog.Alert" parent="@style/Oneplus.Theme.Material.Light.Dialog.BaseAlert">
+        <item name="android:colorBackground">@color/alert_dialog_color_background_light</item>
+        <item name="android:textColorPrimary">@color/op_primary_text_color_light</item>
+        <item name="android:windowTitleStyle">@style/AlertDialogTitleStyleLight</item>
+        <item name="android:textColor">@color/op_primary_text_color_light</item>
+        <item name="android:listChoiceIndicatorSingle">@drawable/op_btn_radio_material_anim</item>
+        <item name="android:textColorAlertDialogListItem">@color/op_primary_text_material_light
+        </item>
+        <item name="android:colorAccent">@color/alert_dialog_color_accent_light</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.Dialog.BaseAlert" parent="@style/Oneplus.Theme.Material.Light.Dialog">
+        <item name="android:windowMinWidthMajor">@android:dimen/dialog_min_width_major</item>
+        <item name="android:windowMinWidthMinor">@android:dimen/dialog_min_width_minor</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.Dialog.FixedSize" parent="@style/Oneplus.Theme.Material.Light.Dialog" />
+
+    <style name="Oneplus.Theme.Material.Light.Dialog.MinWidth" parent="@style/Oneplus.Theme.Material.Light.Dialog" />
+
+    <style name="Oneplus.Theme.Material.Light.Dialog.NoActionBar" parent="@style/Oneplus.Theme.Material.Light.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.Dialog.NoActionBar.FixedSize" parent="@style/Oneplus.Theme.Material.Light.Dialog.NoActionBar" />
+
+    <style name="Oneplus.Theme.Material.Light.Dialog.NoActionBar.MinWidth" parent="@style/Oneplus.Theme.Material.Light.Dialog.NoActionBar">
+        <item name="android:windowMinWidthMajor">@android:dimen/dialog_min_width_major</item>
+        <item name="android:windowMinWidthMinor">@android:dimen/dialog_min_width_minor</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.Dialog.NoFrame" parent="@style/Oneplus.Theme.Material.Light.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowCloseOnTouchOutside">false</item>
+        <item name="android:windowElevation">0.0dip</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.Dialog.Presentation" parent="@style/Oneplus.Theme.Material.Light.NoActionBar.Fullscreen" />
+
+    <style name="Oneplus.Theme.Material.Light.DialogWhenLarge" parent="@style/Oneplus.Theme.Material.Light" />
+
+    <style name="Oneplus.Theme.Material.Light.DialogWhenLarge.DarkActionBar" parent="@style/Oneplus.Theme.Material.Light.DarkActionBar" />
+
+    <style name="Oneplus.Theme.Material.Light.DialogWhenLarge.NoActionBar" parent="@style/Oneplus.Theme.Material.Light.NoActionBar" />
+
+    <style name="Oneplus.Theme.Material.Light.GreenTypeA" parent="@style/Oneplus.Theme.Material.Light">
+        <item name="onePlusAccentColor">#ff40c072</item>
+        <item name="onePlusPrimaryColor">#ff36b066</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.GreenTypeB" parent="@style/Oneplus.Theme.Material.Light.TypeB">
+        <item name="onePlusAccentColor">#ff0a7e07</item>
+        <item name="onePlusPrimaryColor">#ff36b066</item>
+        <item name="onePlusTabIndicatorColor">#ff6be29a</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.GreyTypeA" parent="@style/Oneplus.Theme.Material.Light">
+        <item name="onePlusAccentColor">#ffbdbdbd</item>
+        <item name="onePlusPrimaryColor">#ff9e9e9e</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.GreyTypeB" parent="@style/Oneplus.Theme.Material.Light.TypeB">
+        <item name="onePlusAccentColor">#ff616161</item>
+        <item name="onePlusPrimaryColor">#ff9e9e9e</item>
+        <item name="onePlusTabIndicatorColor">#ffeeeeee</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.IndigoTypeA" parent="@style/Oneplus.Theme.Material.Light">
+        <item name="onePlusAccentColor">#ff576fc9</item>
+        <item name="onePlusPrimaryColor">#ff4e64b8</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.IndigoTypeB" parent="@style/Oneplus.Theme.Material.Light.TypeB">
+        <item name="onePlusAccentColor">#ff384b91</item>
+        <item name="onePlusPrimaryColor">#ff4e64b8</item>
+        <item name="onePlusTabIndicatorColor">#ff859df8</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.LightBlueTypeA" parent="@style/Oneplus.Theme.Material.Light">
+        <item name="onePlusAccentColor">#ff3faddf</item>
+        <item name="onePlusPrimaryColor">#ff299dd1</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.LightBlueTypeB" parent="@style/Oneplus.Theme.Material.Light.TypeB">
+        <item name="onePlusAccentColor">#ff187eac</item>
+        <item name="onePlusPrimaryColor">#ff299dd1</item>
+        <item name="onePlusTabIndicatorColor">#ff74d4ff</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.LightGreenTypeA" parent="@style/Oneplus.Theme.Material.Light">
+        <item name="onePlusAccentColor">#ff94bb46</item>
+        <item name="onePlusPrimaryColor">#ff86ac3a</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.LightGreenTypeB" parent="@style/Oneplus.Theme.Material.Light.TypeB">
+        <item name="onePlusAccentColor">#ff6e8a35</item>
+        <item name="onePlusPrimaryColor">#ff86ac3a</item>
+        <item name="onePlusTabIndicatorColor">#ffc1e479</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.LightStatusBar" parent="@style/Oneplus.Theme.Material.Light">
+        <item name="android:colorPrimaryDark">@color/primary_dark_material_light_light_status_bar
+        </item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.LimeTypeA" parent="@style/Oneplus.Theme.Material.Light">
+        <item name="onePlusAccentColor">#ffb7bf45</item>
+        <item name="onePlusPrimaryColor">#ffa8af3a</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.LimeTypeB" parent="@style/Oneplus.Theme.Material.Light.TypeB">
+        <item name="onePlusAccentColor">#ff8d9329</item>
+        <item name="onePlusPrimaryColor">#ffa8af3a</item>
+        <item name="onePlusTabIndicatorColor">#ffd3dd5d</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.NoActionBar" parent="@style/Oneplus.Theme.Material.Light">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.NoActionBar.Fullscreen" parent="@style/Oneplus.Theme.Material.Light.NoActionBar">
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.NoActionBar.Overscan" parent="@style/Oneplus.Theme.Material.Light.NoActionBar">
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowOverscan">true</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.NoActionBar.TranslucentDecor" parent="@style/Oneplus.Theme.Material.Light.NoActionBar">
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.OrangeTypeA" parent="@style/Oneplus.Theme.Material.Light">
+        <item name="onePlusAccentColor">#fff6a529</item>
+        <item name="onePlusPrimaryColor">#ffec9613</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.OrangeTypeB" parent="@style/Oneplus.Theme.Material.Light.TypeB">
+        <item name="onePlusAccentColor">#ffce8517</item>
+        <item name="onePlusPrimaryColor">#ffec9613</item>
+        <item name="onePlusTabIndicatorColor">#ffffc264</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.Panel" parent="@style/Oneplus.Theme.Material.Light">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.PinkTypeA" parent="@style/Oneplus.Theme.Material.Light">
+        <item name="onePlusAccentColor">#ffd74686</item>
+        <item name="onePlusPrimaryColor">#ffc32f70</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.PinkTypeB" parent="@style/Oneplus.Theme.Material.Light.TypeB">
+        <item name="onePlusAccentColor">#ffa0245b</item>
+        <item name="onePlusPrimaryColor">#ffc32f70</item>
+        <item name="onePlusTabIndicatorColor">#fff969a9</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.PurpleTypeA" parent="@style/Oneplus.Theme.Material.Light">
+        <item name="onePlusAccentColor">#ffb156c8</item>
+        <item name="onePlusPrimaryColor">#ffa04bb5</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.PurpleTypeB" parent="@style/Oneplus.Theme.Material.Light.TypeB">
+        <item name="onePlusAccentColor">#ff773188</item>
+        <item name="onePlusPrimaryColor">#ffa04bb5</item>
+        <item name="onePlusTabIndicatorColor">#ffdb86f1</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.RedTypeA" parent="@style/Oneplus.Theme.Material.Light">
+        <item name="onePlusAccentColor">#ffe2594f</item>
+        <item name="onePlusPrimaryColor">#ffd94b41</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.RedTypeB" parent="@style/Oneplus.Theme.Material.Light.TypeB">
+        <item name="onePlusAccentColor">#ffac342b</item>
+        <item name="onePlusPrimaryColor">#ffd94b41</item>
+        <item name="onePlusTabIndicatorColor">#fff4938d</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.SearchBar" parent="@style/Oneplus.Theme.Material.Light.Panel" />
+
+    <style name="Oneplus.Theme.Material.Light.TealTypeA" parent="@style/Oneplus.Theme.Material.Light">
+        <item name="onePlusAccentColor">#ff26b7aa</item>
+        <item name="onePlusPrimaryColor">#ff189d91</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.TealTypeB" parent="@style/Oneplus.Theme.Material.Light.TypeB">
+        <item name="onePlusAccentColor">#ff187a71</item>
+        <item name="onePlusPrimaryColor">#ff189d91</item>
+        <item name="onePlusTabIndicatorColor">#ff5bd4ca</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.TypeB" parent="@style/Oneplus.Theme.Material.Light">
+        <item name="onePlusActionbarBackgroundColor">?onePlusActionbarLineColor</item>
+        <item name="onePlusActionbarIconColor">?onePlusActionbarTitleColor</item>
+        <item name="onePlusActionbarLineColor">?onePlusPrimaryColor</item>
+        <item name="onePlusActionbarTitleColor">#ffffffff</item>
+        <item name="onePlusTabTextColor">#ffffffff</item>
+        <item name="onePlusTabTextSelectedColor">?onePlusActionbarTitleColor</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.Voice" parent="@style/Oneplus.Theme.Material.Light.Dialog">
+        <item name="android:windowAnimationStyle">@style/Animation.VoiceActivity</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.Wallpaper" parent="@style/Oneplus.Theme.Material.Light">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowShowWallpaper">true</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.Wallpaper.NoTitleBar" parent="@style/Oneplus.Theme.Material.Light.Wallpaper">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.YellowTypeA" parent="@style/Oneplus.Theme.Material.Light">
+        <item name="onePlusAccentColor">#ffe5c63b</item>
+        <item name="onePlusPrimaryColor">#ffd9b824</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Light.YellowTypeB" parent="@style/Oneplus.Theme.Material.Light.TypeB">
+        <item name="onePlusAccentColor">#ffbd9f18</item>
+        <item name="onePlusPrimaryColor">#ffd9b824</item>
+        <item name="onePlusTabIndicatorColor">#fff8dc5a</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.LightBlueTypeA" parent="@style/Oneplus.Theme.Material">
+        <item name="onePlusAccentColor">#ff4db9ea</item>
+        <item name="onePlusPrimaryColor">#ff3faddf</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.LightBlueTypeB" parent="@style/Oneplus.Theme.Material.TypeB">
+        <item name="onePlusAccentColor">#ff2392c4</item>
+        <item name="onePlusPrimaryColor">#ff13678d</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.LightGreenTypeA" parent="@style/Oneplus.Theme.Material">
+        <item name="onePlusAccentColor">#ffa8ce5b</item>
+        <item name="onePlusPrimaryColor">#ff94bb46</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.LightGreenTypeB" parent="@style/Oneplus.Theme.Material.TypeB">
+        <item name="onePlusAccentColor">#ff7b9b3a</item>
+        <item name="onePlusPrimaryColor">#ff4b5c28</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.LightStatusBar" parent="@style/Oneplus.Theme.Material" />
+
+    <style name="Oneplus.Theme.Material.LimeTypeA" parent="@style/Oneplus.Theme.Material">
+        <item name="onePlusAccentColor">#ffc5ce51</item>
+        <item name="onePlusPrimaryColor">#ffb7bf45</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.LimeTypeB" parent="@style/Oneplus.Theme.Material.TypeB">
+        <item name="onePlusAccentColor">#ff9ba133</item>
+        <item name="onePlusPrimaryColor">#ff5d6215</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.NoActionBar" parent="@style/Oneplus.Theme.Material">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.NoActionBar.Fullscreen" parent="@style/Oneplus.Theme.Material.NoActionBar">
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.NoActionBar.Overscan" parent="@style/Oneplus.Theme.Material.NoActionBar">
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowOverscan">true</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.NoActionBar.TranslucentDecor" parent="@style/Oneplus.Theme.Material.NoActionBar">
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.OrangeTypeA" parent="@style/Oneplus.Theme.Material">
+        <item name="onePlusAccentColor">#ffffb749</item>
+        <item name="onePlusPrimaryColor">#fff6a529</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.OrangeTypeB" parent="@style/Oneplus.Theme.Material.TypeB">
+        <item name="onePlusAccentColor">#ffdb8d17</item>
+        <item name="onePlusPrimaryColor">#ff986619</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Panel" parent="@style/Oneplus.Theme.Material">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.PinkTypeA" parent="@style/Oneplus.Theme.Material">
+        <item name="onePlusAccentColor">#ffe75596</item>
+        <item name="onePlusPrimaryColor">#ffd74686</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.PinkTypeB" parent="@style/Oneplus.Theme.Material.TypeB">
+        <item name="onePlusAccentColor">#ffb02964</item>
+        <item name="onePlusPrimaryColor">#ff7c214a</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.PurpleTypeA" parent="@style/Oneplus.Theme.Material">
+        <item name="onePlusAccentColor">#ffc96ee0</item>
+        <item name="onePlusPrimaryColor">#ffb156c8</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.PurpleTypeB" parent="@style/Oneplus.Theme.Material.TypeB">
+        <item name="onePlusAccentColor">#ff883d9b</item>
+        <item name="onePlusPrimaryColor">#ff521f5e</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.RedTypeA" parent="@style/Oneplus.Theme.Material">
+        <item name="onePlusAccentColor">#ffe8685f</item>
+        <item name="onePlusPrimaryColor">#ffe2594f</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.RedTypeB" parent="@style/Oneplus.Theme.Material.TypeB">
+        <item name="onePlusAccentColor">#ffbd3f36</item>
+        <item name="onePlusPrimaryColor">#ff7f211b</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.SearchBar" parent="@style/Oneplus.Theme.Material.Panel" />
+
+    <style name="Oneplus.Theme.Material.Settings" parent="@style/Oneplus.Theme.Material.Light.DarkActionBar">
+        <item name="android:presentationTheme">
+            @style/Oneplus.Theme.Material.Settings.Dialog.Presentation
+        </item>
+        <item name="android:colorPrimary">@color/material_blue_grey_900</item>
+        <item name="android:colorPrimaryDark">@color/material_blue_grey_950</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Settings.BaseDialog" parent="@style/Oneplus.Theme.Material.Light.BaseDialog">
+        <item name="android:colorPrimary">@color/material_blue_grey_900</item>
+        <item name="android:colorPrimaryDark">@color/material_blue_grey_950</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Settings.BaseDialog.FromDark" parent="@style/Oneplus.Theme.Material.BaseDialog" />
+
+    <style name="Oneplus.Theme.Material.Settings.CompactMenu" parent="@style/Oneplus.Theme.Material.Light.CompactMenu">
+        <item name="android:colorPrimary">@color/material_blue_grey_900</item>
+        <item name="android:colorPrimaryDark">@color/material_blue_grey_950</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Settings.CompactMenu.FromDark" parent="@style/Oneplus.Theme.Material.CompactMenu" />
+
+    <style name="Oneplus.Theme.Material.Settings.Dialog" parent="@style/Oneplus.Theme.Material.Settings.BaseDialog" />
+
+    <style name="Oneplus.Theme.Material.Settings.Dialog.Alert" parent="@style/Oneplus.Theme.Material.Settings.Dialog.BaseAlert" />
+
+    <style name="Oneplus.Theme.Material.Settings.Dialog.Alert.FromDark" parent="@style/Oneplus.Theme.Material.Settings.Dialog.BaseAlert.FromDark" />
+
+    <style name="Oneplus.Theme.Material.Settings.Dialog.BaseAlert" parent="@style/Oneplus.Theme.Material.Light.Dialog.BaseAlert">
+        <item name="android:colorPrimary">@color/material_blue_grey_900</item>
+        <item name="android:colorPrimaryDark">@color/material_blue_grey_950</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Settings.Dialog.BaseAlert.FromDark" parent="@style/Oneplus.Theme.Material.Dialog.BaseAlert" />
+
+    <style name="Oneplus.Theme.Material.Settings.Dialog.FromDark" parent="@style/Oneplus.Theme.Material.Settings.BaseDialog.FromDark" />
+
+    <style name="Oneplus.Theme.Material.Settings.Dialog.Presentation" parent="@style/Oneplus.Theme.Material.Light.Dialog.Presentation">
+        <item name="android:colorPrimary">@color/material_blue_grey_900</item>
+        <item name="android:colorPrimaryDark">@color/material_blue_grey_950</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Settings.Dialog.Presentation.FromDark" parent="@style/Oneplus.Theme.Material.Dialog.Presentation" />
+
+    <style name="Oneplus.Theme.Material.Settings.DialogWhenLarge" parent="@style/Oneplus.Theme.Material.Light.DialogWhenLarge.DarkActionBar">
+        <item name="android:colorPrimary">@color/material_blue_grey_900</item>
+        <item name="android:colorPrimaryDark">@color/material_blue_grey_950</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Settings.DialogWhenLarge.FromDark" parent="@style/Oneplus.Theme.Material.DialogWhenLarge.DarkActionBar" />
+
+    <style name="Oneplus.Theme.Material.Settings.DialogWhenLarge.NoActionBar" parent="@style/Oneplus.Theme.Material.Light.DialogWhenLarge.NoActionBar">
+        <item name="android:colorPrimary">@color/material_blue_grey_900</item>
+        <item name="android:colorPrimaryDark">@color/material_blue_grey_950</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Settings.DialogWhenLarge.NoActionBar.FromDark" parent="@style/Oneplus.Theme.Material.DialogWhenLarge.NoActionBar" />
+
+    <style name="Oneplus.Theme.Material.Settings.NoActionBar" parent="@style/Oneplus.Theme.Material.Light.NoActionBar">
+        <item name="android:presentationTheme">
+            @style/Oneplus.Theme.Material.Settings.Dialog.Presentation
+        </item>
+        <item name="android:colorPrimary">@color/material_blue_grey_900</item>
+        <item name="android:colorPrimaryDark">@color/material_blue_grey_950</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Settings.NoActionBar.FromDark" parent="@style/Oneplus.Theme.Material.NoActionBar" />
+
+    <style name="Oneplus.Theme.Material.Settings.SearchBar" parent="@style/Oneplus.Theme.Material.Light.SearchBar">
+        <item name="android:colorPrimary">@color/material_blue_grey_900</item>
+        <item name="android:colorPrimaryDark">@color/material_blue_grey_950</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Settings.SearchBar.FromDark" parent="@style/Oneplus.Theme.Material.SearchBar" />
+
+    <style name="Oneplus.Theme.Material.TealTypeA" parent="@style/Oneplus.Theme.Material">
+        <item name="onePlusAccentColor">#ff3ec4b8</item>
+        <item name="onePlusPrimaryColor">#ff26b7aa</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.TealTypeB" parent="@style/Oneplus.Theme.Material.TypeB">
+        <item name="onePlusAccentColor">#ff189085</item>
+        <item name="onePlusPrimaryColor">#ff15524d</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.TypeB" parent="@style/Oneplus.Theme.Material">
+        <item name="onePlusActionbarIconColor">?onePlusActionbarTitleColor</item>
+        <item name="onePlusActionbarLineColor">?onePlusActionbarBackgroundColor</item>
+        <item name="onePlusTabIndicatorColor">?onePlusActionbarTitleColor</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Voice" parent="@style/Oneplus.Theme.Material.Dialog">
+        <item name="android:windowAnimationStyle">@style/Animation.VoiceActivity</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.VoiceInteractionSession" parent="@style/Oneplus.Theme.Material.Light.NoActionBar.TranslucentDecor">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.VoiceInteractionSession.FromDark" parent="@style/Oneplus.Theme.Material.NoActionBar.TranslucentDecor" />
+
+    <style name="Oneplus.Theme.Material.Wallpaper" parent="@style/Oneplus.Theme.Material">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowShowWallpaper">true</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.Wallpaper.NoTitleBar" parent="@style/Oneplus.Theme.Material.Wallpaper">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.YellowTypeA" parent="@style/Oneplus.Theme.Material">
+        <item name="onePlusAccentColor">#ffefd14a</item>
+        <item name="onePlusPrimaryColor">#ffe5c63b</item>
+    </style>
+
+    <style name="Oneplus.Theme.Material.YellowTypeB" parent="@style/Oneplus.Theme.Material.TypeB">
+        <item name="onePlusAccentColor">#ffcaaa19</item>
+        <item name="onePlusPrimaryColor">#ff927a10</item>
+    </style>
+
+    <style name="Oneplus.Theme.Resolver" parent="@android:style/Theme.Material">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:listPreferredItemPaddingStart">?android:dialogPreferredPadding</item>
+        <item name="android:listPreferredItemPaddingEnd">?android:dialogPreferredPadding</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+        <item name="android:colorControlActivated">?android:colorControlHighlight</item>
+        <item name="android:colorAccent">@color/onePlusPrimaryColor_device_default_dark</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">false</item>
+    </style>
+
+    <style name="Oneplus.Theme.Resolver.Light" parent="@android:style/Theme.Material.Light">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:listPreferredItemPaddingStart">?android:dialogPreferredPadding</item>
+        <item name="android:listPreferredItemPaddingEnd">?android:dialogPreferredPadding</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+        <item name="android:colorControlActivated">?android:colorControlHighlight</item>
+        <item name="android:colorAccent">@color/onePlusPrimaryColor_device_default_light</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">false</item>
+    </style>
+
+    <style name="Oneplus.ThemeOverlay" parent="@android:style/ThemeOverlay" />
+
+    <style name="Oneplus.ThemeOverlay.Material" parent="@style/Oneplus.ThemeOverlay" />
+
+    <style name="Oneplus.ThemeOverlay.Material.ActionBar" parent="@style/Oneplus.ThemeOverlay.Material">
+        <item name="android:colorControlNormal">?android:textColorPrimary</item>
+        <item name="android:searchViewStyle">@style/Oneplus.Widget.Material.SearchView.ActionBar
+        </item>
+    </style>
+
+    <style name="Oneplus.ThemeOverlay.Material.Dark" parent="@style/Oneplus.ThemeOverlay.Material">
+        <item name="android:colorBackground">@color/background_material_dark</item>
+        <item name="android:textColorPrimary">@color/primary_text_material_dark</item>
+        <item name="android:textColorPrimaryDisableOnly">
+            @color/primary_text_disable_only_material_dark
+        </item>
+        <item name="android:textColorSecondary">@color/secondary_text_material_dark</item>
+        <item name="android:textColorPrimaryInverse">@color/primary_text_material_light</item>
+        <item name="android:textColorSecondaryInverse">@color/secondary_text_material_light</item>
+        <item name="android:textColorHintInverse">@color/op_hint_foreground_material_light</item>
+        <item name="android:textCheckMark">@drawable/indicator_check_mark_dark</item>
+        <item name="android:textCheckMarkInverse">@drawable/indicator_check_mark_light</item>
+        <item name="android:textColorHighlight">@color/highlighted_text_material</item>
+        <item name="android:textColorHint">@color/op_hint_foreground_material_dark</item>
+        <item name="android:textColorTertiary">@color/secondary_text_material_dark</item>
+        <item name="android:textColorTertiaryInverse">@color/secondary_text_material_light</item>
+        <item name="android:colorBackgroundCacheHint">
+            @color/background_cache_hint_selector_material_dark
+        </item>
+        <item name="android:textColorAlertDialogListItem">@color/primary_text_material_dark</item>
+        <item name="android:textColorHighlightInverse">@color/highlighted_text_material</item>
+        <item name="android:colorControlNormal">?android:textColorSecondary</item>
+        <item name="android:colorButtonNormal">@color/btn_default_material_dark</item>
+        <item name="android:colorControlHighlight">@color/android_ripple_material_dark</item>
+    </style>
+
+    <style name="Oneplus.ThemeOverlay.Material.Dark.ActionBar" parent="@style/Oneplus.ThemeOverlay.Material.Dark">
+        <item name="android:colorControlNormal">?android:textColorPrimary</item>
+        <item name="android:searchViewStyle">@style/Oneplus.Widget.Material.SearchView.ActionBar
+        </item>
+    </style>
+
+    <style name="Oneplus.ThemeOverlay.Material.Dialog" parent="@style/Oneplus.ThemeOverlay.Material">
+        <item name="android:colorBackground">?android:colorBackgroundFloating</item>
+        <item name="android:windowBackground">@drawable/dialog_background_material</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTitleStyle">@style/DialogWindowTitle.Material</item>
+        <item name="android:windowTitleBackgroundStyle">
+            @style/DialogWindowTitleBackground.Material
+        </item>
+        <item name="android:windowAnimationStyle">@style/Animation.Material.Dialog</item>
+        <item name="android:listDivider">@null</item>
+        <item name="android:windowSoftInputMode">adjustPan</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="android:windowCloseOnTouchOutside">@bool/config_closeDialogWhenTouchOutside
+        </item>
+        <item name="android:listPreferredItemPaddingLeft">?android:dialogPreferredPadding</item>
+        <item name="android:listPreferredItemPaddingRight">?android:dialogPreferredPadding</item>
+        <item name="android:listPreferredItemPaddingStart">?android:dialogPreferredPadding</item>
+        <item name="android:listPreferredItemPaddingEnd">?android:dialogPreferredPadding</item>
+        <item name="android:windowElevation">@dimen/floating_window_z</item>
+        <item name="op_preferencePanelStyle">@style/PreferencePanel.Dialog</item>
+    </style>
+
+    <style name="Oneplus.ThemeOverlay.Material.Dialog.Alert" parent="@style/Oneplus.ThemeOverlay.Material.Dialog">
+        <item name="android:windowMinWidthMajor">@android:dimen/dialog_min_width_major</item>
+        <item name="android:windowMinWidthMinor">@android:dimen/dialog_min_width_minor</item>
+    </style>
+
+    <style name="Oneplus.ThemeOverlay.Material.Light" parent="@style/Oneplus.ThemeOverlay.Material">
+        <item name="android:colorForeground">@color/foreground_material_light</item>
+        <item name="android:colorBackground">@color/background_material_light</item>
+        <item name="android:textColorPrimary">@color/primary_text_material_light</item>
+        <item name="android:textColorPrimaryDisableOnly">
+            @color/primary_text_disable_only_material_light
+        </item>
+        <item name="android:textColorSecondary">@color/secondary_text_material_light</item>
+        <item name="android:textColorPrimaryInverse">@color/primary_text_material_dark</item>
+        <item name="android:textColorSecondaryInverse">@color/secondary_text_material_dark</item>
+        <item name="android:textColorHintInverse">@color/op_hint_foreground_material_dark</item>
+        <item name="android:textCheckMark">@drawable/indicator_check_mark_light</item>
+        <item name="android:textCheckMarkInverse">@drawable/indicator_check_mark_dark</item>
+        <item name="android:textColorHighlight">@color/highlighted_text_material</item>
+        <item name="android:textColorHint">@color/op_hint_foreground_material_light</item>
+        <item name="android:colorForegroundInverse">@color/foreground_material_dark</item>
+        <item name="android:textColorTertiary">@color/secondary_text_material_light</item>
+        <item name="android:textColorTertiaryInverse">@color/secondary_text_material_dark</item>
+        <item name="android:textColorPrimaryInverseDisableOnly">
+            @color/primary_text_disable_only_material_dark
+        </item>
+        <item name="android:colorBackgroundCacheHint">
+            @color/background_cache_hint_selector_material_light
+        </item>
+        <item name="android:textColorAlertDialogListItem">@color/primary_text_material_light</item>
+        <item name="android:textColorHighlightInverse">@color/highlighted_text_material</item>
+        <item name="android:colorControlNormal">?android:textColorSecondary</item>
+        <item name="android:colorButtonNormal">@color/btn_default_material_light</item>
+        <item name="android:colorControlHighlight">@color/android_ripple_material_light</item>
+    </style>
+
+    <style name="Oneplus.Widget.Design.OPTabLayout" parent="@style/Oneplus.Base.Widget.Design.OPTabLayout">
+        <item name="android:background">@drawable/op_actionbar_background</item>
+        <item name="android:elevation">@dimen/actionbar_elevation</item>
+        <item name="op_tabGravity">fill</item>
+        <item name="op_tabMode">fixed</item>
+    </style>
+
+    <style name="Oneplus.Widget.Material.ActionBar" parent="@android:style/Widget.Material.ActionBar">
+        <item name="android:height">@dimen/actionbar_height</item>
+        <item name="android:elevation">@dimen/actionbar_elevation</item>
+    </style>
+
+    <style name="Oneplus.Widget.Material.ActionBar.Solid" parent="@android:style/Widget.Material.ActionBar.Solid">
+        <item name="android:background">?onePlusActionbarBackground</item>
+        <item name="android:titleTextStyle">
+            @style/Oneplus.TextAppearance.Material.Widget.ActionBar.Title
+        </item>
+        <item name="android:subtitleTextStyle">
+            @style/Oneplus.TextAppearance.Material.Widget.ActionBar.Subtitle
+        </item>
+        <item name="android:backgroundStacked">@drawable/op_actionbar_background</item>
+        <item name="android:backgroundSplit">?onePlusActionbarBackgroundColor</item>
+        <item name="android:elevation">@dimen/actionbar_elevation</item>
+        <item name="android:contentInsetStart">@dimen/oneplus_contorl_layout_margin_left2</item>
+        <item name="android:contentInsetStartWithNavigation">
+            @dimen/oneplus_contorl_layout_margin_left4
+        </item>
+    </style>
+
+    <style name="Oneplus.Widget.Material.ActionBar.TabBar" parent="@android:style/Widget.Material.ActionBar.TabBar">
+        <item name="android:showDividers">none</item>
+    </style>
+
+    <style name="Oneplus.Widget.Material.ActionBar.TabText" parent="@android:style/Widget.Material.ActionBar.TabText">
+        <item name="android:textAppearance">
+            @style/Oneplus.TextAppearance.Material.Widget.TabWidget
+        </item>
+    </style>
+
+    <style name="Oneplus.Widget.Material.ActionBar.TabView" parent="@android:style/Widget.Material.ActionBar.TabView">
+        <item name="android:background">@drawable/op_tab_indicator_material</item>
+    </style>
+
+    <style name="Oneplus.Widget.Material.ActionButton" parent="@android:style/Widget.Material.ActionButton">
+        <item name="android:background">@drawable/op_action_bar_item_background_material</item>
+    </style>
+
+    <style name="Oneplus.Widget.Material.ActionButton.CloseMode" parent="@android:style/Widget.Material.ActionButton.CloseMode">
+        <item name="android:background">@drawable/op_action_bar_item_background_material</item>
+    </style>
+
+    <style name="Oneplus.Widget.Material.ActionButton.Overflow" parent="@android:style/Widget.Material.ActionButton.Overflow">
+        <item name="android:background">@drawable/op_action_bar_item_background_material</item>
+        <item name="android:src">@drawable/op_ic_menu_moreoverflow_material</item>
+    </style>
+
+    <style name="Oneplus.Widget.Material.ActionMode" parent="@android:style/Widget.Material.ActionMode">
+        <item name="android:background">@null</item>
+        <item name="android:height">?android:actionBarSize</item>
+        <item name="android:titleTextStyle">
+            @style/Oneplus.TextAppearance.Material.Widget.ActionBar.Title
+        </item>
+        <item name="android:subtitleTextStyle">
+            @style/Oneplus.TextAppearance.Material.Widget.ActionBar.Subtitle
+        </item>
+        <item name="android:backgroundSplit">@null</item>
+    </style>
+
+    <style name="Oneplus.Widget.Material.ActionMode.Light" parent="@style/Oneplus.Widget.Material.ActionMode" />
+
+    <style name="Oneplus.Widget.Material.CalendarView" parent="@android:style/Widget.Material.CalendarView">
+        <item name="android:weekDayTextAppearance">
+            @style/Oneplus.TextAppearance.Material.Widget.Calendar.DayOfWeek
+        </item>
+        <item name="android:dateTextAppearance">
+            @style/Oneplus.TextAppearance.Material.Widget.Calendar.Day
+        </item>
+    </style>
+
+    <style name="Oneplus.Widget.Material.CompoundButton.CheckBox" parent="@android:style/Widget.Material.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/op_btn_check_material_anim</item>
+        <item name="android:radius">@dimen/ripple_radius</item>
+    </style>
+
+    <style name="Oneplus.Widget.Material.CompoundButton.RadioButton" parent="@android:style/Widget.Material.CompoundButton.RadioButton">
+        <item name="android:button">@drawable/op_btn_radio_material_anim</item>
+        <item name="android:radius">@dimen/ripple_radius</item>
+    </style>
+
+    <style name="Oneplus.Widget.Material.CompoundButton.Switch" parent="@style/Widget.Material.CompoundButton.Switch">
+        <item name="android:thumb">@drawable/op_switch_thumb_material_anim</item>
+        <item name="android:radius">@dimen/switch_ripple_radius</item>
+        <item name="android:track">@drawable/op_switch_track_material</item>
+        <item name="android:elevation">0.0dip</item>
+    </style>
+
+    <style name="Oneplus.Widget.Material.DatePicker" parent="@android:style/Widget.Material.DatePicker">
+        <item name="android:headerBackground">?onePlusPrimaryColor</item>
+        <item name="android:datePickerMode">@integer/op_date_picker_mode</item>
+    </style>
+
+    <style name="Oneplus.Widget.Material.DropDownItem.Spinner" parent="@android:style/Widget.Material.DropDownItem.Spinner">
+        <item name="android:paddingStart">@dimen/spinner_material_padding</item>
+        <item name="android:paddingEnd">@dimen/spinner_material_padding</item>
+    </style>
+
+    <style name="Oneplus.Widget.Material.EditText" parent="@android:style/Widget.EditText">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textColor">@color/edittext_color_dark</item>
+        <item name="android:textColorHint">@color/edittext_hint_color_dark</item>
+        <item name="android:background">@drawable/op_edit_text_material_dark</item>
+        <item name="colorError">@drawable/op_edit_text_error_material_dark</item>
+    </style>
+
+    <style name="Oneplus.Widget.Material.Light.ActionBar" parent="@style/Oneplus.Widget.Material.ActionBar" />
+
+    <style name="Oneplus.Widget.Material.Light.ActionBar.Solid" parent="@android:style/Widget.Material.Light.ActionBar.Solid">
+        <item name="android:background">?onePlusActionbarBackground</item>
+        <item name="android:titleTextStyle">
+            @style/Oneplus.TextAppearance.Material.Widget.ActionBar.Title
+        </item>
+        <item name="android:subtitleTextStyle">
+            @style/Oneplus.TextAppearance.Material.Widget.ActionBar.Subtitle
+        </item>
+        <item name="android:backgroundStacked">@drawable/op_actionbar_background</item>
+        <item name="android:backgroundSplit">?onePlusActionbarBackgroundColor</item>
+        <item name="android:elevation">@dimen/actionbar_elevation</item>
+        <item name="android:contentInsetStart">@dimen/oneplus_contorl_layout_margin_left2</item>
+        <item name="android:contentInsetStartWithNavigation">
+            @dimen/oneplus_contorl_layout_margin_left4
+        </item>
+    </style>
+
+    <style name="Oneplus.Widget.Material.Light.ActionBar.TabBar" parent="@style/Oneplus.Widget.Material.ActionBar.TabBar" />
+
+    <style name="Oneplus.Widget.Material.Light.ActionBar.TabText" parent="@style/Oneplus.Widget.Material.ActionBar.TabText">
+        <item name="android:textAppearance">
+            @style/Oneplus.TextAppearance.Material.Light.Widget.TabWidget
+        </item>
+    </style>
+
+    <style name="Oneplus.Widget.Material.Light.ActionBar.TabView" parent="@style/Oneplus.Widget.Material.ActionBar.TabView" />
+
+    <style name="Oneplus.Widget.Material.Light.ActionButton.CloseMode" parent="@style/Oneplus.Widget.Material.ActionButton.CloseMode" />
+
+    <style name="Oneplus.Widget.Material.Light.CalendarView" parent="@android:style/Widget.Material.Light.CalendarView">
+        <item name="android:weekDayTextAppearance">
+            @style/Oneplus.TextAppearance.Material.Light.Widget.Calendar.DayOfWeek
+        </item>
+        <item name="android:dateTextAppearance">
+            @style/Oneplus.TextAppearance.Material.Light.Widget.Calendar.Day
+        </item>
+    </style>
+
+    <style name="Oneplus.Widget.Material.Light.CompoundButton.CheckBox" parent="@android:style/Widget.Material.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/op_btn_check_material_anim</item>
+        <item name="android:radius">@dimen/ripple_radius</item>
+    </style>
+
+    <style name="Oneplus.Widget.Material.Light.CompoundButton.RadioButton" parent="@android:style/Widget.Material.CompoundButton.RadioButton">
+        <item name="android:button">@drawable/op_btn_radio_material_anim</item>
+        <item name="android:radius">@dimen/ripple_radius</item>
+    </style>
+
+    <style name="Oneplus.Widget.Material.Light.CompoundButton.Switch" parent="@style/Widget.Material.CompoundButton.Switch">
+        <item name="android:thumb">@drawable/op_switch_thumb_material_light_anim</item>
+        <item name="android:radius">@dimen/switch_ripple_radius</item>
+        <item name="android:track">@drawable/op_switch_track_material</item>
+        <item name="android:elevation">0.0dip</item>
+    </style>
+
+    <style name="Oneplus.Widget.Material.Light.DatePicker" parent="@android:style/Widget.Material.Light.DatePicker">
+        <item name="android:headerBackground">?onePlusPrimaryColor</item>
+        <item name="android:datePickerMode">@integer/op_date_picker_mode</item>
+    </style>
+
+    <style name="Oneplus.Widget.Material.Light.EditText" parent="@style/Oneplus.Widget.Material.EditText">
+        <item name="android:textColor">@color/edittext_color</item>
+        <item name="android:textColorHint">@color/edittext_hint_color</item>
+        <item name="android:background">@drawable/op_edit_text_material_light</item>
+        <item name="colorError">@drawable/op_edit_text_error_material_light</item>
+    </style>
+
+    <style name="Oneplus.Widget.Material.Light.ListView" parent="@android:style/Widget.Material.ListView">
+        <item name="android:background">@color/bg_interface_light</item>
+        <item name="android:divider">@color/listview_divider_color</item>
+    </style>
+
+    <style name="Oneplus.Widget.Material.Light.NumberPicker" parent="@style/Widget.Material.Light.NumberPicker" />
+
+    <style name="Oneplus.Widget.Material.Light.PopupMenu.Overflow" parent="@style/Oneplus.Widget.Material.PopupMenu">
+        <item name="android:popupBackground">@drawable/op_popup_background_material_light</item>
+    </style>
+
+    <style name="Oneplus.Widget.Material.Light.ProgressBar" parent="@android:style/Widget.Material.ProgressBar">
+        <item name="android:indeterminateDrawable">@drawable/op_progress_medium_material_light
+        </item>
+    </style>
+
+    <style name="Oneplus.Widget.Material.Light.ProgressBar.Horizontal" parent="@style/Oneplus.Widget.Material.ProgressBar.Horizontal">
+        <item name="android:indeterminateDrawable">
+            @drawable/op_progress_indeterminate_horizontal_material_light
+        </item>
+        <item name="android:progressDrawable">@drawable/op_progress_horizontal_material_light</item>
+    </style>
+
+    <style name="Oneplus.Widget.Material.Light.ProgressBar.Large" parent="@android:style/Widget.Material.Light.ProgressBar.Large">
+        <item name="android:indeterminateDrawable">@drawable/op_progress_large_material_light</item>
+    </style>
+
+    <style name="Oneplus.Widget.Material.Light.ProgressBar.Small" parent="@android:style/Widget.Material.Light.ProgressBar.Small">
+        <item name="android:indeterminateDrawable">@drawable/op_progress_small_material_light</item>
+    </style>
+
+    <style name="Oneplus.Widget.Material.Light.SeekBar" parent="@android:style/Widget.Material.Light.SeekBar">
+        <item name="android:indeterminateDrawable">@drawable/op_seekbar_track_material_light</item>
+        <item name="android:progressDrawable">@drawable/op_seekbar_track_material_light</item>
+        <item name="android:thumb">@drawable/op_seekbar_thumb_material_anim_light</item>
+        <item name="android:thumbOffset">3.0999756dip</item>
+    </style>
+
+    <style name="Oneplus.Widget.Material.Light.TimePicker" parent="@android:style/Widget.Material.Light.TimePicker">
+        <item name="android:headerBackground">?onePlusPrimaryColor</item>
+        <item name="android:numbersTextColor">
+            @color/op_timepicker_text_inverse_when_activated_material_light
+        </item>
+        <item name="android:numbersBackgroundColor">
+            @color/timepicker_numbers_background_color_light
+        </item>
+        <item name="android:numbersSelectorColor">?onePlusPrimaryColor</item>
+        <item name="android:amPmTextColor">@color/timepicker_ampmlabel_text_color_light</item>
+        <item name="android:numbersInnerTextColor">
+            @color/op_timepicker_text_inverse_when_activated_material_light
+        </item>
+    </style>
+
+    <style name="Oneplus.Widget.Material.ListView" parent="@android:style/Widget.Material.ListView">
+        <item name="android:background">@color/bg_interface_dark</item>
+        <item name="android:divider">@color/listview_divider_color_dark</item>
+    </style>
+
+    <style name="Oneplus.Widget.Material.NumberPicker" parent="@style/Widget.Material.NumberPicker" />
+
+    <style name="Oneplus.Widget.Material.PopupMenu" parent="@android:style/Widget.Material.PopupMenu.Overflow">
+        <item name="android:dropDownHorizontalOffset">-16.0dip</item>
+        <item name="android:dropDownVerticalOffset">?android:actionBarSize</item>
+    </style>
+
+    <style name="Oneplus.Widget.Material.PopupMenu.Overflow" parent="@style/Oneplus.Widget.Material.PopupMenu">
+        <item name="android:popupBackground">@drawable/op_popup_background_material_dark</item>
+    </style>
+
+    <style name="Oneplus.Widget.Material.ProgressBar" parent="@android:style/Widget.Material.ProgressBar">
+        <item name="android:indeterminateDrawable">@drawable/op_progress_medium_material</item>
+    </style>
+
+    <style name="Oneplus.Widget.Material.ProgressBar.Horizontal" parent="@android:style/Widget.Material.ProgressBar.Horizontal">
+        <item name="android:indeterminateDrawable">
+            @drawable/op_progress_indeterminate_horizontal_material
+        </item>
+        <item name="android:progressDrawable">@drawable/op_progress_horizontal_material</item>
+    </style>
+
+    <style name="Oneplus.Widget.Material.ProgressBar.Large" parent="@android:style/Widget.Material.ProgressBar.Large">
+        <item name="android:indeterminateDrawable">@drawable/op_progress_large_material</item>
+    </style>
+
+    <style name="Oneplus.Widget.Material.ProgressBar.Small" parent="@android:style/Widget.Material.ProgressBar.Small">
+        <item name="android:indeterminateDrawable">@drawable/op_progress_small_material</item>
+    </style>
+
+    <style name="Oneplus.Widget.Material.SearchView.ActionBar" parent="@android:style/Widget.Material.SearchView">
+        <item name="android:closeIcon">@drawable/op_ic_clear_material</item>
+        <item name="android:searchIcon">@drawable/op_ic_search_api_material</item>
+        <item name="android:queryBackground">@null</item>
+        <item name="android:submitBackground">@null</item>
+        <item name="android:searchHintIcon">@null</item>
+    </style>
+
+    <style name="Oneplus.Widget.Material.SeekBar" parent="@android:style/Widget.Material.SeekBar">
+        <item name="android:indeterminateDrawable">@drawable/op_seekbar_track_material_dark</item>
+        <item name="android:progressDrawable">@drawable/op_seekbar_track_material_dark</item>
+        <item name="android:thumb">@drawable/op_seekbar_thumb_material_anim_dark</item>
+        <item name="android:thumbOffset">3.0999756dip</item>
+    </style>
+
+    <style name="Oneplus.Widget.Material.TimePicker" parent="@android:style/Widget.Material.TimePicker">
+        <item name="android:headerBackground">?onePlusPrimaryColor</item>
+        <item name="android:numbersTextColor">
+            @color/op_timepicker_text_inverse_when_activated_material_dark
+        </item>
+        <item name="android:numbersBackgroundColor">
+            @color/timepicker_numbers_background_color_dark
+        </item>
+        <item name="android:numbersSelectorColor">?onePlusPrimaryColor</item>
+        <item name="android:amPmTextColor">@color/timepicker_ampmlabel_text_color_dark</item>
+        <item name="android:numbersInnerTextColor">
+            @color/op_timepicker_text_inverse_when_activated_material_dark
+        </item>
+    </style>
+
+    <style name="Oneplus.Widget.Material.Toolbar" parent="@android:style/Widget.Material.Toolbar">
+        <item name="android:titleTextAppearance">
+            @style/Oneplus.TextAppearance.Material.Widget.ActionBar.Title
+        </item>
+        <item name="android:subtitleTextAppearance">
+            @style/Oneplus.TextAppearance.Material.Widget.ActionBar.Subtitle
+        </item>
+        <item name="android:contentInsetStart">@dimen/oneplus_contorl_layout_margin_left2</item>
+        <item name="android:contentInsetStartWithNavigation">
+            @dimen/oneplus_contorl_layout_margin_left4
+        </item>
+    </style>
+
+    <style name="Oneplus.Widget.Material.Toolbar.Button.Navigation" parent="@android:style/Widget.Material.Toolbar.Button.Navigation">
+        <item name="android:background">@drawable/op_action_bar_item_background_material</item>
+    </style>
+
+    <style name="OneplusThemeBase" parent="@android:style/Theme.Material">
+        <item name="android:buttonStyle">@style/OnePlus.Widget.Material.Button</item>
+        <item name="android:windowBackground">@color/oneplus_contorl_bg_color_dark</item>
+        <item name="android:checkboxStyle">@style/Oneplus.Widget.Material.CompoundButton.CheckBox</item>
+        <item name="android:editTextStyle">@style/Oneplus.Widget.Material.EditText</item>
+        <item name="android:progressBarStyle">@style/Oneplus.Widget.Material.ProgressBar</item>
+        <item name="android:progressBarStyleHorizontal">@style/Oneplus.Widget.Material.ProgressBar.Horizontal</item>
+        <item name="android:progressBarStyleSmall">@style/Oneplus.Widget.Material.ProgressBar.Small</item>
+        <item name="android:progressBarStyleLarge">@style/Oneplus.Widget.Material.ProgressBar.Large</item>
+        <item name="android:radioButtonStyle">@style/Oneplus.Widget.Material.CompoundButton.RadioButton</item>
+        <item name="android:spinnerDropDownItemStyle">@style/Oneplus.Widget.Material.DropDownItem.Spinner</item>
+        <item name="android:textColorHighlight">@color/op_text_selection_highlight_dark</item>
+        <item name="android:textSelectHandleLeft">@drawable/op_text_select_handle_left_material_dark</item>
+        <item name="android:textSelectHandleRight">@drawable/op_text_select_handle_right_material_dark</item>
+        <item name="android:textSelectHandle">@drawable/op_text_select_handle_middle_material_dark</item>
+        <item name="android:actionBarStyle">@style/Oneplus.Widget.Material.ActionBar.Solid</item>
+        <item name="android:actionButtonStyle">@style/Oneplus.Widget.Material.ActionButton</item>
+        <item name="android:actionModeCloseDrawable">@drawable/op_ic_ab_back_material</item>
+        <item name="android:actionBarSize">@dimen/oneplus_contorl_appbar_size_standard</item>
+        <item name="android:actionBarTabStyle">@style/Oneplus.Widget.Material.Light.ActionBar.TabView</item>
+        <item name="android:actionBarTabBarStyle">@style/Oneplus.Widget.Material.Light.ActionBar.TabBar</item>
+        <item name="android:actionBarTabTextStyle">@style/Oneplus.Widget.Material.Light.ActionBar.TabText</item>
+        <item name="android:actionOverflowButtonStyle">@style/Oneplus.Widget.Material.ActionButton.Overflow</item>
+        <item name="android:actionModeCloseButtonStyle">@style/Oneplus.Widget.Material.ActionButton.CloseMode</item>
+        <item name="android:popupMenuStyle">@style/Oneplus.Widget.Material.PopupMenu.Overflow</item>
+        <item name="android:textAppearanceLargePopupMenu">@style/Oneplus.TextAppearance.Material.Menu.Dark</item>
+        <item name="android:dialogTheme">@style/Oneplus.Theme.Material.Dialog</item>
+        <item name="android:alertDialogTheme">@style/Oneplus.Theme.Material.Dialog.Alert</item>
+        <item name="android:homeAsUpIndicator">@drawable/op_ic_ab_back_material</item>
+        <item name="android:buttonBarButtonStyle">@style/OnePlus.Widget.Material.Button.AlertDialog</item>
+        <item name="android:datePickerStyle">@style/Oneplus.Widget.Material.DatePicker</item>
+        <item name="android:calendarViewStyle">@style/Oneplus.Widget.Material.CalendarView</item>
+        <item name="android:actionMenuTextColor">@color/op_cc_text_color_primary</item>
+        <item name="android:textCursorDrawable">@drawable/op_text_cursor_material_dark</item>
+        <item name="android:actionModeStyle">@style/Oneplus.Widget.Material.ActionMode</item>
+        <item name="android:colorControlActivated">?android:colorAccent</item>
+        <item name="android:actionBarTheme">@style/Oneplus.ThemeOverlay.Material.ActionBar</item>
+        <item name="android:colorAccent">@color/selection_control_on_dark</item>
+        <item name="android:switchStyle">@style/Oneplus.Widget.Material.CompoundButton.Switch</item>
+        <item name="android:actionOverflowMenuStyle">@style/Oneplus.Widget.Material.PopupMenu.Overflow</item>
+        <item name="android:timePickerStyle">@style/Oneplus.Widget.Material.TimePicker</item>
+        <item name="android:timePickerDialogTheme">?android:dialogTheme</item>
+        <item name="android:toolbarStyle">@style/Oneplus.Widget.Material.Toolbar</item>
+        <item name="android:datePickerDialogTheme">?android:dialogTheme</item>
+        <item name="OPAlertDialogStyle">@style/OnePlusAlertDialog</item>
+        <item name="OPEditTextStyle">@style/Oneplus.Widget.Material.EditText</item>
+        <item name="OPFloatingActionButtonStyle">@style/OnePlus.Widget.Design.FloatingActionButton</item>
+        <item name="OPListViewStyle">@style/Oneplus.Widget.Material.ListView</item>
+        <item name="OPSeekBarStyle">@style/Oneplus.Widget.Material.SeekBar</item>
+        <item name="OPTabLayoutStyle">@style/Oneplus.Widget.Design.OPTabLayout</item>
+        <item name="OPToastStyle">@style/OnePlusToast</item>
+        <item name="onePlusAccentColor">@color/onePlusAccentColor_device_default_dark</item>
+        <item name="onePlusActionbarBackground">@drawable/op_actionbar_background</item>
+        <item name="onePlusActionbarBackgroundColor">@color/oneplus_contorl_bg_color_appbar_dark</item>
+        <item name="onePlusActionbarIconAlpha">1.0</item>
+        <item name="onePlusActionbarIconColor">@color/oneplus_contorl_icon_color_active_dark</item>
+        <item name="onePlusActionbarLineColor">#1effffff</item>
+        <item name="onePlusActionbarSubtitleAlpha">0.7</item>
+        <item name="onePlusActionbarSubtitleColor">@color/oneplus_contorl_text_color_secondary_dark</item>
+        <item name="onePlusActionbarTitleAlpha">1.0</item>
+        <item name="onePlusActionbarTitleColor">@color/oneplus_contorl_text_color_primary_dark</item>
+        <item name="onePlusBaseColor">#ffffffff</item>
+        <item name="onePlusColorControlHighlight">@color/op_ripple_material_light</item>
+        <item name="onePlusDisabledColor">#1f000000</item>
+        <item name="onePlusDisabledTextColor">#80000000</item>
+        <item name="onePlusPrimaryColor">@color/onePlusPrimaryColor_device_default_dark</item>
+        <item name="onePlusSecondaryTextColor">#b3000000</item>
+        <item name="onePlusTabIndicatorColor">?onePlusPrimaryColor</item>
+        <item name="onePlusTabTextAlpha">1.0</item>
+        <item name="onePlusTabTextColor">@color/oneplus_contorl_text_color_disable_dark</item>
+        <item name="onePlusTabTextSelectedAlpha">1.0</item>
+        <item name="onePlusTabTextSelectedColor">?onePlusPrimaryColor</item>
+        <item name="onePlusTextColor">#deffffff</item>
+        <item name="op_checkBoxPreferenceStyle">@style/OnePlus.Preference.Material.CheckBoxPreference</item>
+        <item name="op_dialogPreferenceStyle">@style/OnePlus.Preference.Material.DialogPreference</item>
+        <item name="op_editTextPreferenceStyle">@style/OnePlus.Preference.Material.DialogPreference.EditTextPreference
+        </item>
+        <item name="op_preferenceActivityStyle">@style/PreferenceActivity.Material</item>
+        <item name="op_preferenceCategoryStyle">@style/Oneplus.Preference.Material.Category</item>
+        <item name="op_preferenceFragmentListStyle">@style/Oneplus.PreferenceFragmentList.Material</item>
+        <item name="op_preferenceFragmentStyle">@style/Oneplus.PreferenceFragment.Material</item>
+        <item name="op_preferenceHeaderPanelStyle">@style/PreferenceHeaderPanel.Material</item>
+        <item name="op_preferenceListStyle">@style/PreferenceHeaderList.Material</item>
+        <item name="op_preferenceScreenStyle">@style/OnePlus.Preference.Material.PreferenceScreen</item>
+        <item name="op_preferenceStyle">@style/OnePlus.Preference.Material</item>
+        <item name="op_seekBarPreferenceStyle">@style/Preference.Material.SeekBarPreference</item>
+        <item name="op_switchPreferenceStyle">@style/OnePlus.Preference.Material.SwitchPreference</item>
+        <item name="textAppearanceOPNumberPickerUnit">@style/Oneplus.TextAppearance.Material.NumberPickerDialog.Minute
+        </item>
+    </style>
+
+    <style name="OneplusThemeLightBase" parent="@android:style/Theme.Material.Light">
+        <item name="android:buttonStyle">@style/OnePlus.Widget.Material.Light.Button</item>
+        <item name="android:windowBackground">@color/oneplus_contorl_bg_color_light</item>
+        <item name="android:checkboxStyle">@style/Oneplus.Widget.Material.Light.CompoundButton.CheckBox</item>
+        <item name="android:editTextStyle">@style/Oneplus.Widget.Material.Light.EditText</item>
+        <item name="android:progressBarStyle">@style/Oneplus.Widget.Material.Light.ProgressBar</item>
+        <item name="android:progressBarStyleHorizontal">@style/Oneplus.Widget.Material.Light.ProgressBar.Horizontal
+        </item>
+        <item name="android:progressBarStyleSmall">@style/Oneplus.Widget.Material.Light.ProgressBar.Small</item>
+        <item name="android:progressBarStyleLarge">@style/Oneplus.Widget.Material.Light.ProgressBar.Large</item>
+        <item name="android:radioButtonStyle">@style/Oneplus.Widget.Material.Light.CompoundButton.RadioButton</item>
+        <item name="android:spinnerDropDownItemStyle">@style/Oneplus.Widget.Material.DropDownItem.Spinner</item>
+        <item name="android:textColorHighlight">@color/op_text_selection_highlight_light</item>
+        <item name="android:textSelectHandleLeft">@drawable/op_text_select_handle_left_material_light</item>
+        <item name="android:textSelectHandleRight">@drawable/op_text_select_handle_right_material_light</item>
+        <item name="android:textSelectHandle">@drawable/op_text_select_handle_middle_material_light</item>
+        <item name="android:actionBarStyle">@style/Oneplus.Widget.Material.Light.ActionBar.Solid</item>
+        <item name="android:actionButtonStyle">@style/Oneplus.Widget.Material.ActionButton</item>
+        <item name="android:actionModeCloseDrawable">@drawable/op_ic_ab_back_material</item>
+        <item name="android:actionBarSize">@dimen/oneplus_contorl_appbar_size_standard</item>
+        <item name="android:actionBarTabStyle">@style/Oneplus.Widget.Material.ActionBar.TabView</item>
+        <item name="android:actionBarTabBarStyle">@style/Oneplus.Widget.Material.ActionBar.TabBar</item>
+        <item name="android:actionBarTabTextStyle">@style/Oneplus.Widget.Material.ActionBar.TabText</item>
+        <item name="android:actionOverflowButtonStyle">@style/Oneplus.Widget.Material.ActionButton.Overflow</item>
+        <item name="android:actionModeCloseButtonStyle">@style/Oneplus.Widget.Material.Light.ActionButton.CloseMode
+        </item>
+        <item name="android:popupMenuStyle">@style/Oneplus.Widget.Material.Light.PopupMenu.Overflow</item>
+        <item name="android:textAppearanceLargePopupMenu">@style/Oneplus.TextAppearance.Material.Menu.Light</item>
+        <item name="android:dialogTheme">@style/Oneplus.Theme.Material.Light.Dialog</item>
+        <item name="android:alertDialogTheme">@style/Oneplus.Theme.Material.Light.Dialog.Alert</item>
+        <item name="android:homeAsUpIndicator">@drawable/op_ic_ab_back_material</item>
+        <item name="android:buttonBarButtonStyle">@style/OnePlus.Widget.Material.Light.Button.AlertDialog</item>
+        <item name="android:datePickerStyle">@style/Oneplus.Widget.Material.Light.DatePicker</item>
+        <item name="android:calendarViewStyle">@style/Oneplus.Widget.Material.Light.CalendarView</item>
+        <item name="android:actionMenuTextColor">@color/op_cc_text_color_primary</item>
+        <item name="android:textCursorDrawable">@drawable/op_text_cursor_material_light</item>
+        <item name="android:actionModeStyle">@style/Oneplus.Widget.Material.ActionMode.Light</item>
+        <item name="android:colorControlActivated">?android:colorAccent</item>
+        <item name="android:actionBarTheme">@style/Oneplus.ThemeOverlay.Material.ActionBar</item>
+        <item name="android:colorAccent">@color/selection_control_on_light</item>
+        <item name="android:switchStyle">@style/Oneplus.Widget.Material.Light.CompoundButton.Switch</item>
+        <item name="android:actionOverflowMenuStyle">@style/Oneplus.Widget.Material.Light.PopupMenu.Overflow</item>
+        <item name="android:timePickerStyle">@style/Oneplus.Widget.Material.Light.TimePicker</item>
+        <item name="android:timePickerDialogTheme">?android:dialogTheme</item>
+        <item name="android:toolbarStyle">@style/Oneplus.Widget.Material.Toolbar</item>
+        <item name="android:datePickerDialogTheme">?android:dialogTheme</item>
+        <item name="OPAlertDialogStyle">@style/OnePlusAlertDialog.Light</item>
+        <item name="OPEditTextStyle">@style/Oneplus.Widget.Material.Light.EditText</item>
+        <item name="OPFloatingActionButtonStyle">@style/OnePlus.Widget.Design.FloatingActionButton</item>
+        <item name="OPListViewStyle">@style/Oneplus.Widget.Material.Light.ListView</item>
+        <item name="OPSeekBarStyle">@style/Oneplus.Widget.Material.Light.SeekBar</item>
+        <item name="OPTabLayoutStyle">@style/Oneplus.Widget.Design.OPTabLayout</item>
+        <item name="OPToastStyle">@style/OnePlusToastLight</item>
+        <item name="onePlusAccentColor">@color/onePlusAccentColor_device_default_light</item>
+        <item name="onePlusActionbarBackground">@drawable/op_actionbar_background</item>
+        <item name="onePlusActionbarBackgroundColor">@color/oneplus_contorl_bg_color_appbar_light</item>
+        <item name="onePlusActionbarIconAlpha">1.0</item>
+        <item name="onePlusActionbarIconColor">@color/oneplus_contorl_icon_color_active_light</item>
+        <item name="onePlusActionbarLineColor">#1e000000</item>
+        <item name="onePlusActionbarSubtitleAlpha">1.0</item>
+        <item name="onePlusActionbarSubtitleColor">@color/oneplus_contorl_text_color_secondary_light</item>
+        <item name="onePlusActionbarTitleAlpha">1.0</item>
+        <item name="onePlusActionbarTitleColor">@color/oneplus_contorl_text_color_primary_light</item>
+        <item name="onePlusBaseColor">#ff000000</item>
+        <item name="onePlusColorControlHighlight">@color/op_ripple_material_dark</item>
+        <item name="onePlusDisabledColor">#1f000000</item>
+        <item name="onePlusDisabledTextColor">#61000000</item>
+        <item name="onePlusPrimaryColor">@color/onePlusPrimaryColor_device_default_light</item>
+        <item name="onePlusSecondaryTextColor">#8a000000</item>
+        <item name="onePlusTabIndicatorColor">?onePlusPrimaryColor</item>
+        <item name="onePlusTabTextAlpha">1.0</item>
+        <item name="onePlusTabTextColor">@color/oneplus_contorl_text_color_disable_light</item>
+        <item name="onePlusTabTextSelectedAlpha">1.0</item>
+        <item name="onePlusTabTextSelectedColor">?onePlusPrimaryColor</item>
+        <item name="onePlusTextColor">#de000000</item>
+        <item name="op_checkBoxPreferenceStyle">@style/OnePlus.Preference.Material.Light.CheckBoxPreference</item>
+        <item name="op_dialogPreferenceStyle">@style/OnePlus.Preference.Material.Light.DialogPreference</item>
+        <item name="op_editTextPreferenceStyle">
+            @style/OnePlus.Preference.Material.Light.DialogPreference.EditTextPreference
+        </item>
+        <item name="op_preferenceActivityStyle">@style/PreferenceActivity.Material</item>
+        <item name="op_preferenceCategoryStyle">@style/Oneplus.Preference.Material.Light.Category</item>
+        <item name="op_preferenceFragmentListStyle">@style/Oneplus.PreferenceFragmentList.Material.Light</item>
+        <item name="op_preferenceFragmentStyle">@style/Oneplus.PreferenceFragment.Material.Light</item>
+        <item name="op_preferenceHeaderPanelStyle">@style/PreferenceHeaderPanel.Material</item>
+        <item name="op_preferenceListStyle">@style/PreferenceHeaderList.Material</item>
+        <item name="op_preferenceScreenStyle">@style/OnePlus.Preference.Material.Light.PreferenceScreen</item>
+        <item name="op_preferenceStyle">@style/OnePlus.Preference.Material.Light</item>
+        <item name="op_seekBarPreferenceStyle">@style/Preference.Material.SeekBarPreference</item>
+        <item name="op_switchPreferenceStyle">@style/OnePlus.Preference.Material.Light.SwitchPreference</item>
+        <item name="textAppearanceOPNumberPickerUnit">@style/Oneplus.TextAppearance.Material.NumberPickerDialog.Minute
+        </item>
+    </style>
+
+    <style name="Oneplus_bottom_fullscreen" parent="@style/Oneplus.Theme.DeviceDefault.Dialog">
+        <item name="android:windowBackground">@color/bg_dialog</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowMinWidthMajor">100.0%</item>
+        <item name="android:windowMinWidthMinor">100.0%</item>
+    </style>
+
+    <style name="Oneplus_popup_bottom_animation" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/popup_bottom_enter</item>
+        <item name="android:windowExitAnimation">@anim/popup_bottom_exit</item>
+    </style>
+
+    <style name="RefreshTimeStyle">
+        <item name="android:textSize">32.0px</item>
+        <item name="android:textColor">@color/oneplus_contorl_text_color_secondary_dark</item>
+        <item name="android:fontFamily">Slate-book</item>
+    </style>
+
+    <style name="SettingItem">
+        <item name="android:paddingLeft">@dimen/oneplus_contorl_layout_margin_left2</item>
+        <item name="android:paddingRight">@dimen/oneplus_contorl_layout_margin_right2</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">@dimen/oneplus_contorl_list_item_height_two_line1</item>
+    </style>
+
+    <style name="SettingSwitch">
+        <item name="android:paddingTop">4.0dip</item>
+        <item name="android:paddingBottom">4.0dip</item>
+        <item name="android:layout_width">104.0dip</item>
+        <item name="android:layout_height">29.0dip</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <style name="SettingTextSubTitle">
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:textColor">@color/setting_text_gray</item>
+    </style>
+
+    <style name="SettingTextTitle">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textColor">@color/setting_text_black</item>
+    </style>
+
+    <style name="ShadowStyle">
+        <item name="android:shadowColor">#c2000000</item>
+        <item name="android:shadowDy">2.625</item>
+        <item name="android:shadowRadius">3.0</item>
+    </style>
+
+    <style name="StarWarTheme" parent="@style/Oneplus.Theme.Material.Light.NoActionBar.Fullscreen">
+        <item name="android:windowBackground">@color/black</item>
+    </style>
+
+    <style name="itemTextStyle.AppTheme" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textAppearance">@style/oneplus_contorl_text_style_subheading</item>
+        <item name="android:textColor">@color/city_search_item_text</item>
+    </style>
+
+    <style name="listitem_primary_text_font">
+        <item name="android:textSize">@dimen/listitem_primatytext_size</item>
+        <item name="android:textColor">@color/listitem_primarytext_color</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="listitem_secondary_text_font">
+        <item name="android:textSize">@dimen/listitem_secondarytext_size</item>
+        <item name="android:textColor">@color/listitem_secondarttext_color</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">2</item>
+    </style>
+
+    <style name="listitem_stamp_font">
+        <item name="android:textSize">@dimen/listitem_stamp_size</item>
+        <item name="android:textColor">@color/listitem_stamptext_color</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="my_actionbar_style" parent="@android:style/Widget.Material.ActionBar.Solid">
+        <item name="android:displayOptions">homeAsUp|showTitle</item>
+        <item name="android:titleTextStyle">@style/AcBar_titleStyle</item>
+    </style>
+
+    <style name="oneplus_contorl_text_style_base">
+        <item name="android:breakStrategy">simple</item>
+    </style>
+
+    <style name="oneplus_contorl_text_style_body1" parent="@style/oneplus_contorl_text_style_base">
+        <item name="android:textSize">@dimen/oneplus_contorl_text_size_body1</item>
+        <item name="android:fontFamily">@string/oneplus_contorl_font_family_body1</item>
+    </style>
+
+    <style name="oneplus_contorl_text_style_body2" parent="@style/oneplus_contorl_text_style_base">
+        <item name="android:textSize">@dimen/oneplus_contorl_text_size_body2</item>
+        <item name="android:fontFamily">@string/oneplus_contorl_font_family_body2</item>
+    </style>
+
+    <style name="oneplus_contorl_text_style_button" parent="@style/oneplus_contorl_text_style_base">
+        <item name="android:textSize">@dimen/oneplus_contorl_text_size_button</item>
+        <item name="android:fontFamily">@string/oneplus_contorl_font_family_button</item>
+    </style>
+
+    <style name="oneplus_contorl_text_style_descriptions" parent="@style/oneplus_contorl_text_style_base">
+        <item name="android:textSize">@dimen/oneplus_contorl_text_size_descriptions</item>
+        <item name="android:fontFamily">@string/oneplus_contorl_font_family_descriptions</item>
+    </style>
+
+    <style name="oneplus_contorl_text_style_display1" parent="@style/oneplus_contorl_text_style_base">
+        <item name="android:textSize">@dimen/oneplus_contorl_text_size_display1</item>
+        <item name="android:fontFamily">@string/oneplus_contorl_font_family_display1</item>
+    </style>
+
+    <style name="oneplus_contorl_text_style_display2" parent="@style/oneplus_contorl_text_style_base">
+        <item name="android:textSize">@dimen/oneplus_contorl_text_size_display2</item>
+        <item name="android:fontFamily">@string/oneplus_contorl_font_family_display2</item>
+    </style>
+
+    <style name="oneplus_contorl_text_style_display3" parent="@style/oneplus_contorl_text_style_base">
+        <item name="android:textSize">@dimen/oneplus_contorl_text_size_display3</item>
+        <item name="android:fontFamily">@string/oneplus_contorl_font_family_display3</item>
+    </style>
+
+    <style name="oneplus_contorl_text_style_display4" parent="@style/oneplus_contorl_text_style_base">
+        <item name="android:textSize">@dimen/oneplus_contorl_text_size_display4</item>
+        <item name="android:fontFamily">@string/oneplus_contorl_font_family_display4</item>
+    </style>
+
+    <style name="oneplus_contorl_text_style_headline" parent="@style/oneplus_contorl_text_style_base">
+        <item name="android:textSize">@dimen/oneplus_contorl_text_size_headline</item>
+        <item name="android:fontFamily">@string/oneplus_contorl_font_family_headline</item>
+    </style>
+
+    <style name="oneplus_contorl_text_style_menu" parent="@style/oneplus_contorl_text_style_body2" />
+
+    <style name="oneplus_contorl_text_style_subheading" parent="@style/oneplus_contorl_text_style_base">
+        <item name="android:textSize">@dimen/oneplus_contorl_text_size_subheading</item>
+        <item name="android:fontFamily">@string/oneplus_contorl_font_family_subheading</item>
+    </style>
+
+    <style name="oneplus_contorl_text_style_subtitle" parent="@style/oneplus_contorl_text_style_base">
+        <item name="android:textSize">@dimen/oneplus_contorl_text_size_subtitle</item>
+        <item name="android:fontFamily">@string/oneplus_contorl_font_family_subtitle</item>
+    </style>
+
+    <style name="oneplus_contorl_text_style_title" parent="@style/oneplus_contorl_text_style_base">
+        <item name="android:textSize">@dimen/oneplus_contorl_text_size_title</item>
+        <item name="android:fontFamily">@string/oneplus_contorl_font_family_title</item>
+    </style>
+
+    <style name="oneplus_contorl_text_style_title_extended" parent="@style/Oneplus.TextAppearance.Material.Widget.ActionBar.Title">
+        <item name="android:textSize">@dimen/oneplus_contorl_text_size_extended</item>
+        <item name="android:fontFamily">@string/oneplus_contorl_font_family_title_extended</item>
+        <item name="android:breakStrategy">simple</item>
+    </style>
+</resources>

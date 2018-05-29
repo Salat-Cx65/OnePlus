@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n1:orientation="vertical" n1:background="@color/white" n1:layout_width="fill_parent" n1:layout_height="fill_parent"
+  xmlns:n1="http://schemas.android.com/apk/res/android">
+    <RelativeLayout n1:background="@color/citylist_title" n1:layout_width="fill_parent" n1:layout_height="50.0dip">
+        <ImageView n1:id="@id/top_back" n1:background="?android:selectableItemBackground" n1:paddingLeft="16.0dip" n1:paddingRight="16.0dip" n1:layout_width="wrap_content" n1:layout_height="fill_parent" n1:src="@drawable/ic_goback" n1:layout_alignParentLeft="true" n1:layout_centerVertical="true" n1:paddingStart="16.0dip" n1:paddingEnd="16.0dip" n1:layout_alignParentStart="true" />
+        <TextView n1:textSize="20.0sp" n1:textColor="@color/setting_text_white" n1:id="@id/top_title" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_toRightOf="@id/top_back" n1:layout_centerVertical="true" />
+        <TextView n1:textSize="16.0sp" n1:textColor="@drawable/selector_top_bar_right_btn" n1:gravity="center" n1:id="@id/top_button" n1:background="?android:selectableItemBackground" n1:paddingLeft="16.0dip" n1:paddingRight="16.0dip" n1:visibility="gone" n1:layout_width="wrap_content" n1:layout_height="fill_parent" n1:layout_alignParentRight="true" />
+    </RelativeLayout>
+    <ViewStub n1:id="@id/bottom_content" n1:layout_width="fill_parent" n1:layout_height="0.0dip" n1:layout_weight="1.0" />
+</LinearLayout>

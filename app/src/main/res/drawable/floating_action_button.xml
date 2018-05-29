@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple n1:color="@color/oneplus_contorl_icon_color_active_dark"
+  xmlns:n1="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape n1:shape="oval">
+            <solid n1:color="@color/footer_button_rippple_color" />
+        </shape>
+    </item>
+</ripple>

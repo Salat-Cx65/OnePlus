@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n1:orientation="vertical" n1:layout_width="wrap_content" n1:layout_height="wrap_content"
+  xmlns:n1="http://schemas.android.com/apk/res/android">
+    <TextClock n1:textSize="@dimen/sp_8" n1:textColor="@android:color/white" n1:id="@id/date_text" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:textAllCaps="true" n1:format12Hour="@string/date_weak_format" n1:format24Hour="@string/date_weak_format" />
+    <ImageView n1:layout_width="@dimen/dimen_20" n1:layout_height="@dimen/dimen_20" n1:layout_marginTop="7.0dip" n1:src="@drawable/ic_sunny" />
+    <TextView n1:id="@id/widget_daily_temp" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginTop="@dimen/dimen_2" n1:layout_marginBottom="@dimen/dimen_7" n1:text="24/28" />
+</LinearLayout>

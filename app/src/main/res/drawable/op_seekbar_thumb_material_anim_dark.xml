@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-selector>
+    <item n1:state_enabled="false"
+      xmlns:n1="http://schemas.android.com/apk/res/android">
+        <shape n1:tint="@color/seekbar_normal_color_dark" n1:shape="ring" n1:useLevel="false" n1:innerRadius="2.0dip" n1:thickness="2.0dip">
+            <solid n1:color="#ff000000" />
+            <size n1:height="18.0dip" n1:width="18.0dip" />
+        </shape>
+    </item>
+    <item n2:state_pressed="true" n2:id="@id/pressed" n2:drawable="@drawable/op_seekbar_thumb_pressed_to_unpressed_dark"
+      xmlns:n2="http://schemas.android.com/apk/res/android" />
+    <item n3:id="@id/unpressed" n3:drawable="@drawable/op_seekbar_thumb_unpressed_to_pressed_dark"
+      xmlns:n3="http://schemas.android.com/apk/res/android" />
+    <transition n4:drawable="@drawable/op_seekbar_thumb_unpressed_to_pressed_animation_dark" n4:toId="@id/pressed" n4:fromId="@id/unpressed"
+      xmlns:n4="http://schemas.android.com/apk/res/android" />
+    <transition n5:drawable="@drawable/op_seekbar_thumb_pressed_to_unpressed_animation_dark" n5:toId="@id/unpressed" n5:fromId="@id/pressed"
+      xmlns:n5="http://schemas.android.com/apk/res/android" />
+</animated-selector>

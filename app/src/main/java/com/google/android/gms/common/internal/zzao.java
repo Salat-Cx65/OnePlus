@@ -1,0 +1,22 @@
+package com.google.android.gms.common.internal;
+
+import android.accounts.Account;
+import android.os.IBinder;
+import android.os.Parcel;
+import android.os.RemoteException;
+import com.google.android.gms.internal.zzed;
+import com.google.android.gms.internal.zzef;
+import net.oneplus.weather.widget.openglbase.RainSurfaceView;
+
+public final class zzao extends zzed implements zzam {
+    zzao(IBinder iBinder) {
+        super(iBinder, "com.google.android.gms.common.internal.IAccountAccessor");
+    }
+
+    public final Account getAccount() throws RemoteException {
+        Parcel zza = zza(RainSurfaceView.RAIN_LEVEL_SHOWER, zzY());
+        Account account = (Account) zzef.zza(zza, Account.CREATOR);
+        zza.recycle();
+        return account;
+    }
+}

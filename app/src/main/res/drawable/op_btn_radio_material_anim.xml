@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-selector>
+    <item n1:state_enabled="false" n1:state_checked="true"
+      xmlns:n1="http://schemas.android.com/apk/res/android">
+        <bitmap n1:src="@drawable/btn_radio_to_on_mtrl_015" n1:tint="?android:colorControlNormal" n1:alpha="?android:disabledAlpha" />
+    </item>
+    <item n2:state_enabled="false"
+      xmlns:n2="http://schemas.android.com/apk/res/android">
+        <bitmap n2:src="@drawable/btn_radio_to_on_mtrl_000" n2:tint="?android:colorControlNormal" n2:alpha="?android:disabledAlpha" />
+    </item>
+    <item n3:state_checked="true" n3:id="@id/on"
+      xmlns:n3="http://schemas.android.com/apk/res/android">
+        <bitmap n3:src="@drawable/btn_radio_to_on_mtrl_015" n3:tint="?onePlusPrimaryColor" />
+    </item>
+    <item n4:id="@id/off"
+      xmlns:n4="http://schemas.android.com/apk/res/android">
+        <bitmap n4:src="@drawable/btn_radio_to_on_mtrl_000" n4:tint="?android:colorControlNormal" />
+    </item>
+    <transition n5:toId="@id/on" n5:fromId="@id/off"
+      xmlns:n5="http://schemas.android.com/apk/res/android">
+        <animation-list>
+            <item n5:duration="15">
+                <bitmap n5:src="@drawable/btn_radio_to_on_mtrl_000" n5:tint="?android:colorControlNormal" />
+            </item>
+            <item n5:duration="15">
+                <bitmap n5:src="@drawable/btn_radio_to_on_mtrl_001" n5:tint="?android:colorControlNormal" />
+            </item>
+            <item n5:duration="15">
+                <bitmap n5:src="@drawable/btn_radio_to_on_mtrl_002" n5:tint="?android:colorControlNormal" />
+            </item>
+            <item n5:duration="15">
+                <bitmap n5:src="@drawable/btn_radio_to_on_mtrl_003" n5:tint="?android:colorControlNormal" />
+            </item>
+            <item n5:duration="15">
+                <bitmap n5:src="@drawable/btn_radio_to_on_mtrl_004" n5:tint="?android:colorControlNormal" />
+            </item>
+            <item n5:duration="15">
+                <bitmap n5:src="@drawable/btn_radio_to_on_mtrl_005" n5:tint="?android:colorControlNormal" />
+            </item>
+            <item n5:duration="15">
+                <bitmap n5:src="@drawable/btn_radio_to_on_mtrl_006" n5:tint="?android:colorControlNormal" />
+            </item>
+            <item n5:duration="15">
+                <bitmap n5:src="@drawable/btn_radio_to_on_mtrl_007" n5:tint="?android:colorControlNormal" />
+            </item>
+            <item n5:duration="15">
+                <bitmap n5:src="@drawable/btn_radio_to_on_mtrl_008" n5:tint="?onePlusPrimaryColor" />
+            </item>
+            <item n5:duration="15">
+                <bitmap n5:src="@drawable/btn_radio_to_on_mtrl_009" n5:tint="?onePlusPrimaryColor" />
+            </item>
+            <item n5:duration="15">
+                <bitmap n5:src="@drawable/btn_radio_to_on_mtrl_010" n5:tint="?onePlusPrimaryColor" />
+            </item>
+            <item n5:duration="15">
+                <bitmap n5:src="@drawable/btn_radio_to_on_mtrl_011" n5:tint="?onePlusPrimaryColor" />
+            </item>
+            <item n5:duration="15">
+                <bitmap n5:src="@drawable/btn_radio_to_on_mtrl_012" n5:tint="?onePlusPrimaryColor" />
+            </item>
+            <item n5:duration="15">
+                <bitmap n5:src="@drawable/btn_radio_to_on_mtrl_013" n5:tint="?onePlusPrimaryColor" />
+            </item>
+            <item n5:duration="15">
+                <bitmap n5:src="@drawable/btn_radio_to_on_mtrl_014" n5:tint="?onePlusPrimaryColor" />
+            </item>
+            <item n5:duration="15">
+                <bitmap n5:src="@drawable/btn_radio_to_on_mtrl_015" n5:tint="?onePlusPrimaryColor" />
+            </item>
+        </animation-list>
+    </transition>
+    <transition n6:toId="@id/off" n6:fromId="@id/on"
+      xmlns:n6="http://schemas.android.com/apk/res/android">
+        <animation-list>
+            <item n6:duration="15">
+                <bitmap n6:src="@drawable/btn_radio_to_off_mtrl_000" n6:tint="?onePlusPrimaryColor" />
+            </item>
+            <item n6:duration="15">
+                <bitmap n6:src="@drawable/btn_radio_to_off_mtrl_001" n6:tint="?onePlusPrimaryColor" />
+            </item>
+            <item n6:duration="15">
+                <bitmap n6:src="@drawable/btn_radio_to_off_mtrl_002" n6:tint="?onePlusPrimaryColor" />
+            </item>
+            <item n6:duration="15">
+                <bitmap n6:src="@drawable/btn_radio_to_off_mtrl_003" n6:tint="?onePlusPrimaryColor" />
+            </item>
+            <item n6:duration="15">
+                <bitmap n6:src="@drawable/btn_radio_to_off_mtrl_004" n6:tint="?onePlusPrimaryColor" />
+            </item>
+            <item n6:duration="15">
+                <bitmap n6:src="@drawable/btn_radio_to_off_mtrl_005" n6:tint="?onePlusPrimaryColor" />
+            </item>
+            <item n6:duration="15">
+                <bitmap n6:src="@drawable/btn_radio_to_off_mtrl_006" n6:tint="?onePlusPrimaryColor" />
+            </item>
+            <item n6:duration="15">
+                <bitmap n6:src="@drawable/btn_radio_to_off_mtrl_007" n6:tint="?onePlusPrimaryColor" />
+            </item>
+            <item n6:duration="15">
+                <bitmap n6:src="@drawable/btn_radio_to_off_mtrl_008" n6:tint="?android:colorControlNormal" />
+            </item>
+            <item n6:duration="15">
+                <bitmap n6:src="@drawable/btn_radio_to_off_mtrl_009" n6:tint="?android:colorControlNormal" />
+            </item>
+            <item n6:duration="15">
+                <bitmap n6:src="@drawable/btn_radio_to_off_mtrl_010" n6:tint="?android:colorControlNormal" />
+            </item>
+            <item n6:duration="15">
+                <bitmap n6:src="@drawable/btn_radio_to_off_mtrl_011" n6:tint="?android:colorControlNormal" />
+            </item>
+            <item n6:duration="15">
+                <bitmap n6:src="@drawable/btn_radio_to_off_mtrl_012" n6:tint="?android:colorControlNormal" />
+            </item>
+            <item n6:duration="15">
+                <bitmap n6:src="@drawable/btn_radio_to_off_mtrl_013" n6:tint="?android:colorControlNormal" />
+            </item>
+            <item n6:duration="15">
+                <bitmap n6:src="@drawable/btn_radio_to_off_mtrl_014" n6:tint="?android:colorControlNormal" />
+            </item>
+            <item n6:duration="15">
+                <bitmap n6:src="@drawable/btn_radio_to_off_mtrl_015" n6:tint="?android:colorControlNormal" />
+            </item>
+        </animation-list>
+    </transition>
+</animated-selector>

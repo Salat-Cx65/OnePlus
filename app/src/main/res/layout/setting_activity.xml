@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n1:orientation="vertical" n1:background="@color/settings_bkg" n1:layout_width="fill_parent" n1:layout_height="fill_parent"
+  xmlns:n1="http://schemas.android.com/apk/res/android">
+    <RelativeLayout n1:id="@id/LayoutTemperature" n1:background="?android:selectableItemBackground" n1:clickable="true" n1:onClick="onClick" style="@style/SettingItem">
+        <TextView n1:id="@id/textView7" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:text="@string/temperature" n1:layout_centerVertical="true" style="@style/SettingTextTitle" />
+        <net.oneplus.weather.app.SettingSwitch n1:id="@id/switchTemperature" n2:checked="true" n2:leftText="@string/c" n2:rightText="@string/f" style="@style/SettingSwitch" xmlns:n2="http://schemas.android.com/apk/res-auto" />
+    </RelativeLayout>
+    <RelativeLayout n1:id="@id/LayoutWind" n1:background="?android:selectableItemBackground" n1:visibility="gone" n1:clickable="true" n1:onClick="onClick" style="@style/SettingItem">
+        <TextView n1:id="@id/textView8" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:text="@string/wind" n1:layout_centerVertical="true" style="@style/SettingTextTitle" />
+        <net.oneplus.weather.app.SettingSwitch n1:id="@id/switchWind" n3:checked="true" n3:leftText="@string/pmh" n3:rightText="@string/kmh" style="@style/SettingSwitch" xmlns:n3="http://schemas.android.com/apk/res-auto" />
+    </RelativeLayout>
+    <RelativeLayout n1:id="@id/LayoutHumidity" n1:background="?android:selectableItemBackground" n1:clickable="true" n1:onClick="onClick" style="@style/SettingItem">
+        <TextView n1:id="@id/textView9" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:text="@string/humidity" n1:layout_centerVertical="true" style="@style/SettingTextTitle" />
+        <net.oneplus.weather.app.SettingSwitch n1:id="@id/switchHumidity" n4:leftText="@string/percent" n4:rightText="@string/gm" style="@style/SettingSwitch" xmlns:n4="http://schemas.android.com/apk/res-auto" />
+    </RelativeLayout>
+    <FrameLayout n1:background="#fff2f5fa" n1:layout_width="fill_parent" n1:layout_height="13.0dip" />
+    <RelativeLayout n1:id="@id/LayoutWarn" n1:background="?android:selectableItemBackground" style="@style/SettingItem">
+        <LinearLayout n1:orientation="vertical" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_centerVertical="true">
+            <TextView n1:id="@id/textView5" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:text="@string/the_weather_warn" style="@style/SettingTextTitle" />
+            <TextView n1:id="@id/textView6" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginTop="10.0dip" n1:text="@string/warn_tips" style="@style/SettingTextSubTitle" />
+        </LinearLayout>
+        <Switch n1:id="@id/switchWarnTips" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_alignParentRight="true" n1:layout_centerVertical="true" style="@style/OPSwitch" />
+    </RelativeLayout>
+    <RelativeLayout n1:id="@id/SettingUpdate" n1:background="?android:selectableItemBackground" n1:visibility="gone" n1:clickable="true" n1:onClick="onClick" style="@style/SettingItem">
+        <TextView n1:id="@id/textView_CheckNewVersion" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:text="@string/check_new_version" n1:layout_alignParentLeft="true" n1:layout_centerVertical="true" style="@style/SettingTextTitle" />
+        <ImageView n1:id="@id/imageView1" n1:layout_width="12.0dip" n1:layout_height="12.0dip" n1:src="@drawable/setting" n1:layout_alignParentRight="true" n1:layout_centerVertical="true" />
+        <TextView n1:id="@id/textViewVersion" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:maxWidth="110.0dip" n1:singleLine="true" n1:layout_toLeftOf="@id/imageView1" n1:layout_centerVertical="true" style="@style/SettingTextSubTitle" />
+    </RelativeLayout>
+    <FrameLayout n1:background="#fff2f5fa" n1:visibility="gone" n1:layout_width="fill_parent" n1:layout_height="13.0dip" />
+    <TextView n1:textSize="16.0sp" n1:textColor="@color/setting_text_black" n1:gravity="center_vertical" n1:layout_gravity="top" n1:id="@id/textView_feedback" n1:background="?android:selectableItemBackground" n1:visibility="gone" n1:clickable="true" n1:text="@string/feedback" n1:onClick="onClick" style="@style/SettingItem" />
+    <TextView n1:textSize="16.0sp" n1:textColor="@color/setting_text_black" n1:gravity="center_vertical" n1:id="@id/textView_about" n1:background="?android:selectableItemBackground" n1:clickable="true" n1:text="@string/about" n1:onClick="onClick" style="@style/SettingItem" />
+</LinearLayout>

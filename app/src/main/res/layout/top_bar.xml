@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout n1:layout_width="fill_parent" n1:layout_height="50.0dip"
+  xmlns:n1="http://schemas.android.com/apk/res/android">
+    <TextView n1:textAppearance="@style/oneplus_contorl_text_style_title" n1:textColor="@color/actionbar_title_color" n1:id="@id/top_bar_title" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_alignParentLeft="true" n1:layout_centerVertical="true" />
+    <ImageView n1:gravity="center" n1:id="@id/top_bar_button" n1:background="@drawable/item_background_borderless_material" n1:paddingLeft="@dimen/dimen_16" n1:paddingRight="@dimen/dimen_16" n1:layout_width="?android:actionBarSize" n1:layout_height="?android:actionBarSize" n1:src="@drawable/ic_share" n1:layout_alignParentEnd="true" />
+</RelativeLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout n1:orientation="vertical" n1:layout_width="fill_parent" n1:layout_height="fill_parent"
+  xmlns:n1="http://schemas.android.com/apk/res/android">
+    <TextView n1:textAppearance="@style/oneplus_contorl_text_style_subheading" n1:textColor="@color/city_search_item_text" n1:id="@id/weather_warning_title" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginTop="@dimen/dimen_27" n1:includeFontPadding="false" />
+    <TextView n1:textAppearance="@style/oneplus_contorl_text_style_body1" n1:textColor="@color/city_search_item_text" n1:id="@id/weather_warning_content" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginTop="@dimen/dimen_24" n1:layout_marginBottom="@dimen/dimen_37" n1:layout_below="@id/weather_warning_title" n1:layout_alignLeft="@id/weather_warning_title" n1:lineSpacingExtra="@dimen/dimen_4" />
+</RelativeLayout>

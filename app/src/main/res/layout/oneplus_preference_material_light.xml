@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n1:gravity="center_vertical" n1:background="?android:activatedBackgroundIndicator" n1:clipToPadding="false" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:minHeight="@dimen/oneplus_contorl_list_item_height_one_line1" n1:paddingStart="@dimen/oneplus_contorl_layout_margin_left2" n1:paddingEnd="@dimen/oneplus_contorl_layout_margin_right2"
+  xmlns:n1="http://schemas.android.com/apk/res/android">
+    <LinearLayout n1:gravity="start|center" n1:orientation="horizontal" n1:id="@id/icon_frame" n1:paddingTop="4.0dip" n1:paddingBottom="4.0dip" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:minWidth="@dimen/oneplus_contorl_layout_margin_left5" n1:paddingEnd="12.0dip">
+        <com.android.internal.widget.PreferenceImageView n1:id="@android:id/icon" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:maxWidth="@dimen/oneplus_contorl_icon_size_list" n1:maxHeight="@dimen/oneplus_contorl_icon_size_list" />
+    </LinearLayout>
+    <RelativeLayout n1:paddingTop="16.0dip" n1:paddingBottom="16.0dip" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_weight="1.0">
+        <TextView n1:textColor="@color/oneplus_contorl_text_color_primary" n1:ellipsize="marquee" n1:id="@android:id/title" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:singleLine="true" style="@style/oneplus_contorl_text_style_subheading" />
+        <TextView n1:textColor="@color/oneplus_contorl_text_color_secondary" n1:id="@android:id/summary" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:maxLines="10" n1:layout_below="@android:id/title" n1:layout_alignStart="@android:id/title" style="@style/oneplus_contorl_text_style_body1" />
+    </RelativeLayout>
+    <LinearLayout n1:gravity="end|center" n1:orientation="vertical" n1:id="@android:id/widget_frame" n1:layout_width="wrap_content" n1:layout_height="fill_parent" n1:paddingStart="16.0dip" />
+</LinearLayout>

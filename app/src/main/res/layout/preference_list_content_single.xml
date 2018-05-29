@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n1:orientation="vertical" n1:layout_width="fill_parent" n1:layout_height="fill_parent"
+  xmlns:n1="http://schemas.android.com/apk/res/android">
+    <LinearLayout n1:orientation="horizontal" n1:layout_width="fill_parent" n1:layout_height="0.0px" n1:layout_weight="1.0">
+        <LinearLayout n1:orientation="vertical" n1:id="@id/headers" n1:layout_width="fill_parent" n1:layout_height="fill_parent">
+            <ListView n1:listPreferredItemHeight="48.0dip" n1:scrollbarAlwaysDrawVerticalTrack="true" n1:scrollbarStyle="@integer/preference_fragment_scrollbarStyle" n1:id="@android:id/list" n1:layout_width="fill_parent" n1:layout_height="0.0px" n1:drawSelectorOnTop="false" n1:cacheColorHint="@android:color/transparent" n1:layout_weight="1.0" style="?op_preferenceFragmentStyle" />
+            <FrameLayout n1:id="@id/list_footer" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:layout_weight="0.0" />
+        </LinearLayout>
+    </LinearLayout>
+    <RelativeLayout n1:id="@id/button_bar" n1:visibility="gone" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:layout_weight="0.0">
+        <Button n1:id="@id/back_button" n1:layout_width="150.0dip" n1:layout_height="wrap_content" n1:layout_margin="5.0dip" n1:text="@string/back_button_label" n1:layout_alignParentStart="true" />
+        <LinearLayout n1:orientation="horizontal" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_alignParentEnd="true">
+            <Button n1:id="@id/skip_button" n1:visibility="gone" n1:layout_width="150.0dip" n1:layout_height="wrap_content" n1:layout_margin="5.0dip" n1:text="@string/skip_button_label" />
+            <Button n1:id="@id/next_button" n1:layout_width="150.0dip" n1:layout_height="wrap_content" n1:layout_margin="5.0dip" n1:text="@string/next_button_label" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

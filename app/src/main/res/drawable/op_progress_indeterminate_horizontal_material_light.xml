@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector n1:drawable="@drawable/op_vector_drawable_progress_indeterminate_horizontal_light"
+  xmlns:n1="http://schemas.android.com/apk/res/android">
+    <target n1:name="rect2_grp" n1:animation="@anim/progress_indeterminate_horizontal_rect2" />
+    <target n1:name="rect1_grp" n1:animation="@anim/progress_indeterminate_horizontal_rect1" />
+</animated-vector>

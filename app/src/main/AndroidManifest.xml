@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="net.oneplus.weather">
+    <uses-feature android:name="com.oneplus.software.oos"/>
+    <uses-feature android:name="com.oneplus.software.oos.n_theme_ready"/>
+    <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <permission android:name="net.oneplus.weather.permission.UPDATE" android:protectionLevel="normal"/>
+    <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:name="net.oneplus.weather.app.BaseApplication" android:resizeableActivity="false" android:theme="@style/AppTheme.ActionBar">
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="net.oneplus.weather.app.MainActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="net.oneplus.weather.app.SettingActivity" android:parentActivityName="net.oneplus.weather.app.MainActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="net.oneplus.weather.app.SettingPreferenceActivity" android:parentActivityName="net.oneplus.weather.app.MainActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="net.oneplus.weather.app.AboutActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="net.oneplus.weather.app.CopyActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="net.oneplus.weather.app.ShowWeatherActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/app_name" android:name="net.oneplus.weather.app.citylist.CityListActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/app_name" android:name="net.oneplus.weather.app.citylist.CitySearchActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="net.oneplus.weather.app.MockLocation" android:parentActivityName="net.oneplus.weather.app.MainActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:configChanges="orientation|screenSize" android:name="net.oneplus.weather.app.FeekbackActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar" android:windowSoftInputMode="stateVisible"/>
+        <activity android:configChanges="orientation|screenSize" android:name="net.oneplus.weather.app.WeatherWarningActivity" android:parentActivityName="net.oneplus.weather.app.MainActivity" android:screenOrientation="portrait"/>
+        <activity android:keepScreenOn="true" android:name="net.oneplus.weather.starwar.VidePlayActivity" android:noHistory="true" android:screenOrientation="portrait" android:theme="@style/StarWarTheme"/>
+        <activity android:keepScreenOn="true" android:name="net.oneplus.weather.starwar.VidePlayActivity" android:noHistory="true" android:screenOrientation="portrait" android:theme="@style/StarWarTheme"/>
+        <service android:name="net.oneplus.weather.receiver.AlarmUpdateJob" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:name="net.oneplus.weather.receiver.BootJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:name="net.oneplus.weather.widget.widget.WidgetUpdateJob" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:name="com.amap.api.location.APSService"/>
+        <service android:name="net.oneplus.weather.widget.widget.WidgetUpdateService"/>
+        <receiver android:name="net.oneplus.weather.receiver.SecretCodeReceiver">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE"/>
+                <data android:host="1288" android:scheme="android_secret_code"/>
+                <data android:host="9900" android:scheme="android_secret_code"/>
+                <data android:host="3345678" android:scheme="android_secret_code"/>
+                <data android:host="55688" android:scheme="android_secret_code"/>
+                <data android:host="33344" android:scheme="android_secret_code"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="net.oneplus.weather.receiver.AlarmReceiver">
+            <intent-filter>
+                <action android:name="net.oneplus.weather.receiver.BootReceiver.ACTION_ALARM"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="net.oneplus.weather.receiver.BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:label="@string/app_name" android:name="net.oneplus.weather.widget.widget.WeatherWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_weather"/>
+        </receiver>
+        <receiver android:name="net.oneplus.weather.widget.widget.WidgetReceiver">
+            <intent-filter>
+                <action android:name="net.oneplus.weather.widget.REFRESH"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.oneplus.weather.ContentProvider" android:exported="true" android:name="net.oneplus.weather.provider.WeatherDataSharedProvider"/>
+        <receiver android:name="net.oneplus.weather.app.ShearBrocastReciver">
+            <intent-filter>
+                <action android:name="net.oneplus.weather.GET_LOCATION_WEATHER"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="com.amap.api.v2.apikey" android:value="9252d1372e2fe6dacab6f9187a3838e4"/>
+        <meta-data android:name="TA_APPKEY" android:value="A72T9KS4CSDN"/>
+        <meta-data android:name="InstallChannel" android:value="OP"/>
+        <meta-data android:name="upgrade_product_code" android:value="27001"/>
+        <meta-data android:name="oneplus_upgrage" android:value="true"/>
+        <meta-data android:name="android.support.VERSION" android:value="26.1.0"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="android.arch.lifecycle.VERSION" android:value="27.0.0-SNAPSHOT"/>
+    </application>
+</manifest>

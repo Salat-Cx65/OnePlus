@@ -1,0 +1,227 @@
+package net.oneplus.weather.db;
+
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+import android.provider.BaseColumns;
+import net.oneplus.weather.app.WeatherWarningActivity;
+
+public class CityWeatherDBHelper extends SQLiteOpenHelper {
+    private static final String COMMA_SEP = ",";
+    private static final String DB_NAME = "city_list.db";
+    private static final int DB_VERSION = 8;
+    private static final String INTEGER_TYPE = " INTEGER";
+    private static final String TEXT_TYPE = " TEXT";
+
+    public static abstract class CityListEntry implements BaseColumns {
+        public static final String COLUMN_10_LAST_REFRESH_TIME = "lastRefreshTime";
+        public static final String COLUMN_1_PROVIDER = "provider";
+        public static final String COLUMN_2_NAME = "name";
+        public static final String COLUMN_3_DISPLAY_NAME = "displayName";
+        public static final String COLUMN_4_LOCATION_ID = "locationId";
+        public static final String COLUMN_5_ADMINISTRATIVE_NAME = "adminName";
+        public static final String COLUMN_6_DISPLAY_ADMINISTRATIVE_NAME = "displayAdminName";
+        public static final String COLUMN_7_COUNTRY = "country";
+        public static final String COLUMN_8_DISPLAY_COUNTRY = "displayCountry";
+        public static final String COLUMN_9_DISPLAY_ORDER = "displayOrder";
+        public static final String TABLE_NAME = "city";
+    }
+
+    public static abstract class ForecastEntry implements BaseColumns {
+        public static final String COLUMN_1_LOCATION_ID = "locationId";
+        public static final String COLUMN_2_TIMESTAMP = "timestamp";
+        public static final String COLUMN_3_HIGH_TEMPERATURE = "highTemp";
+        public static final String COLUMN_4_LOW_TEMPERATURE = "lowTemp";
+        public static final String COLUMN_5_WEATHER_ID = "weatherId";
+        public static final String TABLE_NAME = "forecast";
+    }
+
+    public static abstract class WeatherEntry implements BaseColumns {
+        public static final String COLUMN_10_WEATHER_ID = "weatherId";
+        public static final String COLUMN_1_LOCATION_ID = "locationId";
+        public static final String COLUMN_2_TIMESTAMP = "timestamp";
+        public static final String COLUMN_3_TEMPERATURE = "temperature";
+        public static final String COLUMN_4_REALFEEL_TEMPERATURE = "realFeelTemp";
+        public static final String COLUMN_5_HIGH_TEMPERATURE = "highTemp";
+        public static final String COLUMN_6_LOW_TEMPERATURE = "lowTemp";
+        public static final String COLUMN_7_HUMIDITY = "humidity";
+        public static final String COLUMN_8_SUNRISE_TIME = "sunriseTime";
+        public static final String COLUMN_9_SUNSET_TIME = "sunsetTime";
+        public static final String TABLE_NAME = "weather";
+    }
+
+    public CityWeatherDBHelper(Context context) {
+        super(context, DB_NAME, null, 8);
+    }
+
+    public void onCreate(SQLiteDatabase db) {
+        OPDataBase.createCityList(db);
+        OPDataBase.createWeather(db);
+        OPDataBase.createForecast(db);
+    }
+
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        if (oldVersion < newVersion) {
+            StringBuffer buffer;
+            if (1 == oldVersion) {
+                String alterTable = "ALTER TABLE ".concat(WeatherWarningActivity.INTENT_PARA_CITY).concat(" ADD COLUMN ");
+                db.execSQL(alterTable.concat(CityListEntry.COLUMN_5_ADMINISTRATIVE_NAME).concat(TEXT_TYPE));
+                db.execSQL(alterTable.concat(CityListEntry.COLUMN_6_DISPLAY_ADMINISTRATIVE_NAME).concat(TEXT_TYPE));
+                db.execSQL(alterTable.concat(CityListEntry.COLUMN_7_COUNTRY).concat(TEXT_TYPE));
+                db.execSQL(alterTable.concat(CityListEntry.COLUMN_8_DISPLAY_COUNTRY).concat(TEXT_TYPE));
+                db.execSQL(alterTable.concat(CityListEntry.COLUMN_9_DISPLAY_ORDER).concat(INTEGER_TYPE));
+                db.execSQL(alterTable.concat(CityListEntry.COLUMN_10_LAST_REFRESH_TIME).concat(TEXT_TYPE));
+                db.rawQuery("UPDATE ".concat(WeatherWarningActivity.INTENT_PARA_CITY).concat(" SET ").concat(CityListEntry.COLUMN_9_DISPLAY_ORDER).concat(" = ").concat("_id"), null);
+                buffer = new StringBuffer();
+                buffer.append("CREATE TRIGGER city_order_trigger AFTER INSERT ON ").append(WeatherWarningActivity.INTENT_PARA_CITY).append(" BEGIN ");
+                buffer.append("UPDATE ").append(WeatherWarningActivity.INTENT_PARA_CITY).append(" SET ");
+                buffer.append(CityListEntry.COLUMN_9_DISPLAY_ORDER).append(" = NEW.");
+                buffer.append("_id").append(" WHERE ");
+                buffer.append("_id").append(" = NEW.").append("_id");
+                buffer.append("; END;");
+                db.execSQL(buffer.toString());
+                buffer = new StringBuffer();
+                buffer.append("CREATE TABLE ").append(WeatherEntry.TABLE_NAME).append(" (");
+                buffer.append("_id").append(INTEGER_TYPE).append(" PRIMARY KEY,");
+                buffer.append(WeatherEntry.COLUMN_1_LOCATION_ID).append(TEXT_TYPE).append(" UNIQUE").append(COMMA_SEP);
+                buffer.append(WeatherEntry.COLUMN_2_TIMESTAMP).append(INTEGER_TYPE).append(COMMA_SEP);
+                buffer.append(WeatherEntry.COLUMN_3_TEMPERATURE).append(INTEGER_TYPE).append(COMMA_SEP);
+                buffer.append(WeatherEntry.COLUMN_4_REALFEEL_TEMPERATURE).append(INTEGER_TYPE).append(COMMA_SEP);
+                buffer.append(WeatherEntry.COLUMN_5_HIGH_TEMPERATURE).append(INTEGER_TYPE).append(COMMA_SEP);
+                buffer.append(WeatherEntry.COLUMN_6_LOW_TEMPERATURE).append(INTEGER_TYPE).append(COMMA_SEP);
+                buffer.append(WeatherEntry.COLUMN_7_HUMIDITY).append(INTEGER_TYPE).append(COMMA_SEP);
+                buffer.append(WeatherEntry.COLUMN_8_SUNRISE_TIME).append(INTEGER_TYPE).append(COMMA_SEP);
+                buffer.append(WeatherEntry.COLUMN_9_SUNSET_TIME).append(INTEGER_TYPE).append(COMMA_SEP);
+                buffer.append(WeatherEntry.COLUMN_10_WEATHER_ID).append(INTEGER_TYPE).append(COMMA_SEP);
+                buffer.append("FOREIGN KEY (").append(WeatherEntry.COLUMN_1_LOCATION_ID).append(") ");
+                buffer.append("REFERENCES ").append(WeatherWarningActivity.INTENT_PARA_CITY).append("(").append(WeatherEntry.COLUMN_1_LOCATION_ID).append(")");
+                buffer.append(");");
+                db.execSQL(buffer.toString());
+                buffer = new StringBuffer();
+                buffer.append("CREATE TABLE ").append(ForecastEntry.TABLE_NAME).append(" (");
+                buffer.append("_id").append(INTEGER_TYPE).append(" PRIMARY KEY,");
+                buffer.append(WeatherEntry.COLUMN_1_LOCATION_ID).append(INTEGER_TYPE).append(COMMA_SEP);
+                buffer.append(WeatherEntry.COLUMN_2_TIMESTAMP).append(INTEGER_TYPE).append(COMMA_SEP);
+                buffer.append(WeatherEntry.COLUMN_5_HIGH_TEMPERATURE).append(INTEGER_TYPE).append(COMMA_SEP);
+                buffer.append(WeatherEntry.COLUMN_6_LOW_TEMPERATURE).append(INTEGER_TYPE).append(COMMA_SEP);
+                buffer.append(WeatherEntry.COLUMN_10_WEATHER_ID).append(INTEGER_TYPE).append(COMMA_SEP);
+                buffer.append("FOREIGN KEY (").append(WeatherEntry.COLUMN_1_LOCATION_ID).append(") ");
+                buffer.append("REFERENCES ").append(WeatherWarningActivity.INTENT_PARA_CITY).append("(").append(WeatherEntry.COLUMN_1_LOCATION_ID).append(")");
+                buffer.append(");");
+            } else if (2 == oldVersion) {
+                db.execSQL("ALTER TABLE ".concat(WeatherWarningActivity.INTENT_PARA_CITY).concat(" ADD COLUMN ").concat(CityListEntry.COLUMN_9_DISPLAY_ORDER).concat(INTEGER_TYPE));
+                db.rawQuery("UPDATE ".concat(WeatherWarningActivity.INTENT_PARA_CITY).concat(" SET ").concat(CityListEntry.COLUMN_9_DISPLAY_ORDER).concat(" = ").concat("_id"), null);
+                buffer = new StringBuffer();
+                buffer.append("CREATE TRIGGER city_order_trigger AFTER INSERT ON ").append(WeatherWarningActivity.INTENT_PARA_CITY).append(" BEGIN ");
+                buffer.append("UPDATE ").append(WeatherWarningActivity.INTENT_PARA_CITY).append(" SET ");
+                buffer.append(CityListEntry.COLUMN_9_DISPLAY_ORDER).append(" = NEW.");
+                buffer.append("_id").append(" WHERE ");
+                buffer.append("_id").append(" = NEW.").append("_id");
+                buffer.append("; END;");
+                db.execSQL(buffer.toString());
+                db.execSQL("DROP TABLE IF EXISTS ".concat(WeatherEntry.TABLE_NAME));
+                buffer = new StringBuffer();
+                buffer.append("CREATE TABLE ").append(WeatherEntry.TABLE_NAME).append(" (");
+                buffer.append("_id").append(INTEGER_TYPE).append(" PRIMARY KEY,");
+                buffer.append(WeatherEntry.COLUMN_1_LOCATION_ID).append(TEXT_TYPE).append(" UNIQUE").append(COMMA_SEP);
+                buffer.append(WeatherEntry.COLUMN_2_TIMESTAMP).append(INTEGER_TYPE).append(COMMA_SEP);
+                buffer.append(WeatherEntry.COLUMN_3_TEMPERATURE).append(INTEGER_TYPE).append(COMMA_SEP);
+                buffer.append(WeatherEntry.COLUMN_4_REALFEEL_TEMPERATURE).append(INTEGER_TYPE).append(COMMA_SEP);
+                buffer.append(WeatherEntry.COLUMN_5_HIGH_TEMPERATURE).append(INTEGER_TYPE).append(COMMA_SEP);
+                buffer.append(WeatherEntry.COLUMN_6_LOW_TEMPERATURE).append(INTEGER_TYPE).append(COMMA_SEP);
+                buffer.append(WeatherEntry.COLUMN_7_HUMIDITY).append(INTEGER_TYPE).append(COMMA_SEP);
+                buffer.append(WeatherEntry.COLUMN_8_SUNRISE_TIME).append(INTEGER_TYPE).append(COMMA_SEP);
+                buffer.append(WeatherEntry.COLUMN_9_SUNSET_TIME).append(INTEGER_TYPE).append(COMMA_SEP);
+                buffer.append(WeatherEntry.COLUMN_10_WEATHER_ID).append(INTEGER_TYPE).append(COMMA_SEP);
+                buffer.append("FOREIGN KEY (").append(WeatherEntry.COLUMN_1_LOCATION_ID).append(") ");
+                buffer.append("REFERENCES ").append(WeatherWarningActivity.INTENT_PARA_CITY).append("(").append(WeatherEntry.COLUMN_1_LOCATION_ID).append(")");
+                buffer.append(");");
+                db.execSQL(buffer.toString());
+                buffer = new StringBuffer();
+                buffer.append("CREATE TABLE ").append(ForecastEntry.TABLE_NAME).append(" (");
+                buffer.append("_id").append(INTEGER_TYPE).append(" PRIMARY KEY,");
+                buffer.append(WeatherEntry.COLUMN_1_LOCATION_ID).append(INTEGER_TYPE).append(COMMA_SEP);
+                buffer.append(WeatherEntry.COLUMN_2_TIMESTAMP).append(INTEGER_TYPE).append(COMMA_SEP);
+                buffer.append(WeatherEntry.COLUMN_5_HIGH_TEMPERATURE).append(INTEGER_TYPE).append(COMMA_SEP);
+                buffer.append(WeatherEntry.COLUMN_6_LOW_TEMPERATURE).append(INTEGER_TYPE).append(COMMA_SEP);
+                buffer.append(WeatherEntry.COLUMN_10_WEATHER_ID).append(INTEGER_TYPE).append(COMMA_SEP);
+                buffer.append("FOREIGN KEY (").append(WeatherEntry.COLUMN_1_LOCATION_ID).append(") ");
+                buffer.append("REFERENCES ").append(WeatherWarningActivity.INTENT_PARA_CITY).append("(").append(WeatherEntry.COLUMN_1_LOCATION_ID).append(")");
+                buffer.append(");");
+                db.execSQL(buffer.toString());
+            } else if (3 == oldVersion) {
+                db.execSQL("ALTER TABLE ".concat(WeatherWarningActivity.INTENT_PARA_CITY).concat(" ADD COLUMN ").concat(CityListEntry.COLUMN_9_DISPLAY_ORDER).concat(INTEGER_TYPE));
+                db.rawQuery("UPDATE ".concat(WeatherWarningActivity.INTENT_PARA_CITY).concat(" SET ").concat(CityListEntry.COLUMN_9_DISPLAY_ORDER).concat(" = ").concat("_id"), null);
+                buffer = new StringBuffer();
+                buffer.append("CREATE TRIGGER city_order_trigger AFTER INSERT ON ").append(WeatherWarningActivity.INTENT_PARA_CITY).append(" BEGIN ");
+                buffer.append("UPDATE ").append(WeatherWarningActivity.INTENT_PARA_CITY).append(" SET ");
+                buffer.append(CityListEntry.COLUMN_9_DISPLAY_ORDER).append(" = NEW.");
+                buffer.append("_id").append(" WHERE ");
+                buffer.append("_id").append(" = NEW.").append("_id");
+                buffer.append("; END;");
+                db.execSQL(buffer.toString());
+                db.execSQL("DROP TABLE IF EXISTS ".concat(WeatherEntry.TABLE_NAME));
+                db.execSQL("DROP TABLE IF EXISTS ".concat(ForecastEntry.TABLE_NAME));
+                buffer = new StringBuffer();
+                buffer.append("CREATE TABLE ").append(WeatherEntry.TABLE_NAME).append(" (");
+                buffer.append("_id").append(INTEGER_TYPE).append(" PRIMARY KEY,");
+                buffer.append(WeatherEntry.COLUMN_1_LOCATION_ID).append(TEXT_TYPE).append(" UNIQUE").append(COMMA_SEP);
+                buffer.append(WeatherEntry.COLUMN_2_TIMESTAMP).append(INTEGER_TYPE).append(COMMA_SEP);
+                buffer.append(WeatherEntry.COLUMN_3_TEMPERATURE).append(INTEGER_TYPE).append(COMMA_SEP);
+                buffer.append(WeatherEntry.COLUMN_4_REALFEEL_TEMPERATURE).append(INTEGER_TYPE).append(COMMA_SEP);
+                buffer.append(WeatherEntry.COLUMN_5_HIGH_TEMPERATURE).append(INTEGER_TYPE).append(COMMA_SEP);
+                buffer.append(WeatherEntry.COLUMN_6_LOW_TEMPERATURE).append(INTEGER_TYPE).append(COMMA_SEP);
+                buffer.append(WeatherEntry.COLUMN_7_HUMIDITY).append(INTEGER_TYPE).append(COMMA_SEP);
+                buffer.append(WeatherEntry.COLUMN_8_SUNRISE_TIME).append(INTEGER_TYPE).append(COMMA_SEP);
+                buffer.append(WeatherEntry.COLUMN_9_SUNSET_TIME).append(INTEGER_TYPE).append(COMMA_SEP);
+                buffer.append(WeatherEntry.COLUMN_10_WEATHER_ID).append(INTEGER_TYPE).append(COMMA_SEP);
+                buffer.append("FOREIGN KEY (").append(WeatherEntry.COLUMN_1_LOCATION_ID).append(") ");
+                buffer.append("REFERENCES ").append(WeatherWarningActivity.INTENT_PARA_CITY).append("(").append(WeatherEntry.COLUMN_1_LOCATION_ID).append(")");
+                buffer.append(");");
+                db.execSQL(buffer.toString());
+                buffer = new StringBuffer();
+                buffer.append("CREATE TABLE ").append(ForecastEntry.TABLE_NAME).append(" (");
+                buffer.append("_id").append(INTEGER_TYPE).append(" PRIMARY KEY,");
+                buffer.append(WeatherEntry.COLUMN_1_LOCATION_ID).append(INTEGER_TYPE).append(COMMA_SEP);
+                buffer.append(WeatherEntry.COLUMN_2_TIMESTAMP).append(INTEGER_TYPE).append(COMMA_SEP);
+                buffer.append(WeatherEntry.COLUMN_5_HIGH_TEMPERATURE).append(INTEGER_TYPE).append(COMMA_SEP);
+                buffer.append(WeatherEntry.COLUMN_6_LOW_TEMPERATURE).append(INTEGER_TYPE).append(COMMA_SEP);
+                buffer.append(WeatherEntry.COLUMN_10_WEATHER_ID).append(INTEGER_TYPE).append(COMMA_SEP);
+                buffer.append("FOREIGN KEY (").append(WeatherEntry.COLUMN_1_LOCATION_ID).append(") ");
+                buffer.append("REFERENCES ").append(WeatherWarningActivity.INTENT_PARA_CITY).append("(").append(WeatherEntry.COLUMN_1_LOCATION_ID).append(")");
+                buffer.append(");");
+                db.execSQL(buffer.toString());
+            } else if (4 == oldVersion) {
+                db.execSQL("ALTER TABLE ".concat(WeatherWarningActivity.INTENT_PARA_CITY).concat(" ADD COLUMN ").concat(CityListEntry.COLUMN_9_DISPLAY_ORDER));
+                db.rawQuery("UPDATE ".concat(WeatherWarningActivity.INTENT_PARA_CITY).concat(" SET ").concat(CityListEntry.COLUMN_9_DISPLAY_ORDER).concat(" = ").concat("_id"), null);
+                buffer = new StringBuffer();
+                buffer.append("CREATE TRIGGER city_order_trigger AFTER INSERT ON ").append(WeatherWarningActivity.INTENT_PARA_CITY).append(" BEGIN ");
+                buffer.append("UPDATE ").append(WeatherWarningActivity.INTENT_PARA_CITY).append(" SET ");
+                buffer.append(CityListEntry.COLUMN_9_DISPLAY_ORDER).append(" = NEW.");
+                buffer.append("_id").append(" WHERE ");
+                buffer.append("_id").append(" = NEW.").append("_id");
+                buffer.append("; END;");
+                db.execSQL(buffer.toString());
+            } else if (5 == oldVersion) {
+                buffer = new StringBuffer();
+                buffer.append("CREATE TRIGGER city_order_trigger AFTER INSERT ON ").append(WeatherWarningActivity.INTENT_PARA_CITY).append(" BEGIN ");
+                buffer.append("UPDATE ").append(WeatherWarningActivity.INTENT_PARA_CITY).append(" SET ");
+                buffer.append(CityListEntry.COLUMN_9_DISPLAY_ORDER).append(" = NEW.");
+                buffer.append("_id").append(" WHERE ");
+                buffer.append("_id").append(" = NEW.").append("_id");
+                buffer.append("; END;");
+                db.execSQL(buffer.toString());
+            } else if (6 == oldVersion) {
+                db.execSQL("ALTER TABLE ".concat(WeatherWarningActivity.INTENT_PARA_CITY).concat(" ADD COLUMN ").concat(CityListEntry.COLUMN_10_LAST_REFRESH_TIME).concat(TEXT_TYPE));
+                db.rawQuery("UPDATE ".concat(WeatherWarningActivity.INTENT_PARA_CITY).concat(" SET ").concat(CityListEntry.COLUMN_10_LAST_REFRESH_TIME).concat(" = ").concat("_id"), null);
+            } else if (7 == oldVersion) {
+                OPDataBase.updataDatabase(db, WeatherWarningActivity.INTENT_PARA_CITY, OPDataBase.getCreateCityListSQL());
+            } else {
+                db.execSQL("DROP TABLE IF EXISTS ".concat(WeatherWarningActivity.INTENT_PARA_CITY));
+                db.execSQL("DROP TABLE IF EXISTS ".concat(WeatherEntry.TABLE_NAME));
+                db.execSQL("DROP TABLE IF EXISTS ".concat(ForecastEntry.TABLE_NAME));
+                onCreate(db);
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout n1:id="@id/root" n1:background="@android:color/transparent" n1:layout_width="fill_parent" n1:layout_height="fill_parent"
+  xmlns:n1="http://schemas.android.com/apk/res/android">
+    <ImageView n1:id="@id/weather_type_background" n1:layout_width="240.0dip" n1:layout_height="240.0dip" n1:src="@drawable/wight_sunny" n1:layout_alignParentTop="true" n1:layout_centerHorizontal="true" n1:contentDescription="@string/app_name" />
+    <LinearLayout n1:id="@id/widget_round_ll_time" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginTop="25.0dip" n1:layout_marginRight="20.0dip" n1:layout_alignRight="@id/weather_type_background" n1:layout_alignParentTop="true">
+        <ImageView n1:id="@id/number_iv_0" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:src="@drawable/widget_number_0" n1:contentDescription="@string/app_name" />
+        <ImageView n1:id="@id/number_iv_1" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:src="@drawable/widget_number_0" n1:contentDescription="@string/app_name" />
+        <ImageView n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:src="@drawable/widget_number_divider" n1:contentDescription="@string/app_name" />
+        <ImageView n1:id="@id/number_iv_3" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:src="@drawable/widget_number_0" n1:contentDescription="@string/app_name" />
+        <ImageView n1:id="@id/number_iv_4" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:src="@drawable/widget_number_0" n1:contentDescription="@string/app_name" />
+    </LinearLayout>
+    <TextView n1:textSize="22.0dip" n1:textColor="@android:color/white" n1:id="@id/widget_round_tv_date" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginLeft="170.0dip" n1:layout_marginTop="5.0dip" n1:layout_below="@id/widget_round_ll_time" />
+    <TextView n1:textSize="14.0dip" n1:textColor="@android:color/white" n1:id="@id/widget_round_tv_week" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_below="@id/widget_round_tv_date" n1:layout_alignLeft="@id/widget_round_tv_date" n1:layout_alignWithParentIfMissing="true" />
+    <TextView n1:textSize="14.0dip" n1:textColor="@android:color/white" n1:id="@id/widget_round_tv_type" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginLeft="10.0dip" n1:layout_toRightOf="@id/widget_round_tv_week" n1:layout_alignBaseline="@id/widget_round_tv_week" n1:layout_alignWithParentIfMissing="true" />
+    <TextView n1:textSize="14.0dip" n1:textColor="@android:color/white" n1:id="@id/widget_round_tv_city" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_below="@id/widget_round_tv_week" n1:layout_alignLeft="@id/widget_round_tv_date" n1:layout_alignWithParentIfMissing="true" />
+    <TextView n1:textSize="14.0dip" n1:textColor="@android:color/white" n1:id="@id/widget_round_tv_temper" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginLeft="10.0dip" n1:layout_toRightOf="@id/widget_round_tv_city" n1:layout_alignBaseline="@id/widget_round_tv_city" n1:layout_alignWithParentIfMissing="true" />
+</RelativeLayout>

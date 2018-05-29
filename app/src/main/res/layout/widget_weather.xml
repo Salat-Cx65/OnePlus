@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout n1:layout_width="fill_parent" n1:layout_height="fill_parent"
+  xmlns:n1="http://schemas.android.com/apk/res/android">
+    <ImageView n1:layout_gravity="center" n1:id="@id/widget_bkg" n1:layout_width="fill_parent" n1:layout_height="334.0px" n1:src="@drawable/widget_preview" n1:scaleType="fitXY" />
+    <RelativeLayout n1:layout_gravity="center" n1:id="@id/weather_widget" n1:visibility="gone" n1:layout_width="fill_parent" n1:layout_height="334.0px">
+        <FrameLayout n1:id="@id/widget_refresh" n1:layout_width="@dimen/dimen_48" n1:layout_height="@dimen/dimen_48" n1:layout_alignParentTop="true" n1:layout_alignParentRight="true">
+            <ImageView n1:layout_gravity="center|right|top" n1:layout_width="@dimen/dimen_18" n1:layout_height="@dimen/dimen_18" n1:layout_marginTop="@dimen/dimen_12" n1:layout_marginRight="@dimen/dimen_12" n1:src="@drawable/btn_refresh" />
+        </FrameLayout>
+        <TextView n1:id="@id/widget_refresh_time" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginTop="@dimen/dimen_14" n1:layout_marginRight="@dimen/dimen_42" n1:layout_alignParentTop="true" n1:layout_alignParentRight="true" style="@style/RefreshTimeStyle" />
+        <TextView n1:textSize="32.0px" n1:id="@id/widget_city_name" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginLeft="@dimen/dimen_12" n1:layout_marginTop="@dimen/dimen_16" n1:maxWidth="519.0px" n1:text="@string/app_name" n1:layout_alignParentLeft="true" n1:fontFamily="Slate-book" style="@style/WidgetTextStyle" />
+        <TextView n1:textSize="32.0px" n1:id="@id/widget_weather_des" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginLeft="8.0dip" n1:layout_toRightOf="@id/widget_city_name" n1:layout_alignTop="@id/widget_city_name" n1:fontFamily="Slate-book" style="@style/WidgetTextStyle" />
+        <TextView n1:textSize="118.0px" n1:id="@id/widget_weather_temp" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginLeft="@dimen/dimen_12" n1:layout_marginTop="@dimen/dimen_8" n1:layout_below="@id/widget_city_name" n1:layout_alignParentLeft="true" n1:fontFamily="Slate-medium" style="@style/WidgetTextStyle" />
+        <TextView n1:textSize="36.0px" n1:id="@id/widget_high_low_temp" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginLeft="@dimen/dimen_12" n1:layout_marginTop="@dimen/dimen_2" n1:layout_below="@id/widget_weather_temp" n1:layout_alignParentLeft="true" n1:fontFamily="Slate-book" style="@style/WidgetTextStyle" />
+        <LinearLayout n1:gravity="center" n1:orientation="vertical" n1:id="@id/daily3_weather" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginRight="@dimen/dimen_12" n1:layout_alignParentRight="true" n1:layout_alignParentBottom="true">
+            <TextView n1:id="@id/daily3_date_text" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:textAllCaps="true" style="@style/DaildyDateStyle" />
+            <ImageView n1:id="@id/daily3_weather_icon" n1:layout_width="@dimen/dimen_20" n1:layout_height="@dimen/dimen_20" n1:layout_marginTop="7.0dip" n1:src="@drawable/ic_sunny" />
+            <TextView n1:id="@id/daily3_weather_temp" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginTop="@dimen/dimen_2" n1:layout_marginBottom="@dimen/dimen_7" style="@style/DaildyTemperatureStyle" />
+        </LinearLayout>
+        <LinearLayout n1:gravity="center" n1:orientation="vertical" n1:id="@id/daily2_weather" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginRight="@dimen/dimen_18" n1:layout_toLeftOf="@id/daily3_weather" n1:layout_alignParentBottom="true">
+            <TextView n1:id="@id/daily2_date_text" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:textAllCaps="true" style="@style/DaildyDateStyle" />
+            <ImageView n1:id="@id/daily2_weather_icon" n1:layout_width="@dimen/dimen_20" n1:layout_height="@dimen/dimen_20" n1:layout_marginTop="7.0dip" n1:src="@drawable/ic_sunny" />
+            <TextView n1:id="@id/daily2_weather_temp" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginTop="@dimen/dimen_2" n1:layout_marginBottom="@dimen/dimen_7" style="@style/DaildyTemperatureStyle" />
+        </LinearLayout>
+        <LinearLayout n1:gravity="center" n1:orientation="vertical" n1:id="@id/daily1_weather" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginRight="@dimen/dimen_18" n1:layout_toLeftOf="@id/daily2_weather" n1:layout_alignParentBottom="true">
+            <TextView n1:id="@id/daily1_date_text" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:textAllCaps="true" style="@style/DaildyDateStyle" />
+            <ImageView n1:id="@id/daily1_weather_icon" n1:layout_width="@dimen/dimen_20" n1:layout_height="@dimen/dimen_20" n1:layout_marginTop="7.0dip" n1:src="@drawable/ic_sunny" />
+            <TextView n1:id="@id/daily1_weather_temp" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginTop="@dimen/dimen_2" n1:layout_marginBottom="@dimen/dimen_7" style="@style/DaildyTemperatureStyle" />
+        </LinearLayout>
+    </RelativeLayout>
+    <RelativeLayout n1:layout_gravity="center" n1:id="@id/widget_refreshing_group" n1:visibility="gone" n1:layout_width="fill_parent" n1:layout_height="334.0px">
+        <TextView n1:textSize="32.0px" n1:id="@id/widget_refreshing_city" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginLeft="12.0dip" n1:layout_marginTop="16.0dip" n1:text="@string/app_name" n1:layout_alignParentLeft="true" n1:layout_alignParentTop="true" n1:fontFamily="Slate-book" style="@style/WidgetTextStyle" />
+        <ImageView n1:id="@id/widget_refreshing_bar" n1:layout_width="25.0dip" n1:layout_height="25.0dip" n1:src="@drawable/btn_refresh" n1:layout_centerInParent="true" />
+        <TextView n1:textSize="32.0px" n1:id="@id/widget_refreshing_text" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginTop="5.0dip" n1:text="@string/widget_refreshing" n1:layout_below="@id/widget_refreshing_bar" n1:layout_centerHorizontal="true" style="@style/WidgetTextStyle" />
+    </RelativeLayout>
+</FrameLayout>

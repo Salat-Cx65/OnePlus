@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="entries_humidity_list_preference">
+        <item>% - 相對濕度</item>
+        <item>g/m³ - 絕對濕度</item>
+    </string-array>
+    <string-array name="entries_temperature_list_preference">
+        <item>℃ - 攝氏度</item>
+        <item>℉ - 華氏度</item>
+    </string-array>
+    <string-array name="entryvalues_humidity_list_preference">
+        <item>true</item>
+        <item>false</item>
+    </string-array>
+    <string-array name="entryvalues_temperature_list_preference">
+        <item>true</item>
+        <item>false</item>
+    </string-array>
+</resources>

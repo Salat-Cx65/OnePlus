@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n1:orientation="vertical" n1:id="@id/menu_outside_area" n1:layout_width="fill_parent" n1:layout_height="fill_parent"
+  xmlns:n1="http://schemas.android.com/apk/res/android">
+    <LinearLayout n1:layout_gravity="right" n1:orientation="vertical" n1:id="@id/menu_container" n1:background="?android:selectableItemBackground" n1:paddingLeft="20.0dip" n1:paddingTop="@dimen/dimen_8" n1:paddingRight="@dimen/dimen_5" n1:layout_width="wrap_content" n1:layout_height="400.0dip" n1:paddingStart="20.0dip" n1:paddingEnd="@dimen/dimen_5">
+        <ImageView n1:id="@id/menu" n1:background="?android:selectableItemBackground" n1:padding="@dimen/dimen_8" n1:layout_width="@dimen/dimen_48" n1:layout_height="@dimen/dimen_48" n1:src="@drawable/more_setting" n1:scaleType="centerInside" n1:contentDescription="@null" />
+        <ImageView n1:id="@id/menu_share" n1:background="@drawable/menu_share" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginTop="3.0dip" n1:contentDescription="@null" />
+        <ImageView n1:id="@id/menu_city" n1:background="@drawable/menu_city" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginTop="3.0dip" n1:contentDescription="@null" />
+        <ImageView n1:id="@id/menu_setting" n1:background="@drawable/menu_settings" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginTop="3.0dip" n1:contentDescription="@null" />
+    </LinearLayout>
+</LinearLayout>

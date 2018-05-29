@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout n1:id="@id/root" n1:background="@android:color/transparent" n1:layout_width="fill_parent" n1:layout_height="fill_parent"
+  xmlns:n1="http://schemas.android.com/apk/res/android">
+    <ImageView n1:id="@id/weather_type_background" n1:layout_width="240.0dip" n1:layout_height="240.0dip" n1:src="@drawable/wight_sunny" n1:layout_alignParentTop="true" n1:layout_centerHorizontal="true" n1:contentDescription="@string/app_name" />
+    <LinearLayout n1:orientation="horizontal" n1:id="@id/widget_round_ll_temper" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginTop="10.0dip" n1:layout_marginRight="10.0dip" n1:layout_alignRight="@id/weather_type_background">
+        <ImageView n1:id="@id/number_iv_0" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:src="@drawable/widget_number_temper_2" n1:contentDescription="@string/app_name" />
+        <ImageView n1:id="@id/number_iv_1" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:src="@drawable/widget_number_temper_6" n1:contentDescription="@string/app_name" />
+        <ImageView n1:id="@id/number_iv_2" n1:visibility="gone" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:contentDescription="@string/app_name" />
+        <ImageView n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginTop="11.0dip" n1:src="@drawable/widget_number_temper" n1:contentDescription="@string/app_name" />
+    </LinearLayout>
+    <TextView n1:textSize="26.0dip" n1:textColor="@android:color/white" n1:id="@id/tv_hightandlow_temper" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginLeft="160.0dip" n1:layout_below="@id/widget_round_ll_temper" />
+    <TextView n1:textSize="16.0dip" n1:textColor="@android:color/white" n1:id="@id/tv_city" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_below="@id/tv_hightandlow_temper" n1:layout_alignLeft="@id/tv_hightandlow_temper" n1:layout_alignWithParentIfMissing="true" />
+    <TextView n1:textSize="16.0dip" n1:textColor="@android:color/white" n1:id="@id/tv_type" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_below="@id/tv_city" n1:layout_alignLeft="@id/tv_city" n1:layout_alignWithParentIfMissing="true" />
+</RelativeLayout>

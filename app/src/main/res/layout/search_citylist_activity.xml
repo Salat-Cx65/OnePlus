@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge n1:background="@android:color/white" n1:layout_width="fill_parent" n1:layout_height="fill_parent"
+  xmlns:n1="http://schemas.android.com/apk/res/android">
+    <ListView n1:id="@id/search_list" n1:layout_width="fill_parent" n1:layout_height="fill_parent" n1:divider="@color/divider_color" n1:dividerHeight="@dimen/oneplus_contorl_divider_height_standard" />
+    <TextView n1:textAppearance="@dimen/oneplus_contorl_text_size_subheading" n1:textSize="16.0sp" n1:textColor="@color/no_match_color" n1:gravity="center" n1:layout_gravity="center_horizontal" n1:id="@id/no_search_view" n1:visibility="visible" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginTop="188.0dip" n1:text="@string/no_search_data" n1:drawableTop="@drawable/no_search_icon" n1:drawablePadding="8.0dip" />
+</merge>

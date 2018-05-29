@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector n1:height="10.0dip" n1:width="360.0dip" n1:viewportWidth="360.0" n1:viewportHeight="10.0"
+  xmlns:n1="http://schemas.android.com/apk/res/android">
+    <group n1:name="progress_group" n1:translateX="180.0" n1:translateY="5.0">
+        <path n1:name="background_track" n1:fillColor="?onePlusPrimaryColor" n1:pathData="M -180.0,-1.0 l 360.0,0 l 0,2.0 l -360.0,0 Z" n1:fillAlpha="?android:disabledAlpha" />
+        <group n1:name="rect2_grp" n1:scaleX="0.1" n1:translateX="-197.6">
+            <path n1:name="rect2" n1:fillColor="?onePlusPrimaryColor" n1:pathData="M -144.0,-1.0 l 288.0,0 l 0,2.0 l -288.0,0 Z" />
+        </group>
+        <group n1:name="rect1_grp" n1:scaleX="0.1" n1:translateX="-522.6">
+            <path n1:name="rect1" n1:fillColor="?onePlusPrimaryColor" n1:pathData="M -144.0,-1.0 l 288.0,0 l 0,2.0 l -288.0,0 Z" />
+        </group>
+    </group>
+</vector>

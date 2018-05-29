@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list n1:paddingMode="nest"
+  xmlns:n1="http://schemas.android.com/apk/res/android">
+    <item>
+        <ripple n1:color="@color/op_tab_highlight_material">
+            <item n1:id="@android:id/mask">
+                <color n1:color="@android:color/white" />
+            </item>
+        </ripple>
+    </item>
+    <item n1:gravity="bottom">
+        <shape n1:tint="?onePlusTabIndicatorColor" n1:shape="rectangle">
+            <size n1:height="2.0dip" />
+            <solid n1:color="@color/op_tab_indicator_material" />
+        </shape>
+    </item>
+    <item n1:drawable="@android:color/transparent" n1:bottom="2.0dip" />
+</layer-list>

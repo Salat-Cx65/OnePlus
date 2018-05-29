@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list>
+    <item n1:gravity="fill"
+      xmlns:n1="http://schemas.android.com/apk/res/android">
+        <shape n1:tint="?onePlusActionbarBackgroundColor" n1:shape="rectangle">
+            <solid n1:color="@android:color/white" />
+        </shape>
+    </item>
+    <item n2:gravity="fill_horizontal|bottom|center"
+      xmlns:n2="http://schemas.android.com/apk/res/android">
+        <shape n2:tint="?onePlusActionbarLineColor" n2:shape="rectangle">
+            <size n2:height="1.0px" />
+            <solid n2:color="@android:color/white" />
+        </shape>
+    </item>
+</layer-list>

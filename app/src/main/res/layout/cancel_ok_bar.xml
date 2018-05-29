@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout n1:paddingTop="8.0dip" n1:paddingBottom="8.0dip" n1:layout_width="fill_parent" n1:layout_height="wrap_content"
+  xmlns:n1="http://schemas.android.com/apk/res/android">
+    <TextView n1:textSize="14.0sp" n1:textColor="@color/weather_sun" n1:id="@id/center_alert_dialog_ok" n1:background="?android:selectableItemBackground" n1:paddingLeft="13.0dip" n1:paddingTop="10.0dip" n1:paddingRight="13.0dip" n1:paddingBottom="10.0dip" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginRight="12.0dip" n1:text="@string/update" n1:layout_alignParentRight="true" />
+    <TextView n1:textSize="14.0sp" n1:textColor="#ff666666" n1:id="@id/center_alert_dialog_cancel" n1:background="?android:selectableItemBackground" n1:paddingLeft="13.0dip" n1:paddingTop="10.0dip" n1:paddingRight="13.0dip" n1:paddingBottom="10.0dip" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginRight="8.0dip" n1:text="@string/later" n1:layout_toLeftOf="@id/center_alert_dialog_ok" />
+</RelativeLayout>

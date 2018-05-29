@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n1:orientation="vertical" n1:background="@color/white" n1:layout_width="fill_parent" n1:layout_height="fill_parent" n1:minWidth="300.0dip"
+  xmlns:n1="http://schemas.android.com/apk/res/android">
+    <TextView n1:textSize="18.0sp" n1:textColor="@color/black" n1:id="@id/center_alert_dialog_title" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginLeft="24.0dip" n1:layout_marginTop="16.0dip" n1:layout_marginRight="24.0dip" />
+    <TextView n1:textSize="14.0sp" n1:textColor="#ff666666" n1:gravity="center|left" n1:id="@id/center_alert_dialog_msg" n1:scrollbars="vertical" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginLeft="24.0dip" n1:layout_marginTop="16.0dip" n1:layout_marginRight="24.0dip" n1:lineSpacingExtra="8.0dip" n1:fadeScrollbars="true" />
+    <include layout="@layout/cancel_ok_bar" />
+</LinearLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge n1:layout_width="fill_parent" n1:layout_height="fill_parent"
+  xmlns:n1="http://schemas.android.com/apk/res/android">
+    <net.oneplus.weather.widget.BaseVideoView n1:id="@id/videoViewWeather" n1:layout_width="fill_parent" n1:layout_height="fill_parent" />
+    <ImageView n1:id="@id/imageViewBlank" n1:visibility="gone" n1:layout_width="fill_parent" n1:layout_height="fill_parent" n1:src="@drawable/ic_launcher" n1:scaleType="centerCrop" />
+</merge>

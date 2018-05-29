@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="entries_humidity_list_preference">
+        <item>% - 相对湿度</item>
+        <item>g/m³ - 绝对湿度</item>
+    </string-array>
+    <string-array name="entries_temperature_list_preference">
+        <item>℃ - 摄氏度</item>
+        <item>℉ - 华氏度</item>
+    </string-array>
+    <string-array name="entryvalues_humidity_list_preference">
+        <item>true</item>
+        <item>false</item>
+    </string-array>
+    <string-array name="entryvalues_temperature_list_preference">
+        <item>true</item>
+        <item>false</item>
+    </string-array>
+    <string-array name="wind_direction">
+        <item>微风</item>
+        <item>3~4级</item>
+        <item>4~5级</item>
+        <item>5~6级</item>
+        <item>6~7级</item>
+        <item>7~8级</item>
+        <item>8~9级</item>
+        <item>9~10级</item>
+        <item>10~11级</item>
+        <item>11~12级</item>
+    </string-array>
+    <string-array name="wind_power">
+        <item>无持续风向</item>
+        <item>东北风</item>
+        <item>东风</item>
+        <item>东南风</item>
+        <item>南风</item>
+        <item>西南风</item>
+        <item>西风</item>
+        <item>西北风</item>
+        <item>北风</item>
+        <item>旋转风</item>
+    </string-array>
+</resources>

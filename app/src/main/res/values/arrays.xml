@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="entries_humidity_list_preference">
+        <item>@string/relative_humidity</item>
+        <item>@string/absolute_humidity</item>
+    </string-array>
+    <string-array name="entries_temperature_list_preference">
+        <item>@string/celsius</item>
+        <item>@string/fahrenheit</item>
+    </string-array>
+    <string-array name="entryvalues_humidity_list_preference">
+        <item>true</item>
+        <item>false</item>
+    </string-array>
+    <string-array name="entryvalues_temperature_list_preference">
+        <item>true</item>
+        <item>false</item>
+    </string-array>
+    <string-array name="wind_direction">
+        <item>&lt;10m/h</item>
+        <item>10~17m/h</item>
+        <item>17~25m/h</item>
+        <item>25~34m/h</item>
+        <item>34~43m/h</item>
+        <item>43~54m/h</item>
+        <item>54~65m/h</item>
+        <item>65~77m/h</item>
+        <item>77~89m/h</item>
+        <item>89~102m/h</item>
+    </string-array>
+    <string-array name="wind_power">
+        <item>No Wind</item>
+        <item>Northeast</item>
+        <item>East</item>
+        <item>Southeast</item>
+        <item>South</item>
+        <item>Southwest</item>
+        <item>West</item>
+        <item>Northwest</item>
+        <item>North</item>
+        <item>Whirl wind</item>
+    </string-array>
+</resources>

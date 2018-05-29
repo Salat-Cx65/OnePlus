@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.oneplus.lib.preference.PreferenceScreen>
+    <com.oneplus.lib.widget.preference.OPListPreference n1:entries="@array/entries_temperature_list_preference" n1:title="@string/temperature" n1:key="settings_preference_temperature" n1:summary="@string/temperature" n1:dialogTitle="@string/temperature" n1:entryValues="@array/entryvalues_temperature_list_preference"
+      xmlns:n1="http://schemas.android.com/apk/res/android" />
+    <com.oneplus.lib.widget.preference.OPListPreference n2:entries="@array/entries_humidity_list_preference" n2:title="@string/humidity" n2:key="settings_preference_humidity" n2:summary="@string/humidity" n2:dialogTitle="@string/humidity" n2:entryValues="@array/entryvalues_humidity_list_preference"
+      xmlns:n2="http://schemas.android.com/apk/res/android" />
+    <com.oneplus.lib.widget.preference.OPSwitchPreference n3:title="@string/the_weather_warn" n3:key="settings_preference_warn" n3:summary="@string/warn_tips"
+      xmlns:n3="http://schemas.android.com/apk/res/android" />
+    <Preference n4:title="@string/about" n4:key="settings_preference_about"
+      xmlns:n4="http://schemas.android.com/apk/res/android" />
+</com.oneplus.lib.preference.PreferenceScreen>
