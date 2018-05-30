@@ -1,15 +1,14 @@
 package net.oneplus.weather.api.nodes;
 
 import android.content.Context;
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.location.DetectedActivity;
-import java.util.Locale;
-import net.oneplus.weather.api.R;
+
+import net.oneplus.weather.R;
 import net.oneplus.weather.api.helper.NumberUtils;
 import net.oneplus.weather.util.StringUtils;
 import net.oneplus.weather.widget.WeatherCircleView;
-import net.oneplus.weather.widget.openglbase.RainSurfaceView;
 import net.oneplus.weather.widget.shap.Stars;
+
+import java.util.Locale;
 
 public class Wind extends AbstractWeather {
     private final Direction mDirection;
@@ -111,21 +110,21 @@ public class Wind extends AbstractWeather {
 
     public static Direction getDirectionFromAccu(String text) {
         String toLowerCase = text.toLowerCase(Locale.ENGLISH);
-        Object obj = -1;
+        int obj = -1;
         switch (toLowerCase.hashCode()) {
-            case net.oneplus.weather.R.styleable.AppCompatTheme_textAppearanceSearchResultTitle:
+            case R.styleable.AppCompatTheme_textAppearanceSearchResultTitle:
                 if (toLowerCase.equals("e")) {
-                    obj = RainSurfaceView.RAIN_LEVEL_RAINSTORM;
+                    obj = 4;
                 }
                 break;
-            case net.oneplus.weather.R.styleable.AppCompatTheme_windowActionBarOverlay:
+            case R.styleable.AppCompatTheme_windowActionBarOverlay:
                 if (toLowerCase.equals("n")) {
-                    obj = null;
+                    obj = -1;
                 }
                 break;
-            case net.oneplus.weather.R.styleable.AppCompatTheme_windowFixedWidthMinor:
+            case R.styleable.AppCompatTheme_windowFixedWidthMinor:
                 if (toLowerCase.equals("s")) {
-                    obj = DetectedActivity.RUNNING;
+                    obj = 8;
                 }
                 break;
             case 119:
@@ -135,32 +134,32 @@ public class Wind extends AbstractWeather {
                 break;
             case 3511:
                 if (toLowerCase.equals("ne")) {
-                    obj = RainSurfaceView.RAIN_LEVEL_SHOWER;
+                    obj = 2;
                 }
                 break;
             case 3529:
                 if (toLowerCase.equals("nw")) {
-                    obj = ConnectionResult.TIMEOUT;
+                    obj = 14;
                 }
                 break;
             case 3666:
                 if (toLowerCase.equals("se")) {
-                    obj = ConnectionResult.RESOLUTION_REQUIRED;
+                    obj = 6;
                 }
                 break;
             case 3684:
                 if (toLowerCase.equals("sw")) {
-                    obj = ConnectionResult.DEVELOPER_ERROR;
+                    obj = 10;
                 }
                 break;
             case 100572:
                 if (toLowerCase.equals("ene")) {
-                    obj = RainSurfaceView.RAIN_LEVEL_DOWNPOUR;
+                    obj = 3;
                 }
                 break;
             case 100727:
                 if (toLowerCase.equals("ese")) {
-                    obj = RainSurfaceView.RAIN_LEVEL_THUNDERSHOWER;
+                    obj = 5;
                 }
                 break;
             case 109221:
@@ -170,62 +169,62 @@ public class Wind extends AbstractWeather {
                 break;
             case 109509:
                 if (toLowerCase.equals("nwn")) {
-                    obj = ConnectionResult.INTERRUPTED;
+                    obj = 15;
                 }
                 break;
             case 114181:
                 if (toLowerCase.equals("sse")) {
-                    obj = DetectedActivity.WALKING;
+                    obj = 7;
                 }
                 break;
             case 114199:
                 if (toLowerCase.equals("ssw")) {
-                    obj = ConnectionResult.SERVICE_INVALID;
+                    obj = 9;
                 }
                 break;
             case 117888:
                 if (toLowerCase.equals("wnw")) {
-                    obj = ConnectionResult.CANCELED;
+                    obj = 13;
                 }
                 break;
             case 118043:
                 if (toLowerCase.equals("wsw")) {
-                    obj = ConnectionResult.LICENSE_CHECK_FAILED;
+                    obj = 11;
                 }
                 break;
         }
         switch (obj) {
-            case RainSurfaceView.RAIN_LEVEL_DRIZZLE:
+            case 0:
                 return Direction.N;
-            case RainSurfaceView.RAIN_LEVEL_NORMAL_RAIN:
+            case 1:
                 return Direction.NNE;
-            case RainSurfaceView.RAIN_LEVEL_SHOWER:
+            case 2:
                 return Direction.NE;
-            case RainSurfaceView.RAIN_LEVEL_DOWNPOUR:
+            case 3:
                 return Direction.ENE;
-            case RainSurfaceView.RAIN_LEVEL_RAINSTORM:
+            case 4:
                 return Direction.E;
-            case RainSurfaceView.RAIN_LEVEL_THUNDERSHOWER:
+            case 5:
                 return Direction.ESE;
-            case ConnectionResult.RESOLUTION_REQUIRED:
+            case 6:
                 return Direction.SE;
-            case DetectedActivity.WALKING:
+            case 7:
                 return Direction.SSE;
-            case DetectedActivity.RUNNING:
+            case 8:
                 return Direction.S;
-            case ConnectionResult.SERVICE_INVALID:
+            case 9:
                 return Direction.SSW;
-            case ConnectionResult.DEVELOPER_ERROR:
+            case 10:
                 return Direction.SW;
-            case ConnectionResult.LICENSE_CHECK_FAILED:
+            case 11:
                 return Direction.WSW;
             case WeatherCircleView.ARC_DIN:
                 return Direction.W;
-            case ConnectionResult.CANCELED:
+            case 13:
                 return Direction.WNW;
-            case ConnectionResult.TIMEOUT:
+            case 14:
                 return Direction.NW;
-            case ConnectionResult.INTERRUPTED:
+            case 15:
                 return Direction.NWN;
             default:
                 return Direction.NA;
@@ -234,84 +233,84 @@ public class Wind extends AbstractWeather {
 
     public static Direction getDirectionFromOppo(String text) {
         String toLowerCase = text.toLowerCase(Locale.ENGLISH);
-        Object obj = -1;
+        int obj = -1;
         switch (toLowerCase.hashCode()) {
             case -589995872:
-                if (toLowerCase.equals("\u65cb\u8f6c\u4e0d\u5b9a\u98ce")) {
-                    obj = RainSurfaceView.RAIN_LEVEL_SHOWER;
+                if (toLowerCase.equals("旋转不定风")) {
+                    obj = 2;
                 }
                 break;
             case 658994:
-                if (toLowerCase.equals("\u4e1c\u98ce")) {
-                    obj = RainSurfaceView.RAIN_LEVEL_THUNDERSHOWER;
+                if (toLowerCase.equals("东风")) {
+                    obj = 5;
                 }
                 break;
             case 698519:
-                if (toLowerCase.equals("\u5317\u98ce")) {
-                    obj = RainSurfaceView.RAIN_LEVEL_DOWNPOUR;
+                if (toLowerCase.equals("北风")) {
+                    obj = 3;
                 }
                 break;
             case 700503:
-                if (toLowerCase.equals("\u5357\u98ce")) {
-                    obj = DetectedActivity.WALKING;
+                if (toLowerCase.equals("南风")) {
+                    obj = 7;
                 }
                 break;
             case 1130287:
-                if (toLowerCase.equals("\u897f\u98ce")) {
-                    obj = ConnectionResult.SERVICE_INVALID;
+                if (toLowerCase.equals("西风")) {
+                    obj = 9;
                 }
                 break;
             case 19914675:
-                if (toLowerCase.equals("\u4e1c\u5317\u98ce")) {
-                    obj = RainSurfaceView.RAIN_LEVEL_RAINSTORM;
+                if (toLowerCase.equals("东北风")) {
+                    obj = 4;
                 }
                 break;
             case 19916659:
-                if (toLowerCase.equals("\u4e1c\u5357\u98ce")) {
-                    obj = ConnectionResult.RESOLUTION_REQUIRED;
+                if (toLowerCase.equals("东南风")) {
+                    obj = 6;
                 }
                 break;
             case 26220013:
-                if (toLowerCase.equals("\u65cb\u8f6c\u98ce")) {
-                    obj = null;
+                if (toLowerCase.equals("旋转风")) {
+                    obj = -1;
                 }
                 break;
             case 34524758:
-                if (toLowerCase.equals("\u897f\u5317\u98ce")) {
-                    obj = ConnectionResult.DEVELOPER_ERROR;
+                if (toLowerCase.equals("西北风")) {
+                    obj = 10;
                 }
                 break;
             case 34526742:
-                if (toLowerCase.equals("\u897f\u5357\u98ce")) {
-                    obj = DetectedActivity.RUNNING;
+                if (toLowerCase.equals("西南风")) {
+                    obj = 8;
                 }
                 break;
             case 812250606:
-                if (toLowerCase.equals("\u65cb\u8f6c\u4e0d\u5b9a")) {
+                if (toLowerCase.equals("旋转不定")) {
                     obj = 1;
                 }
                 break;
         }
         switch (obj) {
-            case RainSurfaceView.RAIN_LEVEL_DRIZZLE:
-            case RainSurfaceView.RAIN_LEVEL_NORMAL_RAIN:
-            case RainSurfaceView.RAIN_LEVEL_SHOWER:
+            case 0:
+            case 1:
+            case 2:
                 return Direction.RW;
-            case RainSurfaceView.RAIN_LEVEL_DOWNPOUR:
+            case 3:
                 return Direction.N;
-            case RainSurfaceView.RAIN_LEVEL_RAINSTORM:
+            case 4:
                 return Direction.NE;
-            case RainSurfaceView.RAIN_LEVEL_THUNDERSHOWER:
+            case 5:
                 return Direction.E;
-            case ConnectionResult.RESOLUTION_REQUIRED:
+            case 6:
                 return Direction.SE;
-            case DetectedActivity.WALKING:
+            case 7:
                 return Direction.S;
-            case DetectedActivity.RUNNING:
+            case 8:
                 return Direction.SW;
-            case ConnectionResult.SERVICE_INVALID:
+            case 9:
                 return Direction.W;
-            case ConnectionResult.DEVELOPER_ERROR:
+            case 10:
                 return Direction.NW;
             default:
                 return Direction.NA;
@@ -319,11 +318,11 @@ public class Wind extends AbstractWeather {
     }
 
     public static Direction getDirectionFromSwa(String text) {
-        Object obj = -1;
+        int obj = -1;
         switch (text.hashCode()) {
             case net.oneplus.weather.R.styleable.AppCompatTheme_colorAccent:
                 if (text.equals("0")) {
-                    obj = null;
+                    obj = -1;
                 }
                 break;
             case net.oneplus.weather.R.styleable.AppCompatTheme_colorBackgroundFloating:
@@ -333,65 +332,65 @@ public class Wind extends AbstractWeather {
                 break;
             case Stars.CIRCLE_COUNT:
                 if (text.equals("2")) {
-                    obj = RainSurfaceView.RAIN_LEVEL_SHOWER;
+                    obj = 2;
                 }
                 break;
             case net.oneplus.weather.R.styleable.AppCompatTheme_colorControlActivated:
                 if (text.equals("3")) {
-                    obj = RainSurfaceView.RAIN_LEVEL_DOWNPOUR;
+                    obj = 3;
                 }
                 break;
             case net.oneplus.weather.R.styleable.AppCompatTheme_colorControlHighlight:
                 if (text.equals("4")) {
-                    obj = RainSurfaceView.RAIN_LEVEL_RAINSTORM;
+                    obj = 4;
                 }
                 break;
             case net.oneplus.weather.R.styleable.AppCompatTheme_colorControlNormal:
                 if (text.equals("5")) {
-                    obj = RainSurfaceView.RAIN_LEVEL_THUNDERSHOWER;
+                    obj = 5;
                 }
                 break;
             case net.oneplus.weather.R.styleable.AppCompatTheme_colorError:
                 if (text.equals("6")) {
-                    obj = ConnectionResult.RESOLUTION_REQUIRED;
+                    obj = 6;
                 }
                 break;
             case net.oneplus.weather.R.styleable.AppCompatTheme_colorPrimary:
                 if (text.equals("7")) {
-                    obj = DetectedActivity.WALKING;
+                    obj = 7;
                 }
                 break;
             case net.oneplus.weather.R.styleable.AppCompatTheme_colorPrimaryDark:
                 if (text.equals("8")) {
-                    obj = DetectedActivity.RUNNING;
+                    obj = 8;
                 }
                 break;
             case net.oneplus.weather.R.styleable.AppCompatTheme_colorSwitchThumbNormal:
                 if (text.equals("9")) {
-                    obj = ConnectionResult.SERVICE_INVALID;
+                    obj = 9;
                 }
                 break;
         }
         switch (obj) {
-            case RainSurfaceView.RAIN_LEVEL_DRIZZLE:
+            case 0:
                 return Direction.NA;
-            case RainSurfaceView.RAIN_LEVEL_NORMAL_RAIN:
+            case 1:
                 return Direction.NE;
-            case RainSurfaceView.RAIN_LEVEL_SHOWER:
+            case 2:
                 return Direction.E;
-            case RainSurfaceView.RAIN_LEVEL_DOWNPOUR:
+            case 3:
                 return Direction.SE;
-            case RainSurfaceView.RAIN_LEVEL_RAINSTORM:
+            case 4:
                 return Direction.S;
-            case RainSurfaceView.RAIN_LEVEL_THUNDERSHOWER:
+            case 5:
                 return Direction.SW;
-            case ConnectionResult.RESOLUTION_REQUIRED:
+            case 6:
                 return Direction.W;
-            case DetectedActivity.WALKING:
+            case 7:
                 return Direction.NW;
-            case DetectedActivity.RUNNING:
+            case 8:
                 return Direction.N;
-            case ConnectionResult.SERVICE_INVALID:
+            case 9:
                 return Direction.RW;
             default:
                 return Direction.NA;

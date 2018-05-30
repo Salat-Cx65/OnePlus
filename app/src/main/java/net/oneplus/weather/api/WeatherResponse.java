@@ -1,19 +1,16 @@
 package net.oneplus.weather.api;
 
 import android.content.Context;
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.location.DetectedActivity;
-import com.oneplus.lib.widget.recyclerview.ItemTouchHelper;
+
 import net.oneplus.weather.api.cache.WeatherCache;
 import net.oneplus.weather.api.nodes.RootWeather;
-import net.oneplus.weather.widget.openglbase.RainSurfaceView;
 
 public class WeatherResponse {
     private WeatherException mError;
     private int mRequestedType;
     private RootWeather mResult;
 
-    public static interface CacheListener {
+    public interface CacheListener {
         void onResponse(RootWeather rootWeather);
     }
 
@@ -42,54 +39,56 @@ public class WeatherResponse {
     }
 
     public static boolean containRequestedData(int type, RootWeather weather) {
-        if (WeatherRequest.contain(type, DetectedActivity.RUNNING) && weather.getAqiWeather() != null) {
+        if (WeatherRequest.contain(type, WeatherRequest.Type.AQI) && weather.getAqiWeather() != null) {
             return true;
         }
-        if (WeatherRequest.contain(type, 1) && weather.getCurrentWeather() != null) {
+        if (WeatherRequest.contain(type, WeatherRequest.Type.CURRENT) && weather.getCurrentWeather() != null) {
             return true;
         }
-        if (WeatherRequest.contain(type, RainSurfaceView.RAIN_LEVEL_RAINSTORM) && weather.getDailyForecastsWeather() != null) {
+        if (WeatherRequest.contain(type, WeatherRequest.Type.DAILY_FORECASTS) && weather.getDailyForecastsWeather()
+                != null) {
             return true;
         }
-        if (WeatherRequest.contain(type, RainSurfaceView.RAIN_LEVEL_SHOWER) && weather.getHourForecastsWeather() != null) {
+        if (WeatherRequest.contain(type, WeatherRequest.Type.HOUR_FORECASTS) && weather.getHourForecastsWeather() !=
+                null) {
             return true;
         }
-        if (!WeatherRequest.contain(type, ConnectionResult.API_UNAVAILABLE) || weather.getLifeIndexWeather() == null) {
-            return WeatherRequest.contain(type, ItemTouchHelper.END) && weather.getWeatherAlarms() != null;
+        if (!WeatherRequest.contain(type, WeatherRequest.Type.LIFE_INDEX) || weather.getLifeIndexWeather() == null) {
+            return WeatherRequest.contain(type, WeatherRequest.Type.LIFE_INDEX) && weather.getWeatherAlarms() != null;
         } else {
             return true;
         }
     }
 
     public void addResponse(RootWeather weather, int type) {
-        if (this.mResult == null) {
-            this.mResult = weather;
+        if (mResult == null) {
+            mResult = weather;
         } else if (weather != null) {
             switch (type) {
-                case RainSurfaceView.RAIN_LEVEL_NORMAL_RAIN:
-                    this.mResult.setCurrentWeather(weather.getCurrentWeather());
+                case WeatherRequest.Type.CURRENT:
+                    mResult.setCurrentWeather(weather.getCurrentWeather());
                     break;
-                case RainSurfaceView.RAIN_LEVEL_SHOWER:
-                    this.mResult.setHourForecastsWeather(weather.getHourForecastsWeather());
+                case WeatherRequest.Type.HOUR_FORECASTS:
+                    mResult.setHourForecastsWeather(weather.getHourForecastsWeather());
                     break;
-                case RainSurfaceView.RAIN_LEVEL_RAINSTORM:
-                    this.mResult.setDailyForecastsWeather(weather.getDailyForecastsWeather());
-                    this.mResult.setFutureLink(weather.getFutureLink());
+                case WeatherRequest.Type.DAILY_FORECASTS:
+                    mResult.setDailyForecastsWeather(weather.getDailyForecastsWeather());
+                    mResult.setFutureLink(weather.getFutureLink());
                     break;
-                case DetectedActivity.RUNNING:
-                    this.mResult.setAqiWeather(weather.getAqiWeather());
+                case WeatherRequest.Type.AQI:
+                    mResult.setAqiWeather(weather.getAqiWeather());
                     break;
-                case ConnectionResult.API_UNAVAILABLE:
-                    this.mResult.setLifeIndexWeather(weather.getLifeIndexWeather());
+                case WeatherRequest.Type.LIFE_INDEX:
+                    mResult.setLifeIndexWeather(weather.getLifeIndexWeather());
                     break;
-                case ItemTouchHelper.END:
-                    this.mResult.setWeatherAlarms(weather.getWeatherAlarms());
+                case WeatherRequest.Type.ALARM:
+                    mResult.setWeatherAlarms(weather.getWeatherAlarms());
                     break;
                 default:
                     break;
             }
         }
-        this.mRequestedType |= type;
+        mRequestedType |= type;
     }
 
     public boolean isSuccess() {
@@ -97,61 +96,61 @@ public class WeatherResponse {
     }
 
     public RootWeather getResult() {
-        return this.mResult;
+        return mResult;
     }
 
     public WeatherException getError() {
-        return this.mError;
+        return mError;
     }
 
     public boolean isRequested(int type) {
         boolean hasData = false;
         switch (type) {
-            case RainSurfaceView.RAIN_LEVEL_NORMAL_RAIN:
-                if (this.mResult == null || this.mResult.getCurrentWeather() == null) {
+            case WeatherRequest.Type.CURRENT:
+                if (mResult == null || mResult.getCurrentWeather() == null) {
                     hasData = false;
                 } else {
                     hasData = true;
                 }
                 break;
-            case RainSurfaceView.RAIN_LEVEL_SHOWER:
-                if (this.mResult == null || this.mResult.getHourForecastsWeather() == null) {
+            case WeatherRequest.Type.HOUR_FORECASTS:
+                if (mResult == null || mResult.getHourForecastsWeather() == null) {
                     hasData = false;
                 } else {
                     hasData = true;
                 }
                 break;
-            case RainSurfaceView.RAIN_LEVEL_RAINSTORM:
-                if (this.mResult == null || this.mResult.getDailyForecastsWeather() == null) {
+            case WeatherRequest.Type.DAILY_FORECASTS:
+                if (mResult == null || mResult.getDailyForecastsWeather() == null) {
                     hasData = false;
                 } else {
                     hasData = true;
                 }
                 break;
-            case DetectedActivity.RUNNING:
-                if (this.mResult == null || this.mResult.getAqiWeather() == null) {
+            case WeatherRequest.Type.AQI:
+                if (mResult == null || mResult.getAqiWeather() == null) {
                     hasData = false;
                 } else {
                     hasData = true;
                 }
                 break;
-            case ConnectionResult.API_UNAVAILABLE:
-                if (this.mResult == null || this.mResult.getLifeIndexWeather() == null) {
+            case WeatherRequest.Type.LIFE_INDEX:
+                if (mResult == null || mResult.getLifeIndexWeather() == null) {
                     hasData = false;
                 } else {
                     hasData = true;
                 }
                 break;
-            case ItemTouchHelper.END:
-                hasData = (this.mResult == null || this.mResult.getWeatherAlarms() == null) ? false : true;
+            case WeatherRequest.Type.ALARM:
+                hasData = (mResult == null || mResult.getWeatherAlarms() == null) ? false : true;
                 break;
         }
-        return (this.mRequestedType & type) == type || hasData;
+        return (mRequestedType & type) == type || hasData;
     }
 
     public void setError(WeatherException error) {
-        this.mError = error;
-        this.mResult = null;
-        this.mRequestedType = 0;
+        mError = error;
+        mResult = null;
+        mRequestedType = 0;
     }
 }

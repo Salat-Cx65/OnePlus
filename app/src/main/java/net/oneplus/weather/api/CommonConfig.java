@@ -1,13 +1,13 @@
 package net.oneplus.weather.api;
 
-import com.google.android.gms.common.ConnectionResult;
-import java.util.Date;
 import net.oneplus.weather.api.helper.DateUtils;
 import net.oneplus.weather.api.helper.StringUtils;
 import net.oneplus.weather.api.helper.WeatherUtils;
 
+import java.util.Date;
+
 public final class CommonConfig {
-    static final /* synthetic */ boolean $assertionsDisabled;
+    static final boolean $assertionsDisabled = CommonConfig.class.desiredAssertionStatus();
     public static final String ACCU_API_KEY = "590df10b57554ac099b44ffbfaafa5bb";
     private static final String ACCU_API_KEY_DEV = "eey3z2dBNI896hIG08j7q1uxXzTxJqkZ";
     private static final String ACCU_API_KEY_PRD = "590df10b57554ac099b44ffbfaafa5bb";
@@ -18,14 +18,21 @@ public final class CommonConfig {
     public static final boolean DEBUG = false;
     public static final String EMPTY_STRING = "";
     private static final String LOCAL_US = "en-us";
-    public static final String OPPO_REQUEST_URL_CHINA_v1 = "http://weather.myoppo.com/chinaWeather/smChinaWeathers/%s/%s-%s.xml";
-    public static final String OPPO_REQUEST_URL_CHINA_v2 = "http://weather.myoppo.com/chinaWeather/smChinaWeathersGz/%s/%s-%s.xml.gz";
-    public static final String OPPO_REQUEST_URL_CHINA_v3 = "http://i1.weather.oppomobile.com/chinaWeather/smChinaWeathersGz/%s/%s-%s.json.gz";
-    public static final String OPPO_REQUEST_URL_CHINA_v3_BACKUP = "http://i2.weather.oppomobile.com/chinaWeather/smChinaWeathersGz/%s/%s-%s.json.gz";
-    public static final String OPPO_REQUEST_URL_FOREIGN = "http://newtq.myoppo.com/weather_world/worldWeather_new/%s/%s-%s.xml";
+    public static final String OPPO_REQUEST_URL_CHINA_v1 = "http://weather.myoppo" +
+            ".com/chinaWeather/smChinaWeathers/%s/%s-%s.xml";
+    public static final String OPPO_REQUEST_URL_CHINA_v2 = "http://weather.myoppo" +
+            ".com/chinaWeather/smChinaWeathersGz/%s/%s-%s.xml.gz";
+    public static final String OPPO_REQUEST_URL_CHINA_v3 = "http://i1.weather.oppomobile" +
+            ".com/chinaWeather/smChinaWeathersGz/%s/%s-%s.json.gz";
+    public static final String OPPO_REQUEST_URL_CHINA_v3_BACKUP = "http://i2.weather.oppomobile" +
+            ".com/chinaWeather/smChinaWeathersGz/%s/%s-%s.json.gz";
+    public static final String OPPO_REQUEST_URL_FOREIGN = "http://newtq.myoppo" +
+            ".com/weather_world/worldWeather_new/%s/%s-%s.xml";
     private static final String SWA_HOST_NAME = "http://webapi.weather.com.cn/";
-    private static final String SWA_HOST_NAME_WITHOUT_KEY = "http://webapi.weather.com.cn/data/?areaid=%s&type=%s&date=%s&appid=%s";
-    private static final String SWA_HOST_NAME_WITH_KEY = "http://webapi.weather.com.cn/data/?areaid=%s&type=%s&date=%s&appid=%s&key=%s";
+    private static final String SWA_HOST_NAME_WITHOUT_KEY = "http://webapi.weather.com" +
+            ".cn/data/?areaid=%s&type=%s&date=%s&appid=%s";
+    private static final String SWA_HOST_NAME_WITH_KEY = "http://webapi.weather.com" +
+            ".cn/data/?areaid=%s&type=%s&date=%s&appid=%s&key=%s";
     private static final String SWA_OPPO_APPID = "ac845ca00d98401c";
     private static final String SWA_OPPO_SECKEY = "yijia_webapi_data";
     private static final String SWA_TYPE_AIR = "air";
@@ -35,10 +42,6 @@ public final class CommonConfig {
     private static final String SWA_TYPE_HOUR_FORECASTS = "hourfc";
     private static final String SWA_TYPE_INDEX = "index";
     public static final String WEATHER_REQUESTS = "CustomTags:WEATHER_REQUESTS";
-
-    static {
-        $assertionsDisabled = !CommonConfig.class.desiredAssertionStatus() ? true : DEBUG;
-    }
 
     public static String getOppoChinaUrl(String key) {
         if ($assertionsDisabled || key != null) {
@@ -102,7 +105,8 @@ public final class CommonConfig {
             if (StringUtils.isBlank(locale)) {
                 locale = LOCAL_US;
             }
-            return "http://api.accuweather.com/airquality/v1/observations/" + key + ".json?apikey=" + ACCU_API_KEY_PRD + "&language=" + locale;
+            return "http://api.accuweather.com/airquality/v1/observations/" + key + ".json?apikey=" +
+                    ACCU_API_KEY_PRD + "&language=" + locale;
         }
         throw new AssertionError();
     }
@@ -112,7 +116,8 @@ public final class CommonConfig {
             if (StringUtils.isBlank(locale)) {
                 locale = LOCAL_US;
             }
-            return "http://api.accuweather.com/currentconditions/v1/" + key + ".json?apikey=" + ACCU_API_KEY_PRD + "&language=" + locale + "&details=true";
+            return "http://api.accuweather.com/currentconditions/v1/" + key + ".json?apikey=" + ACCU_API_KEY_PRD +
+                    "&language=" + locale + "&details=true";
         }
         throw new AssertionError();
     }
@@ -122,7 +127,8 @@ public final class CommonConfig {
             if (StringUtils.isBlank(locale)) {
                 locale = LOCAL_US;
             }
-            return "http://api.accuweather.com/forecasts/v1/hourly/24hour/" + key + "?apikey=" + ACCU_API_KEY_PRD + "&language=" + locale + "&details=true&metric=true";
+            return "http://api.accuweather.com/forecasts/v1/hourly/24hour/" + key + "?apikey=" + ACCU_API_KEY_PRD +
+                    "&language=" + locale + "&details=true&metric=true";
         }
         throw new AssertionError();
     }
@@ -132,7 +138,8 @@ public final class CommonConfig {
             if (StringUtils.isBlank(locale)) {
                 locale = LOCAL_US;
             }
-            return "http://api.accuweather.com/forecasts/v1/daily/10day/" + key + "?apikey=" + ACCU_API_KEY_PRD + "&language=" + locale + "&details=true&metric=true";
+            return "http://api.accuweather.com/forecasts/v1/daily/10day/" + key + "?apikey=" + ACCU_API_KEY_PRD +
+                    "&language=" + locale + "&details=true&metric=true";
         }
         throw new AssertionError();
     }
@@ -142,7 +149,8 @@ public final class CommonConfig {
             if (StringUtils.isBlank(locale)) {
                 locale = LOCAL_US;
             }
-            return "http://api.accuweather.com/alerts/v1/" + key + ".json?apikey=" + ACCU_API_KEY_PRD + "&language=" + locale + "&details=true";
+            return "http://api.accuweather.com/alerts/v1/" + key + ".json?apikey=" + ACCU_API_KEY_PRD + "&language="
+                    + locale + "&details=true";
         }
         throw new AssertionError();
     }
@@ -233,7 +241,9 @@ public final class CommonConfig {
 
     private static String getSwaUrl(String id, String type, Date date) {
         String strDate = DateUtils.formatSwaRequestDateText(date);
-        String key = WeatherUtils.swaStandardURLEncoder(String.format(SWA_HOST_NAME_WITHOUT_KEY, new Object[]{id, type, strDate, SWA_OPPO_APPID}), SWA_OPPO_SECKEY);
-        return String.format(SWA_HOST_NAME_WITH_KEY, new Object[]{id, type, strDate, SWA_OPPO_APPID.substring(0, ConnectionResult.RESOLUTION_REQUIRED), key});
+        String key = WeatherUtils.swaStandardURLEncoder(String.format(SWA_HOST_NAME_WITHOUT_KEY, new Object[]{id,
+                type, strDate, SWA_OPPO_APPID}), SWA_OPPO_SECKEY);
+        return String.format(SWA_HOST_NAME_WITH_KEY, new Object[]{id, type, strDate, SWA_OPPO_APPID.substring(0,
+                6), key});
     }
 }

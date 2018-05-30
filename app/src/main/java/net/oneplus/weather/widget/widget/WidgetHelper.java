@@ -10,13 +10,8 @@ import android.database.Cursor;
 import android.os.Handler;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.View;
 import android.widget.RemoteViews;
-import com.google.android.gms.location.DetectedActivity;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Iterator;
-import java.util.List;
-import java.util.TimeZone;
 
 import net.oneplus.weather.R;
 import net.oneplus.weather.api.WeatherException;
@@ -39,6 +34,12 @@ import net.oneplus.weather.util.WeatherLog;
 import net.oneplus.weather.util.WeatherResHelper;
 import net.oneplus.weather.widget.openglbase.RainSurfaceView;
 
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Iterator;
+import java.util.List;
+import java.util.TimeZone;
+
 public class WidgetHelper extends ContextWrapper {
     public static final String ACTION_REFRESH = "net.oneplus.weather.widget.REFRESH";
     public static final String NEED_REFRESH = "need_refresh";
@@ -50,57 +51,10 @@ public class WidgetHelper extends ContextWrapper {
     private final Handler mHandler;
     private RemoteViews mRemoteViews;
 
-    class AnonymousClass_1 implements OnResponseListener {
-        final /* synthetic */ CityData val$finalCityData;
-        final /* synthetic */ int val$finalWidgetId;
-
-        class AnonymousClass_1 implements Runnable {
-            final /* synthetic */ RootWeather val$response;
-
-            AnonymousClass_1(RootWeather rootWeather) {
-                this.val$response = rootWeather;
-            }
-
-            public void run() {
-                WidgetHelper.this.updateWeatherWidget(this.val$response, AnonymousClass_1.this.val$finalCityData, AnonymousClass_1.this.val$finalWidgetId);
-            }
-        }
-
-        class AnonymousClass_2 implements Runnable {
-            final /* synthetic */ RootWeather val$response;
-
-            AnonymousClass_2(RootWeather rootWeather) {
-                this.val$response = rootWeather;
-            }
-
-            public void run() {
-                WidgetHelper.this.updateWeatherWidget(this.val$response, AnonymousClass_1.this.val$finalCityData, AnonymousClass_1.this.val$finalWidgetId);
-            }
-        }
-
-        AnonymousClass_1(CityData cityData, int i) {
-            this.val$finalCityData = cityData;
-            this.val$finalWidgetId = i;
-        }
-
-        public void onCacheResponse(RootWeather response) {
-            WidgetHelper.this.mHandler.postDelayed(new AnonymousClass_1(response), 500);
-        }
-
-        public void onNetworkResponse(RootWeather response) {
-            WidgetHelper.this.mHandler.postDelayed(new AnonymousClass_2(response), 500);
-        }
-
-        public void onErrorResponse(WeatherException exception) {
-            WidgetHelper.this.setWidgetFail(this.val$finalWidgetId);
-            WeatherLog.e("update error" + exception);
-        }
-    }
-
     private WidgetHelper(Context base) {
         super(base);
-        this.mHandler = new Handler();
-        this.mRemoteViews = new RemoteViews(getPackageName(), 2131492996);
+        mHandler = new Handler();
+        mRemoteViews = new RemoteViews(getPackageName(), R.layout.widget_weather);
     }
 
     public static WidgetHelper getInstance(Context context) {
@@ -157,14 +111,43 @@ public class WidgetHelper extends ContextWrapper {
             WeatherLog.e("cityData or widgetId is null ");
             return;
         }
-        this.mRemoteViews.setViewVisibility(R.id.weather_widget, DetectedActivity.RUNNING);
-        this.mRemoteViews.setViewVisibility(R.id.widget_refreshing_group, 0);
-        this.mRemoteViews.setTextViewText(R.id.widget_refreshing_city, cityData.getLocalName());
-        this.mRemoteViews.setImageViewResource(R.id.widget_refreshing_bar, R.drawable.btn_refresh);
-        this.mRemoteViews.setTextViewText(R.id.widget_refreshing_text, getString(R.string.widget_refreshing));
+        mRemoteViews.setViewVisibility(R.id.weather_widget, View.GONE);
+        mRemoteViews.setViewVisibility(R.id.widget_refreshing_group, View.VISIBLE);
+        mRemoteViews.setTextViewText(R.id.widget_refreshing_city, cityData.getLocalName());
+        mRemoteViews.setImageViewResource(R.id.widget_refreshing_bar, R.drawable.btn_refresh);
+        mRemoteViews.setTextViewText(R.id.widget_refreshing_text, getString(R.string.widget_refreshing));
         Log.d(TAG, "updateDataThenWidget getConfiguration: " + getResources().getConfiguration().toString());
-        sAppWidgetManager.updateAppWidget(widgetId, this.mRemoteViews);
-        new WeatherClientProxy(this).setCacheMode(isForce ? CacheMode.LOAD_NO_CACHE : CacheMode.LOAD_CACHE_ELSE_NETWORK).requestWeatherInfo(cityData, new AnonymousClass_1(cityData, widgetId));
+        sAppWidgetManager.updateAppWidget(widgetId, mRemoteViews);
+        final CityData finalCityData = cityData;
+        final int finalWidgetId = widgetId;
+        new WeatherClientProxy(this).setCacheMode(isForce ? CacheMode.LOAD_NO_CACHE : CacheMode
+                .LOAD_CACHE_ELSE_NETWORK).requestWeatherInfo(cityData, new OnResponseListener() {
+            @Override
+            public void onCacheResponse(final RootWeather rootWeather) {
+                mHandler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        updateWeatherWidget(rootWeather, finalCityData, finalWidgetId);
+                    }
+                }, 500);
+            }
+
+            @Override
+            public void onErrorResponse(WeatherException weatherException) {
+                setWidgetFail(finalWidgetId);
+                WeatherLog.e("update error" + weatherException);
+            }
+
+            @Override
+            public void onNetworkResponse(final RootWeather rootWeather) {
+                mHandler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        updateWeatherWidget(rootWeather, finalCityData, finalWidgetId);
+                    }
+                }, 500);
+            }
+        });
     }
 
     private CityData getCityFromCoursor(Cursor cursor, int index) {
@@ -192,24 +175,28 @@ public class WidgetHelper extends ContextWrapper {
         String timeZone = DateTimeUtils.CHINA_OFFSET;
         if (response.getCurrentWeather() != null) {
             CurrentWeather currentWeather = response.getCurrentWeather();
-            this.mRemoteViews.setViewVisibility(R.id.weather_widget, 0);
-            this.mRemoteViews.setViewVisibility(R.id.widget_refreshing_group, DetectedActivity.RUNNING);
+            mRemoteViews.setViewVisibility(R.id.weather_widget, View.VISIBLE);
+            mRemoteViews.setViewVisibility(R.id.widget_refreshing_group, View.GONE);
             timeZone = currentWeather.getLocalTimeZone();
-            this.mRemoteViews.setTextViewText(R.id.widget_city_name, cityData.getLocalName());
-            RemoteViews remoteViews = this.mRemoteViews;
+            mRemoteViews.setTextViewText(R.id.widget_city_name, cityData.getLocalName());
+            RemoteViews remoteViews = mRemoteViews;
             Object[] objArr = new Object[1];
             objArr[0] = DateTimeUtils.dateToHourMinute(response.getDate(), null);
-            remoteViews.setTextViewText(R.id.widget_refresh_time, getString(2131689866, objArr));
-            this.mRemoteViews.setTextViewText(R.id.widget_weather_des, currentWeather.getWeatherText(this));
-            this.mRemoteViews.setTextViewText(R.id.widget_weather_temp, TemperatureUtil.getCurrentTemperature(this, response.getTodayCurrentTemp()));
+            remoteViews.setTextViewText(R.id.widget_refresh_time, getString(R.string.updated, objArr));
+            mRemoteViews.setTextViewText(R.id.widget_weather_des, currentWeather.getWeatherText(this));
+            mRemoteViews.setTextViewText(R.id.widget_weather_temp, TemperatureUtil.getCurrentTemperature(this,
+                    response.getTodayCurrentTemp()));
             int highTemp = response.getTodayHighTemperature();
             int lowTemp = response.getTodayLowTemperature();
             Log.d(TAG, "highTemp:" + highTemp);
             Log.d(TAG, "lowTemp:" + lowTemp);
             String hTemp = TemperatureUtil.getHighTemperature(this, highTemp);
-            this.mRemoteViews.setTextViewText(R.id.widget_high_low_temp, hTemp.replace("\u00b0", StringUtils.EMPTY_STRING) + " / " + TemperatureUtil.getHighTemperature(this, lowTemp));
+            mRemoteViews.setTextViewText(R.id.widget_high_low_temp, hTemp.replace("°", StringUtils
+                    .EMPTY_STRING) + " / " + TemperatureUtil.getHighTemperature(this, lowTemp));
             try {
-                this.mRemoteViews.setImageViewResource(R.id.widget_bkg, WeatherTypeUtil.getWidgetWeatherTypeResID(WeatherResHelper.weatherToResID(this, response.getCurrentWeatherId()), cityData.isDay(response)));
+                mRemoteViews.setImageViewResource(R.id.widget_bkg, WeatherTypeUtil.getWidgetWeatherTypeResID
+                        (WeatherResHelper.weatherToResID(this, response.getCurrentWeatherId()), cityData.isDay
+                                (response)));
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             }
@@ -220,7 +207,8 @@ public class WidgetHelper extends ContextWrapper {
             int realCurrentdate = DateTimeUtils.timeToDay(this, System.currentTimeMillis(), timeZone);
             Iterator<DailyForecastsWeather> iterator = dailyForecastsWeathers.iterator();
             while (iterator.hasNext()) {
-                if (DateTimeUtils.timeToDay(this, ((DailyForecastsWeather) iterator.next()).getDate().getTime(), timeZone) <= realCurrentdate) {
+                if (DateTimeUtils.timeToDay(this, ((DailyForecastsWeather) iterator.next()).getDate().getTime(),
+                        timeZone) <= realCurrentdate) {
                     iterator.remove();
                 }
             }
@@ -233,34 +221,46 @@ public class WidgetHelper extends ContextWrapper {
                 Calendar c = Calendar.getInstance();
                 c.setTimeZone(TimeZone.getTimeZone("GMT" + timeZone));
                 c.setTimeInMillis(weather.getDate().getTime());
-                String day = DateTimeUtils.getDayString(this, c.get(7));
+                String day = DateTimeUtils.getDayString(this, c.get(Calendar.DAY_OF_WEEK));
                 if (i == 0) {
-                    this.mRemoteViews.setTextViewText(2131296359, day);
-                    this.mRemoteViews.setImageViewResource(2131296361, WeatherResHelper.getWeatherIconResID(WeatherResHelper.weatherToResID(this, weather.getDayWeatherId())));
-                    this.mRemoteViews.setTextViewText(2131296362, TemperatureUtil.getHighTemperature(this, (int) weather.getMaxTemperature().getCentigradeValue()).replace("\u00b0", StringUtils.EMPTY_STRING) + " / " + TemperatureUtil.getHighTemperature(this, (int) weather.getMinTemperature().getCentigradeValue()));
+                    mRemoteViews.setTextViewText(R.id.daily1_date_text, day);
+                    mRemoteViews.setImageViewResource(R.id.daily1_weather_icon, WeatherResHelper.getWeatherIconResID
+                            (WeatherResHelper.weatherToResID(this, weather.getDayWeatherId())));
+                    mRemoteViews.setTextViewText(R.id.daily1_weather_temp, TemperatureUtil.getHighTemperature(this, (int)
+                            weather.getMaxTemperature().getCentigradeValue()).replace("°", StringUtils
+                            .EMPTY_STRING) + " / " + TemperatureUtil.getHighTemperature(this, (int) weather
+                            .getMinTemperature().getCentigradeValue()));
                 }
                 if (i == 1) {
-                    this.mRemoteViews.setTextViewText(2131296363, day);
-                    this.mRemoteViews.setImageViewResource(2131296365, WeatherResHelper.getWeatherIconResID(WeatherResHelper.weatherToResID(this, weather.getDayWeatherId())));
-                    this.mRemoteViews.setTextViewText(2131296366, TemperatureUtil.getHighTemperature(this, (int) weather.getMaxTemperature().getCentigradeValue()).replace("\u00b0", StringUtils.EMPTY_STRING) + " / " + TemperatureUtil.getHighTemperature(this, (int) weather.getMinTemperature().getCentigradeValue()));
+                    mRemoteViews.setTextViewText(R.id.daily2_date_text, day);
+                    mRemoteViews.setImageViewResource(R.id.daily2_weather_icon, WeatherResHelper.getWeatherIconResID
+                            (WeatherResHelper.weatherToResID(this, weather.getDayWeatherId())));
+                    mRemoteViews.setTextViewText(R.id.daily2_weather_temp, TemperatureUtil.getHighTemperature(this, (int)
+                            weather.getMaxTemperature().getCentigradeValue()).replace("°", StringUtils
+                            .EMPTY_STRING) + " / " + TemperatureUtil.getHighTemperature(this, (int) weather
+                            .getMinTemperature().getCentigradeValue()));
                 }
                 if (i == 2) {
-                    this.mRemoteViews.setTextViewText(2131296367, day);
-                    this.mRemoteViews.setImageViewResource(2131296369, WeatherResHelper.getWeatherIconResID(WeatherResHelper.weatherToResID(this, weather.getDayWeatherId())));
-                    this.mRemoteViews.setTextViewText(2131296370, TemperatureUtil.getHighTemperature(this, (int) weather.getMaxTemperature().getCentigradeValue()).replace("\u00b0", StringUtils.EMPTY_STRING) + " / " + TemperatureUtil.getHighTemperature(this, (int) weather.getMinTemperature().getCentigradeValue()));
+                    mRemoteViews.setTextViewText(R.id.daily3_date_text, day);
+                    mRemoteViews.setImageViewResource(R.id.daily3_weather_icon, WeatherResHelper.getWeatherIconResID
+                            (WeatherResHelper.weatherToResID(this, weather.getDayWeatherId())));
+                    mRemoteViews.setTextViewText(R.id.daily3_weather_temp, TemperatureUtil.getHighTemperature(this, (int)
+                            weather.getMaxTemperature().getCentigradeValue()).replace("°", StringUtils
+                            .EMPTY_STRING) + " / " + TemperatureUtil.getHighTemperature(this, (int) weather
+                            .getMinTemperature().getCentigradeValue()));
                 }
             }
         }
-        this.mRemoteViews.setOnClickPendingIntent(R.id.widget_refresh, getRefreshPendingIntent(this, widgetId));
-        this.mRemoteViews.setOnClickPendingIntent(R.id.weather_widget, getClickPendingIntent(this, widgetId));
-        sAppWidgetManager.updateAppWidget(widgetId, this.mRemoteViews);
+        mRemoteViews.setOnClickPendingIntent(R.id.widget_refresh, getRefreshPendingIntent(this, widgetId));
+        mRemoteViews.setOnClickPendingIntent(R.id.weather_widget, getClickPendingIntent(this, widgetId));
+        sAppWidgetManager.updateAppWidget(widgetId, mRemoteViews);
     }
 
     private PendingIntent getClickPendingIntent(Context context, int widgetId) {
         Intent intentClick = getPackageManager().getLaunchIntentForPackage(getPackageName());
         intentClick.putExtra(WIDGET_ID, widgetId);
-        intentClick.setFlags(268468224);
-        return PendingIntent.getActivity(context, widgetId, intentClick, 134217728);
+        intentClick.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        return PendingIntent.getActivity(context, widgetId, intentClick, PendingIntent.FLAG_UPDATE_CURRENT);
     }
 
     private PendingIntent getRefreshPendingIntent(Context context, int widgetId) {
@@ -268,30 +268,31 @@ public class WidgetHelper extends ContextWrapper {
         refreshIntent.putExtra(NEED_REFRESH, true);
         refreshIntent.putExtra(WIDGET_ID, widgetId);
         refreshIntent.setAction(ACTION_REFRESH);
-        return PendingIntent.getBroadcast(context, widgetId, refreshIntent, 134217728);
+        return PendingIntent.getBroadcast(context, widgetId, refreshIntent, PendingIntent.FLAG_UPDATE_CURRENT);
     }
 
     private void setWidgetFail(int widgetId) {
-        this.mRemoteViews.setViewVisibility(R.id.weather_widget, DetectedActivity.RUNNING);
-        this.mRemoteViews.setViewVisibility(R.id.widget_refreshing_group, 0);
-        this.mRemoteViews.setTextViewText(R.id.widget_refreshing_text, getString(R.string.widget_refresh_fail));
-        this.mRemoteViews.setOnClickPendingIntent(R.id.widget_refreshing_bar, getRefreshPendingIntent(this, widgetId));
-        sAppWidgetManager.updateAppWidget(widgetId, this.mRemoteViews);
+        mRemoteViews.setViewVisibility(R.id.weather_widget, View.GONE);
+        mRemoteViews.setViewVisibility(R.id.widget_refreshing_group, View.VISIBLE);
+        mRemoteViews.setTextViewText(R.id.widget_refreshing_text, getString(R.string.widget_refresh_fail));
+        mRemoteViews.setOnClickPendingIntent(R.id.widget_refreshing_bar, getRefreshPendingIntent(this, widgetId));
+        sAppWidgetManager.updateAppWidget(widgetId, mRemoteViews);
     }
 
     private void setWidgetFailException(int widgetId) {
-        this.mRemoteViews.setViewVisibility(R.id.weather_widget, DetectedActivity.RUNNING);
-        this.mRemoteViews.setViewVisibility(R.id.widget_refreshing_group, 0);
-        this.mRemoteViews.setImageViewResource(R.id.widget_bkg, R.drawable.widget_bkg_sunny);
-        this.mRemoteViews.setImageViewResource(R.id.widget_refreshing_bar, R.drawable.ic_add_city);
-        this.mRemoteViews.setTextViewText(R.id.widget_refreshing_text, getString(R.string.widget_refresh_fail_add));
-        this.mRemoteViews.setTextViewText(R.id.widget_refreshing_city, getString(R.string.app_name));
+        mRemoteViews.setViewVisibility(R.id.weather_widget, View.GONE);
+        mRemoteViews.setViewVisibility(R.id.widget_refreshing_group, View.VISIBLE);
+        mRemoteViews.setImageViewResource(R.id.widget_bkg, R.drawable.widget_bkg_sunny);
+        mRemoteViews.setImageViewResource(R.id.widget_refreshing_bar, R.drawable.ic_add_city);
+        mRemoteViews.setTextViewText(R.id.widget_refreshing_text, getString(R.string.widget_refresh_fail_add));
+        mRemoteViews.setTextViewText(R.id.widget_refreshing_city, getString(R.string.app_name));
         Intent chooseIntent = new Intent(this, CityListActivity.class);
         chooseIntent.putExtra(NEED_REFRESH, true);
         chooseIntent.putExtra("appWidgetId", widgetId);
-        chooseIntent.setFlags(268468224);
-        this.mRemoteViews.setOnClickPendingIntent(R.id.widget_refreshing_bar, PendingIntent.getActivity(this, widgetId, chooseIntent, 134217728));
-        sAppWidgetManager.updateAppWidget(widgetId, this.mRemoteViews);
+        chooseIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        mRemoteViews.setOnClickPendingIntent(R.id.widget_refreshing_bar, PendingIntent.getActivity(this,
+                widgetId, chooseIntent, PendingIntent.FLAG_UPDATE_CURRENT));
+        sAppWidgetManager.updateAppWidget(widgetId, mRemoteViews);
     }
 
     public void setCityByID(Context context, CityData cityData) {
@@ -307,8 +308,10 @@ public class WidgetHelper extends ContextWrapper {
 
     public CityData getCityByID(Context context, int locationId) {
         CityData city = new CityData();
-        city.setName(PreferenceUtils.getString(context, locationId + "city_name", getString(R.string.current_location)));
-        city.setLocalName(PreferenceUtils.getString(context, locationId + "city_localname", getString(R.string.current_location)));
+        city.setName(PreferenceUtils.getString(context, locationId + "city_name", getString(R.string
+                .current_location)));
+        city.setLocalName(PreferenceUtils.getString(context, locationId + "city_localname", getString(R.string
+                .current_location)));
         city.setProvider(PreferenceUtils.getInt(context, locationId + "city_provider", -1));
         city.setLocationId(PreferenceUtils.getString(context, locationId + "city_locationid", "-1"));
         return city;

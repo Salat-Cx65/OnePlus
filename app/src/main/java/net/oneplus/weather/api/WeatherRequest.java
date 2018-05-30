@@ -1,15 +1,12 @@
 package net.oneplus.weather.api;
 
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.location.DetectedActivity;
-import com.oneplus.lib.widget.recyclerview.ItemTouchHelper;
-import java.util.Locale;
 import net.oneplus.weather.api.WeatherResponse.CacheListener;
 import net.oneplus.weather.api.WeatherResponse.NetworkListener;
 import net.oneplus.weather.api.helper.Validate;
 import net.oneplus.weather.api.nodes.RootWeather;
 import net.oneplus.weather.api.parser.ResponseParser;
-import net.oneplus.weather.widget.openglbase.RainSurfaceView;
+
+import java.util.Locale;
 
 public abstract class WeatherRequest {
     private CacheListener mCacheListener;
@@ -51,11 +48,12 @@ public abstract class WeatherRequest {
     }
 
     private static boolean validRequestType(int type) {
-        return contain(type, 1) || contain(type, RainSurfaceView.RAIN_LEVEL_SHOWER) || contain(type, RainSurfaceView.RAIN_LEVEL_RAINSTORM) || contain(type, DetectedActivity.RUNNING) || contain(type, ConnectionResult.API_UNAVAILABLE) || contain(type, ItemTouchHelper.END);
+        return contain(type, Type.CURRENT) || contain(type, Type.HOUR_FORECASTS) || contain(type, Type.DAILY_FORECASTS)
+                || contain(type, Type.AQI) || contain(type, Type.LIFE_INDEX) || contain(type, Type.ALARM);
     }
 
     public WeatherRequest(String key) {
-        this(15, key, null, null);
+        this(Type.ALL, key, null, null);
     }
 
     public WeatherRequest(int type, String key) {
@@ -63,100 +61,101 @@ public abstract class WeatherRequest {
     }
 
     public WeatherRequest(String key, NetworkListener networkListener, CacheListener cacheListener) {
-        this(15, key, networkListener, cacheListener);
+        this(Type.ALL, key, networkListener, cacheListener);
     }
 
     public WeatherRequest(int type, String key, NetworkListener networkListener, CacheListener cacheListener) {
-        this.mCacheMode = CacheMode.LOAD_DEFAULT;
-        this.mUseHttpCache = true;
+        mCacheMode = CacheMode.LOAD_DEFAULT;
+        mUseHttpCache = true;
         Validate.notEmpty(key, "Key should not be empty!");
         if (validRequestType(type)) {
-            this.mKey = key;
-            this.mType = type;
-            this.mNetworkListener = networkListener;
-            this.mCacheListener = cacheListener;
+            mKey = key;
+            mType = type;
+            mNetworkListener = networkListener;
+            mCacheListener = cacheListener;
             return;
         }
-        throw new IllegalArgumentException("Type should contain at least one of type AQI, LIFE_INDEX, CURRENT, HOUR_FORECASTS, ALARM or DAILY_FORECASTS.");
+        throw new IllegalArgumentException("Type should contain at least one of type AQI, LIFE_INDEX, CURRENT, " +
+                "HOUR_FORECASTS, ALARM or DAILY_FORECASTS.");
     }
 
     public WeatherRequest setLocale(Locale locale) {
-        this.mLocale = locale;
+        mLocale = locale;
         return this;
     }
 
     public Locale getLocale() {
-        return this.mLocale;
+        return mLocale;
     }
 
     public Locale getLocale(Locale defaultLocale) {
-        return this.mLocale == null ? defaultLocale : this.mLocale;
+        return mLocale == null ? defaultLocale : mLocale;
     }
 
     public String getRequestKey() {
-        return this.mKey;
+        return mKey;
     }
 
     public int getRequestType() {
-        return this.mType;
+        return mType;
     }
 
     public void deliverNetworkResponse(RootWeather weather) {
-        if (this.mNetworkListener != null) {
-            this.mNetworkListener.onResponseSuccess(weather);
+        if (mNetworkListener != null) {
+            mNetworkListener.onResponseSuccess(weather);
         }
     }
 
     public void deliverNetworkError(WeatherException e) {
-        if (this.mNetworkListener != null) {
-            this.mNetworkListener.onResponseError(e);
+        if (mNetworkListener != null) {
+            mNetworkListener.onResponseError(e);
         }
     }
 
     public void deliverCacheResponse(RootWeather weather) {
-        if (this.mCacheListener != null) {
-            this.mCacheListener.onResponse(weather);
+        if (mCacheListener != null) {
+            mCacheListener.onResponse(weather);
         }
     }
 
     public void setNetworkListener(NetworkListener listener) {
-        this.mNetworkListener = listener;
+        mNetworkListener = listener;
     }
 
     public void setCacheListener(CacheListener listener) {
-        this.mCacheListener = listener;
+        mCacheListener = listener;
     }
 
     public NetworkListener getNetworkListener() {
-        return this.mNetworkListener;
+        return mNetworkListener;
     }
 
     public CacheListener getCacheListener() {
-        return this.mCacheListener;
+        return mCacheListener;
     }
 
     public final WeatherRequest setCacheMode(CacheMode mode) {
         if (mode == null) {
             throw new NullPointerException("mode should not be null.");
         }
-        this.mCacheMode = mode;
+        mCacheMode = mode;
         return this;
     }
 
     public final CacheMode getCacheMode() {
-        return this.mCacheMode;
+        return mCacheMode;
     }
 
     public final boolean containRequest(int type) {
-        return contain(this.mType, type);
+        return contain(mType, type);
     }
 
     public WeatherRequest setHttpCacheEnable(boolean enable) {
-        this.mUseHttpCache = enable;
+        mUseHttpCache = enable;
         return this;
     }
 
     public boolean getHttpCacheEnable() {
-        return this.mUseHttpCache;
+        return mUseHttpCache;
     }
 }
